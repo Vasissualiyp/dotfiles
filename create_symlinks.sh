@@ -8,8 +8,12 @@ declare -A FILES_TO_SYMLINK=(
   [bash/.bashrc]="$HOME/"
   [bash/.bash_profile]="$HOME/"
   [bspwm/bspwmrc]="$HOME/.config/bspwm/"
+  [kitty/kitty.conf]="$HOME/.config/kitty/"
   [sxhkd/sxhkdrc]="$HOME/.config/sxhkd/"
   [sxhkd/sxhkdrc_office]="$HOME/.config/sxhkd/"
+  [nvim/init.lua]="$HOME/.config/nvim/"
+  [nvim/lua]="$HOME/.config/nvim/"
+  [nvim/vimscript]="$HOME/.config/nvim/"
   # add other dotfiles here
 )
 
