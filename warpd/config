@@ -1,0 +1,28 @@
+hint_activation_key: C-S-A-x
+hint2_activation_key: C-S-A-z
+grid_activation_key: C-S-A-g
+screen_activation_key: C-S-A-s
+activation_key: C-S-A-n
+hint_chars: asdfghjkl;qwertyuiopzxcvbnm,./
+hint2_chars: asdfghjkl;qwertyuiopzxcvbnm,./
+
+cursor_color: #657f6e
+grid_color: #5a7084
+grid_border_color: #5a7084
+hint_bgcolor: #3c4b5a
+hint_fgcolor: #90a1a9
+
+
+
+# Vas-Desktop-EOS config
+#screen_chars: kjl
+#screen_chars: jkl
+#screen_chars: jlk
+
+# Office-EOS config
+screen_chars: kj;l
+#screen_chars: jk;l
+#screen_chars: j;lk
+
+hint2_size: 15
+hint2_grid_size: 5
