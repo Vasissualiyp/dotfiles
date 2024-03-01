@@ -142,8 +142,8 @@ EDITOR=vim
 # Personal aliases {{{
 alias cdls='cdls_func(){ cd "$1" && ls; unset -f cdls_func; }; cdls_func'
 alias cdf='cdf_func(){ cd "$(find . - type d | fzf)"; unset -f cdf_func; }; cdf_func'
-alias pushall='pushall_func(){ ~/scripts/git/git_push_all.sh; unset -f pushall_func; }; pushall_func'
-alias pullall='pullall_func(){ ~/scripts/git/git_pull_all.sh; unset -f pullall_func; }; pullall_func'
+alias pushall='pushall_func(){ ~/scripts/git/git_push_all_refactored.sh; unset -f pushall_func; }; pushall_func'
+alias pullall='pullall_func(){ ~/scripts/git/git_pull_all_refactored.sh; unset -f pullall_func; }; pullall_func'
 alias endall='endall_func(){ ~/scripts/system/shutdown.sh; unset -f endall_func; }; endall_func'
 
 alias screenoff='screenoff_func(){ xset dpms force off; unset -f screenoff_func; }; screenoff_func'
