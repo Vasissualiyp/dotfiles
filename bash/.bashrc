@@ -137,14 +137,16 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
-EDITOR=vim
+export EDITOR=nvim
 
 # Personal aliases {{{
 alias cdls='cdls_func(){ cd "$1" && ls; unset -f cdls_func; }; cdls_func'
 alias cdf='cdf_func(){ cd "$(find . - type d | fzf)"; unset -f cdf_func; }; cdf_func'
+alias endall='endall_func(){ ~/scripts/system/shutdown.sh; unset -f endall_func; }; endall_func'
+
 alias pushall='pushall_func(){ ~/scripts/git/git_push_all.sh; unset -f pushall_func; }; pushall_func'
 alias pullall='pullall_func(){ ~/scripts/git/git_pull_all.sh; unset -f pullall_func; }; pullall_func'
-alias endall='endall_func(){ ~/scripts/system/shutdown.sh; unset -f endall_func; }; endall_func'
+alias addgit='addgit_func(){ echo "$(pwd),$(git remote get-url origin)" >> $HOME/scripts/git/github_tracked_dirs.csv; unset -f addgit_func; }; addgit_func'
 
 alias screenoff='screenoff_func(){ xset dpms force off; unset -f screenoff_func; }; screenoff_func'
 alias cald='cald_func(){ cal -m; unset -f cald_func; }; cald_func'
@@ -153,6 +155,8 @@ alias invert='invert_func(){ ~/scripts/custom_docs_editing/invert_pdf.sh; unset 
 
 alias zd='zd_func(){ zathura "$1" ; unset -f zd_func; }; zd_func'
 alias zl='zl_func(){ zathura -c .config/zathura/zathurarc-light "$1" ; unset -f zl_func; }; zl_func'
+alias zdf='zd_func(){ zathura $(fzf) ; unset -f zd_func; }; zd_func'
+alias zlf='zl_func(){ zathura -c .config/zathura/zathurarc-light $(fzf) ; unset -f zl_func; }; zl_func'
 
 alias shgpt='shgpt_func(){ source ~/env/venv/bin/activate; source ~/.bash_profile; unset -f shgpt_func; }; shgpt_func'
 alias srcenv='srcenv_func(){ source ./env/bin/activate ; unset -f srcenv_func; }; srcenv_func'
