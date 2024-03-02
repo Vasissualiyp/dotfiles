@@ -51,6 +51,12 @@
     # '';
   };
 
+  programs.bash.enable = true;
+  programs.bash.shellAliases = {
+    lls = "ls -l";
+  };
+ 
+
   programs.neovim = {
     enable = true;
   };
