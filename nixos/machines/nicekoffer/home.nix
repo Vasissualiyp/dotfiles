@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let 
-  bashAliasesModule = import ./modules/terminals/bash.nix;
+  bashModule = import ../../modules/terminals/bash.nix;
 in
 
 {
@@ -11,7 +11,7 @@ in
   home.homeDirectory = "/home/vasilii";
 
   imports = [
-    bashAliasesModule
+    bashModule
   ];
 
   # This value determines the Home Manager release that your configuration is
