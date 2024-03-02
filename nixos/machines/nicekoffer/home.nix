@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let 
-  bashAliasesModule = import ./bash-aliases.nix;
+  bashAliasesModule = import ./modules/terminals/bash.nix;
 in
 
 {
