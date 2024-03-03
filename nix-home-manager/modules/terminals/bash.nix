@@ -18,6 +18,9 @@ let
     screenoff = "xset dpms force off";
     cald = "cal -m";
 
+	hmupd = "$HOME/.dotfiles/home-manager-nix-update.sh"
+	sysupd = "$HOME/.dotfiles/system-nix-update.sh"
+
     invert = "$HOME/scripts/custom_docs_editing/invert_pdf.sh";
     zd = "zathura \"$1\"";
     zl = "zathura -c $HOME/.config/zathura/zathurarc-light \"$1\"";
@@ -44,10 +47,15 @@ in
   programs.bash = {
     enable = true;
     shellAliases = bashAliases;
+
     initExtra = ''
       ccp() {
         echo -n "$@" | xsel -b
       }
+    '';
+
+	interactiveShellInit = ''
+    set -o vi
     '';
   };
 }
