@@ -2,6 +2,7 @@
 
 let 
   bashModule = import ../../modules/terminals/bash.nix;
+  nvimModule = import ../../modules/editors/nvim.nix;
 in
 
 {
@@ -12,6 +13,7 @@ in
 
   imports = [
     bashModule
+	nvimModule
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -59,10 +61,7 @@ in
     # '';
   };
 
-  programs.neovim = {
-    enable = true;
-  };
-  programs.git = {
+ programs.git = {
     enable = true;
 	userName = "Vasissualiyp";
 	userEmail = "vpustovoit@cita.utoronto.ca";
