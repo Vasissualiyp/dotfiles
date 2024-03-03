@@ -13,23 +13,30 @@
   outputs = { self, nixpkgs, ... }@inputs: 
   let
     system = "x86_64-linux";
-	pkgs = nixpkgs.legacyPackages.${system};
+	#pkgs = nixpkgs.legacyPackages.${system};
 
-    #pkgs = import nixpkgs {
-	#  inherit system;
+    pkgs = import nixpkgs {
+	  inherit system;
 
-	#  config ={
-	#    allowUnfree = true;
-	#  };
-	#};
+	  config ={
+	    allowUnfree = true;
+	  };
+	};
 
   in
   {
     nixosConfigurations = {
-      myNixos = nixpkgs.lib.nixosSystem {
+      nicekoffer = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/nicekoffer/configuration.nix
+		  inputs.home-manager.nixosModules.default
+        ];
+      };
+      weisskoffer = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/weisskoffer/configuration.nix
 		  inputs.home-manager.nixosModules.default
         ];
       };
