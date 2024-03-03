@@ -20,7 +20,7 @@
   };
 
   plugins = with pkgs.vimPlugins; [
-    plenary
+    #plenary
     nvim-web-devicons
     nvim-treesitter
     nvim-treesitter-context
@@ -28,16 +28,16 @@
     telescope-nvim
     vim-tmux-navigator
     harpoon
-    ripgrep
+    #ripgrep
     leap-nvim
     copilot-vim
     vim-css-color
-    mason-nvim
-    mason-lspconfig
+    #mason-nvim
+    #mason-lspconfig
     nvim-lspconfig
     SimpylFold
     vimtex
-    vim-tex-fold
+    #vim-tex-fold
     vimwiki
     calendar-vim
     vim-smoothie
@@ -45,7 +45,7 @@
     lightline-vim
     vimspector
     fzf-vim
-    fzf
+    #fzf
     startup-nvim
     telescope-ultisnips-nvim
     ultisnips
