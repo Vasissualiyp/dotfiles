@@ -40,6 +40,7 @@
     thunderbird
     xournalpp
     zathura
+	qrencode
     #zathura-djvu
     #zathura-pdf-mupdf
 
