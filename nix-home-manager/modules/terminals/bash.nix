@@ -18,8 +18,8 @@ let
     screenoff = "xset dpms force off";
     cald = "cal -m";
 
-	hmupd = "$HOME/.dotfiles/home-manager-nix-update.sh"
-	sysupd = "$HOME/.dotfiles/system-nix-update.sh"
+	hmupd = "$HOME/.dotfiles/home-manager-nix-update.sh";
+	sysupd = "$HOME/.dotfiles/system-nix-update.sh";
 
     invert = "$HOME/scripts/custom_docs_editing/invert_pdf.sh";
     zd = "zathura \"$1\"";
