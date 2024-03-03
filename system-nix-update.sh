@@ -1,3 +1,2 @@
-#!/bin/bash
-
-home-manager switch --flake ~/.dotfiles/nix-system/
+hostname=$(hostname)
+sudo nixos-rebuild switch --flake "$HOME/.dotfiles/nix-system/#$hostname"
