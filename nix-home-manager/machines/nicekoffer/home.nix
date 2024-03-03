@@ -2,7 +2,7 @@
 
 let 
   bashModule = import ../../modules/terminals/bash.nix;
-  nvimModule = import ../../modules/editors/nvim.nix;
+  nvimModule = import ../../modules/editors/neovim/nvim.nix;
 in
 
 {
