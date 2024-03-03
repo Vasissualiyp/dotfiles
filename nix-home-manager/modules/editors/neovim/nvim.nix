@@ -19,7 +19,14 @@
     plugins = with pkgs.vimPlugins; [
       #plenary
       nvim-web-devicons
-      nvim-treesitter
+      (nvim-treesitter.withPlugins (p: [
+        p.tree-sitter-nix
+        p.tree-sitter-bash
+        p.tree-sitter-vim
+        p.tree-sitter-python
+        p.tree-sitter-lua
+        p.tree-sitter-c
+	  ]));
       nvim-treesitter-context
       nvim-treesitter-textobjects
       telescope-nvim
