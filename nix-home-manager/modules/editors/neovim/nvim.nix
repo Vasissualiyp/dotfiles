@@ -26,7 +26,7 @@
         p.tree-sitter-python
         p.tree-sitter-lua
         p.tree-sitter-c
-	  ]));
+	  ]))
       nvim-treesitter-context
       nvim-treesitter-textobjects
       telescope-nvim
