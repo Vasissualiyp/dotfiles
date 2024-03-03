@@ -49,13 +49,16 @@ in
     shellAliases = bashAliases;
 
     initExtra = ''
+
+	  # ccp alias
       ccp() {
         echo -n "$@" | xsel -b
       }
+
+	  # vi mode
+      set -o vi
+
     '';
 
-	interactiveShellInit = ''
-    set -o vi
-    '';
   };
 }
