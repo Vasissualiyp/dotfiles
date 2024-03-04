@@ -19,18 +19,17 @@ in
       ${builtins.readFile ./lua/config/digraphs.lua}
 
       ${builtins.readFile ./lua/plugins/treesitter.lua}
+
+      ${builtins.readFile ./lua/keymaps/inkscape.lua}
+      ${builtins.readFile ./lua/keymaps/noterius.lua}
+      vim.cmd('source ~/.config/nvim/vimscript/noterius.vim')
 	'';
 #${toLuaFile ./lua/plugins/treesitter.lua}
     plugins = with pkgs.vimPlugins; [
       #plenary
 
-      #-- SimPylFold --
-      #require('plugins.simpylfold')
-      #-- Inkscape (Gilles Catelle's snippets) --
-      #require('keymaps.inkscape')
       #-- Noterius --
       #require('keymaps.noterius')
-      #vim.cmd('source ~/.config/nvim/vimscript/noterius.vim')
       nvim-web-devicons
       (nvim-treesitter.withPlugins (p: [
         p.tree-sitter-nix
@@ -58,7 +57,10 @@ in
       #mason-nvim
       #mason-lspconfig
 	  nvim-lspconfig
-	  SimpylFold
+	  {
+	  plugin = SimpylFold;
+	  config = toLuaFile ./lua/plugins/simpylfold.lua;
+	  }
       {
 	  plugin = vimtex;
 	  config = "source ~/.dotfiles/nvim/vimscript/vimtex.vim \nlua << EOF\n${builtins.readFile ./lua/keymaps/limelight.lua}EOF\n";
