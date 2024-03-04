@@ -27,6 +27,7 @@
 
     # System
     unzip
+	stdenv.cc.cc.lib
     unrar
     dmenu
     xsel
