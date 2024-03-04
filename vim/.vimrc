@@ -384,8 +384,8 @@ Plug 'equt/paper.vim'
 Plug 'itchyny/lightline.vim'
 
 "Snippets
-"Plug 'SirVer/ultisnips'
-"Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 "GPT-3 API
 Plug 'dense-analysis/neural'
