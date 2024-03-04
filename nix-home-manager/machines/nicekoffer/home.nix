@@ -3,6 +3,7 @@
 let 
   bashModule = import ../../modules/terminals/bash.nix;
   nvimModule = import ../../modules/editors/neovim/nvim.nix;
+  latexModule = import ../../modules/latex/latex.nix;
 in
 
 {
