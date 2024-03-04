@@ -32,10 +32,13 @@ in
       (nvim-treesitter.withPlugins (p: [
         p.tree-sitter-bash
         p.tree-sitter-c
+        p.tree-sitter-conf
         p.tree-sitter-cpp
+        p.tree-sitter-ini
         p.tree-sitter-json
         p.tree-sitter-latex
         p.tree-sitter-lua
+        p.tree-sitter-make
         p.tree-sitter-nix
         p.tree-sitter-python
         p.tree-sitter-rust
