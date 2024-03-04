@@ -779,4 +779,71 @@ snippet pmdoc "pocoo style module doc string" b
 $0
 endsnippet
 
+
+
+######################
+## VASILII SNIPPETS ##
+######################
+
+# Import common libraries
+snippet lib "Common Python Libraries" b
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+import scipy as sp
+endsnippet
+
+# Function template
+snippet func "Function Definition" b
+def ${1:function_name}(${2:args}):
+    """
+    Description of the function.
+
+    Parameters:
+    - $2
+
+    Returns:
+    -
+    """
+    $0
+endsnippet
+
+# Class template
+snippet class "Class Definition" b
+class ${1:ClassName}:
+    def __init__(self, ${2:args}):
+        ${3:pass}
+
+    $0
+endsnippet
+
+# Main block
+snippet main "Main Block" b
+if __name__ == "__main__":
+    $0
+endsnippet
+
+# Basic plotting setup
+snippet plot "Basic Plotting Setup" b
+plt.figure(figsize=(8,6))
+plt.plot(${1:x_data}, ${2:y_data}, label='${3:label}')
+plt.xlabel('${4:x_label}')
+plt.ylabel('${5:y_label}')
+plt.title('${6:title}')
+plt.legend()
+plt.show()
+$0
+endsnippet
+
+# Data loading with pandas
+snippet loaddata "Load Data with Pandas" b
+import pandas as pd
+
+data = pd.read_csv('${1:file_path}')
+$0
+endsnippet
+
+snippet pf "Print string with variables" b
+print(f"$1")
+endsnippet
 # vim:ft=snippets:
