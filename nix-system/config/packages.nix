@@ -5,6 +5,10 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
 
+	# MAKE SURE TO CHOOSE THE REQUIRED LATEX SCHEME!
+	texlive.combined.scheme-full   # long download ~5 mins
+	#texlive.combined.scheme-basic # fast download, but not all functionalities present
+
     # Main essentials
     vim_configurable
     home-manager
@@ -41,7 +45,6 @@
     xournalpp
     zathura
 	qrencode
-	texlive.combined.scheme-full
     #zathura-djvu
     #zathura-pdf-mupdf
 
