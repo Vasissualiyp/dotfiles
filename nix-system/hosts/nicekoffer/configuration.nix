@@ -6,10 +6,10 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [ 
       ./hardware-configuration.nix
 	  ../../config/packages.nix
-	  ../../modules/shell.nix
+	  #../../modules/shell.nix
 	  #inputs.home-manager.nixosModules.default
     ];
 
@@ -50,6 +50,8 @@
       experimental-features = nix-command flakes
     '';
   };
+
+  mkShell = { inherit pkgs };
   
   # Audio
   hardware.pulseaudio.enable = true;

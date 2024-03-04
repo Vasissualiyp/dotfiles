@@ -4,6 +4,7 @@ let
   bashModule = import ../../modules/terminals/bash.nix;
   nvimModule = import ../../modules/editors/neovim/nvim.nix;
   latexModule = import ../../modules/latex/latex.nix;
+  pythonshelllibModule = import ../../modules/terminals/shell.nix;
 in
 
 {
@@ -15,6 +16,7 @@ in
   imports = [
     bashModule
 	nvimModule
+    pythonshelllibModule 
   ];
 
   # This value determines the Home Manager release that your configuration is
