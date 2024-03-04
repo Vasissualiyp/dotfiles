@@ -4,7 +4,7 @@ let
   bashModule = import ../../modules/terminals/bash.nix;
   nvimModule = import ../../modules/editors/neovim/nvim.nix;
   latexModule = import ../../modules/latex/latex.nix;
-  pythonshelllibModule = (import ../../modules/terminals/shell.nix {inherit pkgs; })
+  pythonshelllibModule = (import ../../modules/terminals/shell.nix {inherit pkgs; });
 in
 
 {
