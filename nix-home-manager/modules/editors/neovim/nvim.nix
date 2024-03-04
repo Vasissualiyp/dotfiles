@@ -32,8 +32,8 @@ in
       (nvim-treesitter.withPlugins (p: [
         p.tree-sitter-bash
         p.tree-sitter-c
-        p.tree-sitter-conf
         p.tree-sitter-cpp
+        p.tree-sitter-csv
         p.tree-sitter-ini
         p.tree-sitter-json
         p.tree-sitter-latex
