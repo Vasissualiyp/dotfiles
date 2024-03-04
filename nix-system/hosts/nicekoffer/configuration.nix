@@ -55,8 +55,6 @@
     '';
   };
 
-  mkShell = { inherit pkgs };
-  
   # Audio
   hardware.pulseaudio.enable = true;
 

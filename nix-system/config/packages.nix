@@ -23,6 +23,7 @@
     neofetch
     redshift
     gwenview
+	fzf
     feh
 
     # System
