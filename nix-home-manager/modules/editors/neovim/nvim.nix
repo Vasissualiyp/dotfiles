@@ -60,8 +60,6 @@ in
 	  leap-nvim
 	  copilot-vim
 	  vim-css-color
-      #mason-nvim
-      #mason-lspconfig
 	  nvim-lspconfig
 	  {
 	  plugin = SimpylFold;
@@ -96,12 +94,16 @@ in
 	  fzf-vim
       #fzf
 	  startup-nvim
+	  vim-snippets
 	  telescope-ultisnips-nvim
       {
 	  plugin = ultisnips;
 	  config = toLuaFile ./lua/keymaps/ultisnips.lua;
 	  }
-	  vim-snippets
+
+	  # Mason doesn't work on NixOs
+      #mason-nvim
+      #mason-lspconfig-nvim
     ];
 
   };
