@@ -32,10 +32,16 @@ in
       (nvim-treesitter.withPlugins (p: [
         p.tree-sitter-nix
         p.tree-sitter-bash
+        p.tree-sitter-nix
+        p.tree-sitter-latex
+        p.tree-sitter-json
+        p.tree-sitter-yaml
         p.tree-sitter-vim
         p.tree-sitter-python
         p.tree-sitter-lua
         p.tree-sitter-c
+        p.tree-sitter-cpp
+        p.tree-sitter-rust
 	  ]))
 	  nvim-treesitter-context
 	  nvim-treesitter-textobjects
