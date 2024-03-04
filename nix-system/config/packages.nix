@@ -41,6 +41,7 @@
     xournalpp
     zathura
 	qrencode
+	texlive.combined.scheme-full
     #zathura-djvu
     #zathura-pdf-mupdf
 
