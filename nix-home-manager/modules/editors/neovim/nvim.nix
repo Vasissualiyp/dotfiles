@@ -30,18 +30,17 @@ in
 
       nvim-web-devicons
       (nvim-treesitter.withPlugins (p: [
-        p.tree-sitter-nix
         p.tree-sitter-bash
-        p.tree-sitter-nix
-        p.tree-sitter-latex
-        p.tree-sitter-json
-        p.tree-sitter-yaml
-        p.tree-sitter-vim
-        p.tree-sitter-python
-        p.tree-sitter-lua
         p.tree-sitter-c
         p.tree-sitter-cpp
+        p.tree-sitter-json
+        p.tree-sitter-latex
+        p.tree-sitter-lua
+        p.tree-sitter-nix
+        p.tree-sitter-python
         p.tree-sitter-rust
+        p.tree-sitter-vim
+        p.tree-sitter-yaml
 	  ]))
 	  nvim-treesitter-context
 	  nvim-treesitter-textobjects
