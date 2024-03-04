@@ -21,15 +21,13 @@ in
       ${builtins.readFile ./lua/plugins/treesitter.lua}
 
       ${builtins.readFile ./lua/keymaps/inkscape.lua}
+      vim.cmd('source ~/.dotfiles/nvim/vimscript/noterius.vim')
       ${builtins.readFile ./lua/keymaps/noterius.lua}
-      vim.cmd('source ~/.config/nvim/vimscript/noterius.vim')
 	'';
 #${toLuaFile ./lua/plugins/treesitter.lua}
     plugins = with pkgs.vimPlugins; [
       #plenary
 
-      #-- Noterius --
-      #require('keymaps.noterius')
       nvim-web-devicons
       (nvim-treesitter.withPlugins (p: [
         p.tree-sitter-nix
@@ -63,7 +61,7 @@ in
 	  }
       {
 	  plugin = vimtex;
-	  config = "source ~/.dotfiles/nvim/vimscript/vimtex.vim \nlua << EOF\n${builtins.readFile ./lua/keymaps/limelight.lua}EOF\n";
+	  config = "source ~/.dotfiles/nvim/vimscript/vimtex.vim \nlua << EOF\n${builtins.readFile ./lua/keymaps/limelight.lua}\nEOF";
 	  }
       #vim-tex-fold
       {
