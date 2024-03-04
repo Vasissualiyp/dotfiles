@@ -2,6 +2,7 @@
 let
     toLua = str: "lua << EOF\n${str}\nEOF\n";
     toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
+in
 {
   programs.neovim = {
     enable = true;
@@ -17,9 +18,9 @@ let
       ${builtins.readFile ./lua/config/colors.lua}
       ${builtins.readFile ./lua/config/digraphs.lua}
 
-	  ${toLuaFile ./lua/plugins/treesitter.lua}
-
+      ${builtins.readFile ./lua/plugins/treesitter.lua}
 	'';
+#${toLuaFile ./lua/plugins/treesitter.lua}
     plugins = with pkgs.vimPlugins; [
       #plenary
 
@@ -39,8 +40,8 @@ let
         p.tree-sitter-lua
         p.tree-sitter-c
 	  ]))
-	  vim-treesitter-context
-	  vim-treesitter-textobjects
+	  nvim-treesitter-context
+	  nvim-treesitter-textobjects
       {
 	  plugin = telescope-nvim;
 	  config = toLua "${builtins.readFile ./lua/plugins/telescope.lua}\n${builtins.readFile ./lua/keymaps/telescope.lua}";
