@@ -19,6 +19,11 @@ vim.keymap.set('n', '<leader>no', function()
     vim.cmd('call OpenNoteByDate()')
 end, { silent = true })
 
+-- Call DisplayNoteriusQuickhelp()
+vim.keymap.set('n', '<leader>n?', function()
+    vim.cmd('call DisplayNoteriusQuickhelp()')
+end, { silent = true })
+
 -- Call SearchNotes()
 vim.keymap.set('n', '<leader>ns', function()
     vim.cmd('call SearchNotes()')

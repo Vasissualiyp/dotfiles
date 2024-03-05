@@ -154,6 +154,29 @@ endfunction
 
 "}}}
 
+let g:noterius_quickhelp_path = '/home/vasilii/Software/Noterius/quickhelp.tex'
+
+function! DisplayNoteriusQuickhelp()
+    let l:quickhelp_path = get(g:, 'noterius_quickhelp_path', '')
+    if l:quickhelp_path == ''
+        echo "No path set for Noterius Quickhelp"
+        return
+    endif
+
+    let l:lines = readfile(l:quickhelp_path)
+    if empty(l:lines)
+        echo "Failed to read Noterius Quickhelp file or file is empty"
+        return
+    endif
+
+    new
+    setlocal buftype=nofile
+    setlocal bufhidden=hide
+    setlocal noswapfile
+    call append(0, l:lines)
+    setlocal nomodifiable
+endfunction
+
 " SearchNotes (NEED TO FIX) {{{
 function! SearchNotes()
     let l:keyword = input('Enter search term: ')
