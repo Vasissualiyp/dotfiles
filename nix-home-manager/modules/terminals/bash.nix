@@ -14,6 +14,8 @@ let
     pushall = "$HOME/scripts/git/git_push_all.sh";
     pullall = "$HOME/scripts/git/git_pull_all.sh";
     addgit = "echo \"$(pwd),$(git remote get-url origin)\" >> $HOME/scripts/git/github_tracked_dirs.csv";
+	citavpn ="~/scripts/VPN/citavpn.sh"
+
 
     screenoff = "xset dpms force off";
     cald = "cal -m";
