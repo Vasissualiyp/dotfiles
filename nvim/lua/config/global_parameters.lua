@@ -41,3 +41,6 @@ vim.opt.encoding = 'utf-8'
 
 -- Set fold method
 vim.opt.foldmethod = "syntax"
+
+-- Disable mouse
+vim.opt.mouse = ''
