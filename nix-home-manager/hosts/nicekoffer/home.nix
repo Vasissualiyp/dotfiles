@@ -4,9 +4,9 @@ let
   bashModule = import ../../modules/terminals/bash.nix;
   nvimModule = import ../../modules/editors/neovim/nvim.nix;
   latexModule = import ../../modules/latex/latex.nix;
-  #tmuxModule = import ../../modules/terminals/tmux.nix;
-  #redshiftModule = import ../../modules/system/redshift.nix;
-  #pythonshelllibModule = (import ../../modules/terminals/shell.nix {inherit pkgs; });
+  tmuxModule = import ../../modules/terminals/tmux.nix;
+  redshiftModule = import ../../modules/system/redshift.nix;
+  pythonshelllibModule = (import ../../modules/terminals/shell.nix {inherit pkgs; });
 in
 
 {
