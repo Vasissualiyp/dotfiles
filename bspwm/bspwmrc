@@ -103,14 +103,14 @@ bspc config top_padding 30
 
 # Sxhkd
 if [ "$machine_name" == "Vas-Office-EOS" ]; then
-  sxhkd -c /home/vasilii/.config/sxhkd/sxhkdrc_office &
+  sxhkd -c /home/vasilii/.dotfiles/sxhkd/sxhkdrc_office &
   xfce-power-manager &
 elif [ "$machine_name" == "Vas-Desktop-EOS" ]; then
   sxhkd &
 elif [ "$machine_name" == "Vas-MSI-Arch" ]; then
   sxhkd &
 elif [ "$machine_name" == "Vas-HP-EOS" ]; then
-  sxhkd -c /home/vasilii/.config/sxhkd/sxhkdrc_office &
+  sxhkd -c /home/vasilii/.dotfiles/sxhkd/sxhkdrc_office &
   xfce-power-manager &
 fi
 # warpd
@@ -147,9 +147,9 @@ xsetroot -cursor_name left_ptr &
 #stalonetray
 pkill stalonetray
 if [ "$machine_name" == "Vas-Office-EOS" ]; then
-  stalonetray -c .config/stalonetray/stalonetrayrc_Office &
+  stalonetray -c .dotfiles/stalonetray/stalonetrayrc_Office &
 #elif [ "$machine_name" == "Vas-Desktop-EOS" ]; then
-#  stalonetray -c .config/stalonetray/stalonetrayrc_Office &
+#  stalonetray -c .dotfiles/stalonetray/stalonetrayrc_Office &
 #elif [ "$machine_name" == "Vas-HP-EOS" ]; then
-#  stalonetray -c .config/stalonetray/stalonetrayrc_Office &
+#  stalonetray -c .dotfiles/stalonetray/stalonetrayrc_Office &
 fi
