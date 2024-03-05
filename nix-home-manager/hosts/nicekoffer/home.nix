@@ -18,7 +18,7 @@ in
   imports = [
     bashModule
 	nvimModule
-	#tmuxModule
+	tmuxModule
 	#latexModule
 	#redshiftModule
     #pythonshelllibModule 
