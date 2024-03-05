@@ -9,6 +9,7 @@
     [ 
       ./hardware-configuration.nix
 	  ../../config/packages.nix
+	  ../../modules/terminals/tmux.nix
 	  #../../modules/shell.nix
 	  #inputs.home-manager.nixosModules.default
     ];
