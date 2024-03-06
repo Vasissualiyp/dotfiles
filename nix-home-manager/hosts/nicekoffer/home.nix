@@ -19,8 +19,8 @@ in
     bashModule
 	nvimModule
 	tmuxModule
+	redshiftModule
 	#latexModule
-	#redshiftModule
     #pythonshelllibModule 
   ];
 

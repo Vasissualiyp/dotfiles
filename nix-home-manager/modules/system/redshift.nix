@@ -1,48 +1,40 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, callPackage, ... }: 
 
-let
-  cfg = config.services.redshift;
-in
 {
-  options.services.redshift = {
-    enable = lib.mkEnableOption "Redshift";
+  #services.geoclue2.enable = true;
+  # All values except 'enable' are optional.
+  services.redshift = {
+    enable = true;
 
-    latitude = lib.mkOption {
-      type = lib.types.str;
-      default = "43.7";
-      description = "Your current latitude.";
-    };
+    provider = "manual";
+    latitude = "43.65";
+    longitude = "-79.38";
 
-    longitude = lib.mkOption {
-      type = lib.types.str;
-      default = "-79.4";
-      description = "Your current longitude.";
-    };
+    settings.redshift.brightness-day = "1";
+    settings.redshift.brightness-night = "1";
 
     temperature = {
-      day = lib.mkOption {
-        type = lib.types.int;
-        default = 6500;
-        description = "Colour temperature to use during the day.";
-      };
-      
-      night = lib.mkOption {
-        type = lib.types.int;
-        default = 1000;
-        description = "Colour temperature to use at night.";
-      };
+      day = 6500;
+      night = 1000;
     };
-  };
 
-  config = lib.mkIf cfg.enable {
-    services.redshift = {
-      enable = true;
-      provider = "manual";
-      latitude = cfg.latitude;
-      longitude = cfg.longitude;
-      extraOptions = [
-        "-t ${toString cfg.temperature.day}:${toString cfg.temperature.night}"
-      ];
-    };
   };
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
