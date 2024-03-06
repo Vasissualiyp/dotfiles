@@ -6,7 +6,7 @@ let
   cfg = config.programs.tmux;
 in
 {
-  programs.tmux = {
+  options.programs.tmux = {
     enable = mkEnableOption "Tmux";
 
     extraConfig = mkOption {
