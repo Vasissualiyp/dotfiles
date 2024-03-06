@@ -6,6 +6,13 @@ let
   cfg = config.programs.tmux;
 in
 {
+  programs.tmux = {
+    plugins = with pkgs;
+	[
+      tmuxPlugins.catpuccin
+	];
+  };
+
   options.programs.tmux = {
     enable = mkEnableOption "Tmux";
 

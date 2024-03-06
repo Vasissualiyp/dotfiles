@@ -15,7 +15,7 @@
 
     # Essentials
     neovim
-    #tmux
+    tmux
     ctags # Needed for vim to create tags
     pinentry-curses # for importing passphrase for pass
     pass
