@@ -14,7 +14,7 @@ in
       ${builtins.readFile ./lua/config/path_setup.lua}
 
 	  -- Add vimwiki directory
-	  vim.cmd("let g:vimwiki_list = [{'path': '~/Documents/wiki/Research'}]")
+      vim.cmd('source ~/.dotfiles/nvim/vimscript/vimwiki.vim')
       
       -- Load config settings
       ${builtins.readFile ./lua/keymaps/global.lua}
