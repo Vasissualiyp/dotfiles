@@ -169,7 +169,7 @@ function! DisplayNoteriusQuickhelp()
         return
     endif
 
-    new
+    tabnew
     setlocal buftype=nofile
     setlocal bufhidden=hide
     setlocal noswapfile
