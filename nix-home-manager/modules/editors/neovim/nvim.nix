@@ -12,6 +12,9 @@ in
       
       -- This is needed to setup the path, which is essential for nvim on NixOS to work
       ${builtins.readFile ./lua/config/path_setup.lua}
+
+	  -- Add vimwiki directory
+	  vim.cmd("let g:vimwiki_list = [{'path': '~/Documents/wiki/Research'}]")
       
       -- Load config settings
       ${builtins.readFile ./lua/keymaps/global.lua}
@@ -24,7 +27,6 @@ in
       vim.cmd('source ~/.dotfiles/nvim/vimscript/noterius.vim')
       ${builtins.readFile ./lua/keymaps/noterius.lua}
 	'';
-#${toLuaFile ./lua/plugins/treesitter.lua}
     plugins = with pkgs.vimPlugins; [
       #plenary
 
