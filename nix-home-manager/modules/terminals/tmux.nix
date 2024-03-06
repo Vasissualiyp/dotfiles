@@ -10,6 +10,11 @@ in
     plugins = with pkgs;
 	[
       tmuxPlugins.catpuccin
+	  tmuxPlugins.tmux-sensible
+	  tmuxPlugins.vim-tmux-navigator
+	  tmuxPlugins.tmux-yank
+	  tmuxPlugins.tmux-resurrect
+	  tmuxPlugins.tmux-continuum
 	];
   };
 
