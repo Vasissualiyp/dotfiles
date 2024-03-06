@@ -25,9 +25,9 @@ let
 
     invert = "$HOME/scripts/custom_docs_editing/invert_pdf.sh";
     zd = "zathura \"$1\"";
-    zl = "zathura -c $HOME/.config/zathura/zathurarc-light \"$1\"";
+    zl = "zathura -c $HOME/.dotfiles/zathura/zathurarc-light \"$1\"";
     zdf = "zathura $(fzf)";
-    zlf = "zathura -c $HOME/.config/zathura/zathurarc-light $(fzf)";
+    zlf = "zathura -c $HOME/.dotfiles/zathura/zathurarc-light $(fzf)";
 
     shgpt = "source $HOME/env/venv/bin/activate; source $HOME/.bash_profile";
 

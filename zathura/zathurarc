@@ -65,5 +65,6 @@ set render-loading "false"
 set scroll-step 50
 unmap f
 map f toggle_fullscreen
+map gr set recolor
 map [fullscreen] f toggle_fullscreen
 
