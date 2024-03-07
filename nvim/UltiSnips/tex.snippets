@@ -1,9 +1,7 @@
-#Pre-made snips {{{
 ##########
 # GLOBAL #
 ##########
 
-#{{{
 global !p
 
 def create_table(snip):
@@ -71,13 +69,12 @@ def create_matrix(cols, rows, sep, start, end):
 		res += end
 	return res[:-1]
 endglobal
-#}}}
+
 
 ###############
 # ENVIRONMENT #
 ###############
 
-#{{{
 snippet beg "begin{} / end{}" bi
 \begin{$1}
 	${0:${VISUAL}}
@@ -218,28 +215,23 @@ snippet table "Table environment" b
 	\end{$4${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
 \end{table}
 endsnippet
-#}}}
+
 
 ########
 # MATH #
 ########
 
-#{{{
-
 snippet cc "subset" w
 \subset 
 endsnippet
-
 
 snippet inn "in " w
 \in 
 endsnippet
 
-
 snippet Nn "cap" w
 \cap 
 endsnippet
-
 
 snippet UU "cup" w
 \cup 
@@ -349,39 +341,32 @@ endsnippet
 
 
 snippet () "Left( right)" w
-\left( ${1:${VISUAL}} \right) $0
+\left( ${1:${VISUAL}} \right)$0
 endsnippet
-
 
 snippet lr "left( right)" i
-\left( ${1:${VISUAL}} \right) $0
+\left( ${1:${VISUAL}} \right)$0
 endsnippet
-
 
 snippet lr( "left( right)" Ai
-\left( ${1:${VISUAL}} \right) $0
+\left( ${1:${VISUAL}} \right)$0
 endsnippet
-
 
 snippet lr| "left| right|" Ai
-\left| ${1:${VISUAL}} \right| $0
+\left| ${1:${VISUAL}} \right|$0
 endsnippet
-
 
 snippet lr{ "left\{ right\}" Ai
-\left\\{ ${1:${VISUAL}} \right\\} $0
+\left\\{ ${1:${VISUAL}} \right\\}$0
 endsnippet
-
 
 snippet lrb "left\{ right\}" i
-\left\\{ ${1:${VISUAL}} \right\\} $0
+\left\\{ ${1:${VISUAL}} \right\\}$0
 endsnippet
-
 
 snippet lr[ "left[ right]" Ai
-\left[ ${1:${VISUAL}} \right] $0
+\left[ ${1:${VISUAL}} \right]$0
 endsnippet
-
 
 snippet lra "leftangle rightangle" wi
 \left<${1:${VISUAL}} \right>$0
@@ -397,21 +382,17 @@ snippet sum "sum" w
 \sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
 endsnippet
 
-
 snippet taylor "taylor" w
 \sum_{${1:k}=${2:0}}^{${3:\infty}} ${4:c_$1} (x-a)^$1 $0
 endsnippet
-
 
 snippet lim "limit" w
 \lim_{${1:n} \to ${2:\infty}} 
 endsnippet
 
-
 snippet limsup "limsup" w
 \limsup_{${1:n} \to ${2:\infty}} 
 endsnippet
-
 
 snippet prod "product" w
 \prod_{${1:n=${2:1}} }^{${3:\infty}} ${4:${VISUAL}} $0
@@ -422,13 +403,12 @@ snippet ddx "d/dx" Aw
 \frac{\mathrm{d} ${1:V}}{\mathrm{d} ${2:x}} $0
 endsnippet
 
-
 snippet pddx "partial d/dx" Aw
 \frac{\partial ${1:V}}{\partial ${2:x}} $0
 endsnippet
 
 
-snippet ooo "\infty" w
+snippet ooo "\infty" wA
 \infty
 endsnippet
 
@@ -436,7 +416,6 @@ endsnippet
 snippet rij "mrij" i
 (${1:x}_${2:n})_{${3:$2}\\in${4:\\N}}$0
 endsnippet
-
 
 
 snippet iff "iff" Aw
@@ -515,13 +494,13 @@ endsnippet
 snippet !> "mapsto" Aw
 \mapsto 
 endsnippet
-#}}}
+
 
 ##########
 # TABLES #
 #########
 
-#{{{
+
 pre_expand "create_table(snip)"
 snippet "gentbl(\d+)x(\d+)" "Generate table of *width* by *height*" r
 endsnippet
@@ -529,13 +508,13 @@ endsnippet
 pre_expand "add_row(snip)"
 snippet "tr(\d+)" "Add table row of dimension ..." r
 endsnippet
-#}}}
+
 
 ###########
 # POSTFIX #
 ###########
 
-#{{{
+
 snippet bar "bar" wi
 \bar{${1:${VISUAL} }}$0
 endsnippet
@@ -551,13 +530,13 @@ endsnippet
 snippet "(.*)\\bra{(.*?)}([^\|]*?)\>" "braket" Awri
 `!p snip.rv = match.group(1)`\braket{`!p snip.rv = match.group(2)`}{`!p snip.rv = match.group(3).replace('q', f'\psi').replace('f', f'\phi')`}
 endsnippet
-#}}}
+
 
 #############
 # PRE-AMBLE #
 #############
 
-#{{{
+
 
 snippet pac "usepackage - removes square braces if options removed" b
 \usepackage`!p snip.rv='[' if t[1] else ""`${1:options}`!p snip.rv = ']' if t[1] else ""`{${2:package}}$0
@@ -566,13 +545,13 @@ endsnippet
 snippet docls "Document Class" bA
 \documentclass{$1}$0
 endsnippet
-#}}}
+
 
 #########
 # OTHER #
 #########
 
-#{{{
+
 
 snippet acl "Acroynm expanded" bi
 \acl{${1:acronym}}
@@ -585,14 +564,14 @@ endsnippet
 snippet ni "Non-indented paragraph" bi
 \noindent
 endsnippet
-#}}}
+
 
 
 ############
 # SECTIONS #
 ############
 
-#{{{
+
 
 snippet chap "Chapter" wi
 \chapter{$1${VISUAL}}
@@ -694,16 +673,10 @@ snippet subpar*l "Sub Paragraph* with label" wi
 endsnippet
 
 
-#}}}
-#}}}
-
-#Gilles Castel's snips {{{
-
 ##########################
 #GILLES CASTEL'S SNIPPETS#
 ##########################
 
-#{{{
 snippet beg "begin{} / end{}" bA
 \begin{$1}
 	$0
@@ -751,247 +724,195 @@ snippet // "Fraction" iA
 \\frac{$1}{$2}$0
 endsnippet
 
-#}}}
-#}}}
-
-#My snips {{{
 
 ###############
 ###INTEGRALS###
 ###############
-
-#{{{
-
 
 priority 300
 snippet dint "integral" wA
 \int ${1:${VISUAL}} \, \mathrm{d} ${2:x} $0
 endsnippet
 
-
 priority 300
 snippet cint "integral" wA
 \oint\limits_{${1:\Gamma}} ${2:${VISUAL}} \, \mathrm{d} ${2:\gamma} $0
 endsnippet
 
-
 priority 300
 snippet ddint "integral" wA
 \int_{${1:-\infty}}^{${2:\infty}} ${3:${VISUAL}} \, \mathrm{d} ${4:x}  $0
 endsnippet
-#}}}
+
 
 ################
 #GREEK ALPHABET#
 ################
 
-#{{{
-
-
 snippet a "alpha" w
-\alpha 
+\alpha
 endsnippet
-
 
 snippet b "beta" w
-\beta 
+\beta
 endsnippet
-
 
 snippet g "gamma" w
-\gamma 
+\gamma
 endsnippet
-
 
 snippet d "delta" w
-\delta 
+\delta
 endsnippet
-
 
 snippet eps "epsilon" w
-\epsilon 
+\epsilon
 endsnippet
-
 
 snippet z "zeta" w
-\zeta 
+\zeta
 endsnippet
-
 
 snippet eta "eta" w
-\eta 
+\eta
 endsnippet
-
 
 snippet th "theta" w
-\theta 
+\theta
 endsnippet
-
 
 snippet i "iota" w
-\iota 
+\iota
 endsnippet
-
 
 snippet k "kappa" w
-\kappa 
+\kappa
 endsnippet
-
 
 snippet l "lambda" w
-\lambda 
+\lambda
 endsnippet
-
 
 snippet n "nu" w
-\nu 
+\nu
 endsnippet
-
 
 snippet m "mu" w
-\mu 
+\mu
 endsnippet
-
 
 snippet x "xi" w
-\xi 
+\xi
 endsnippet
-
 
 snippet pi "pi" w
-\pi 
+\pi
 endsnippet
-
 
 snippet f "phi" w
-\phi 
+\phi
 endsnippet
-
 
 snippet r "rho" w
-\rho 
+\rho
 endsnippet
-
 
 snippet s "sigma" w
-\sigma 
+\sigma
 endsnippet
-
 
 snippet t "tau" w
-\tau 
+\tau
 endsnippet
-
 
 snippet u "upsilon" w
-\upsilon 
+\upsilon
 endsnippet
-
 
 snippet F "Phi" w
-\Phi 
+\Phi
 endsnippet
-
 
 snippet G "Gamma" w
-\Gamma 
+\Gamma
 endsnippet
-
 
 snippet c "chi" w
-\chi 
+\chi
 endsnippet
-
 
 snippet psi "psi" w
-\psi 
+\psi
 endsnippet
-
 
 snippet o "omega" w
-\omega 
+\omega
 endsnippet
-
 
 snippet D "Delta" w
-\Delta 
+\Delta
 endsnippet
-
 
 snippet veps "varepsilon" w
-\varepsilon 
+\varepsilon
 endsnippet
-
 
 snippet vth "vartheta" w
-\vartheta 
+\vartheta
 endsnippet
-
 
 snippet T "Theta" w
-\Theta 
+\Theta
 endsnippet
-
 
 snippet L "Lambda" w
-\Lambda 
+\Lambda
 endsnippet
-
 
 snippet X "Xi" w
-\Xi 
+\Xi
 endsnippet
-
 
 snippet P "Pi" w
-\Pi 
+\Pi
 endsnippet
-
 
 snippet vr "varrho" w
-\varrho 
+\varrho
 endsnippet
-
 
 snippet S "Sigma" w
-\Sigma 
+\Sigma
 endsnippet
-
 
 snippet U "Upsilon" w
-\Upsilon 
+\Upsilon
 endsnippet
-
 
 snippet vf "varphi" w
-\varphi 
+\varphi
 endsnippet
-
 
 snippet Psi "Psi" w
-\Psi 
+\Psi
 endsnippet
-
 
 snippet O "Omega" w
-\Omega 
+\Omega
 endsnippet
-#}}}
 
 ##################
 #VASILII SNIPPETS#
 ##################
 
-#{{{
-
 snippet time "Current Time" w
 `date +%H:%M`
 endsnippet
 
-# note.sh environments {{{
+# note.sh environments 
 snippet gnote "Green note" bA
 \note{green}{$1 at `date +%H:%M`}.
-%{{{
+%
 $2
 %}}}
 $0
@@ -999,7 +920,7 @@ endsnippet
 
 snippet bnote "Blue note" bA
 \note{blue}{$1 at `date +%H:%M`}.
-%{{{
+%
 $2
 %}}}
 $0
@@ -1007,7 +928,7 @@ endsnippet
 
 snippet rnote "Red note" bA
 \note{red}{$1 at `date +%H:%M`}.
-%{{{
+%
 $2
 %}}}
 $0
@@ -1015,7 +936,7 @@ endsnippet
 
 snippet knote "Black note" bA
 \note{black}{$1 at `date +%H:%M`}.
-%{{{
+%
 $2
 %}}}
 $0
@@ -1023,7 +944,7 @@ endsnippet
 
 snippet meet "Meeting note" bA
 \note{purple}{{\large Meeting with $1 at `date +%H:%M`}}.
-%{{{
+%
 $2
 %}}}
 $0
@@ -1031,7 +952,7 @@ endsnippet
 
 snippet idea "Idea" bA
 \note{teal}{$1}.
-%{{{
+%
 $2
 %}}}
 $0
@@ -1039,7 +960,7 @@ endsnippet
 
 snippet BBsem "Black Board Seminar" bA
 \note{olive}{{\large BB Seminar at `date +%H:%M`}}.
-%{{{
+%
 $1
 %}}}
 $0
@@ -1047,12 +968,12 @@ endsnippet
 
 snippet sem "Seminar" bA
 \note{lime}{{\large ${1:Seminar} at `date +%H:%M`}}.
-%{{{
+%
 $2
 %}}}
 $0
 endsnippet
-#}}}
+
 
 snippet niagara "Address of files on Niagara" w
 vasissua@niagara.scinet.utoronto.ca:/scratch/m/murray/vasissua
@@ -1079,25 +1000,21 @@ snippet neur "Neural" w
 endsnippet
 
 
-
 # Fonts
-
 snippet mbb "number sets like reals, complex" wA
 \mathbb{$1}$0
 endsnippet
-
 
 snippet mcal "curly variable" wA
 \mathcal{$1}$0
 endsnippet
 
-
 snippet mfk "edgy font" wA
 \mathfrak{$1}$0
 endsnippet
-#}}}
 
-# Character modifiers {{{
+
+# Character modifiers 
 snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
 \vec{`!p snip.rv=match.group(1)`} 
 endsnippet
@@ -1106,43 +1023,35 @@ snippet "(\\?\w+)(\.h)" "Hat postfix" riA
 \hat{`!p snip.rv=match.group(1)`} 
 endsnippet
 
-
 snippet h "hat" w
 \hat{$1}$0
 endsnippet
-
 
 snippet v "vector" w
 \Vec{$1}$0
 endsnippet
 
-
 snippet ol "overline" w
 \overline{$1}$0
 endsnippet
 
-
 snippet ul "underline" w
 \underline{$1}$0
 endsnippet
-#}}}
 
-# Math {{{
 
+# Math 
 snippet =- "Equiv" wA
 \equiv 
 endsnippet
-
 
 snippet ~~ "Approx" wA
 \approx 
 endsnippet
 
-
 snippet =~ "Simeq" wA
 \simeq 
 endsnippet
-
 
 snippet ~ "Similar" w
 \sim 
@@ -1156,16 +1065,13 @@ snippet o< "proportional" wA
 \propto 
 endsnippet
 
-
 snippet pl "Parallel" i
 \parallel
 endsnippet
 
-
 snippet pp "Perpendicular" i
 \bot
 endsnippet
-
 
 snippet nabl "nabla" wA
 \nabla 
@@ -1175,8 +1081,7 @@ snippet vnabl "vector nabla" wA
 \Vec{\nabla} 
 endsnippet
 
-# Automatic arrow builder {{{
-
+# Automatic arrow builder 
 snippet -> "right arrow" wA
 \rightarrow
 endsnippet
@@ -1208,11 +1113,14 @@ endsnippet
 snippet \Leftarrow= "Left long arrow" wA
 \impliedby
 endsnippet
-#}}}
 
-#}}}
+snippet \impliedby> "Left right long arrow (iff)" wA
+\iff
+endsnippet
 
-# Astrophysics {{{
+
+
+# Astrophysics 
 snippet H2 "H_2" w
 H$_2$ 
 endsnippet
@@ -1225,13 +1133,12 @@ snippet Lya "Lyman-alpha" wA
 Lyman-$\alpha$ $0
 endsnippet
 
-
 snippet Msun "Solar mass" wA
 M_\odot 
 endsnippet
-#}}}
 
-# Formatting {{{
+
+# Formatting 
 priority 300
 snippet verb "verbatim environment" bA
 \begin{verbatim}
@@ -1239,7 +1146,13 @@ ${0:${VISUAL}}
 \end{verbatim}
 endsnippet
 
-#Verbatim environment {{{
+snippet lstl "lstlisting (same as verbatim)" bi
+\begin{lstlisting}
+${0:${VISUAL}}
+\end{lstlisting}
+endsnippet
+
+# Formatting: Inline verbatim environment 
 # veve is just fast to type, and hard to accidentally confuse with other words
 priority 100
 snippet (veve "verbatim environment 1" wA 
@@ -1257,13 +1170,7 @@ priority 100
 snippet evev "verbatim environment 4" wA 
 \verb|${0:${VISUAL}}|
 endsnippet
-#}}}
 
-snippet lstl "lstlisting" bi
-\begin{lstlisting}
-${0:${VISUAL}}
-\end{lstlisting}
-endsnippet
 
 snippet cas[ "cases []" biA
 \begin{equation}
@@ -1295,25 +1202,26 @@ snippet cas( "cases ()" biA
 \end{equation}
 endsnippet
 
+
 snippet 1st "1st" wA
 1$^\text{st}$ 
 endsnippet
 
-snippet 2nd "1st" wA
+snippet 2nd "2nd" wA
 2$^\text{nd}$ 
 endsnippet
 
-snippet 3rd "1st" wA
+snippet 3rd "3rd" wA
 3$^\text{rd}$ 
 endsnippet
 
-# Below doesn't work!
+# This ordinal (general nth) doesn't work!
 snippet "`(\d+)(st|nd|rd|th)`" "General ordinal" r
 $1$^\text{$2}$
 endsnippet
-#}}}
 
-# Matrix generator {{{
+
+# Matrix generator 
 post_jump "create_matrix_placeholders(snip)"
 snippet 'mx-(\d+)-(\d+)' "LaTeX array" br
 \begin{pmatrix}{`!p
@@ -1326,7 +1234,7 @@ snip.rv = create_matrix(match.group(1), match.group(2), "&", "\t", "\\\\\\\\\n")
 \end{pmatrix}
 endsnippet
 
-#}}}
 
-#}}}
+
+
 # vim:ft=snippets:
