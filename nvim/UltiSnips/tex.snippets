@@ -691,7 +691,7 @@ $0
 endsnippet
 
 snippet mk "Math" wA
-$${1}$`!p
+$ ${1}$`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
     snip.rv = ' '
 else:
@@ -705,7 +705,6 @@ snippet '([A-Za-z])(\d)' "auto subscript" wrA
 `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
 endsnippet
 
-
 snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
 `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
 endsnippet
@@ -714,7 +713,6 @@ endsnippet
 snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wr
 \\frac{`!p snip.rv = match.group(1)`}{$1}$0
 endsnippet
-
 
 snippet inf "infinity" w
 \infty
@@ -853,11 +851,11 @@ snippet D "Delta" w
 \Delta
 endsnippet
 
-snippet veps "varepsilon" w
+snippet \epsilon "varepsilon" w
 \varepsilon
 endsnippet
 
-snippet vth "vartheta" w
+snippet \theta "vartheta" w
 \vartheta
 endsnippet
 
@@ -877,7 +875,7 @@ snippet P "Pi" w
 \Pi
 endsnippet
 
-snippet vr "varrho" w
+snippet \rho "varrho" w
 \varrho
 endsnippet
 
@@ -889,7 +887,7 @@ snippet U "Upsilon" w
 \Upsilon
 endsnippet
 
-snippet vf "varphi" w
+snippet \phi "varphi" w
 \varphi
 endsnippet
 
