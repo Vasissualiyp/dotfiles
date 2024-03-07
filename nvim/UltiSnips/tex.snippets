@@ -1043,7 +1043,11 @@ snippet =- "Equiv" wA
 \equiv 
 endsnippet
 
-snippet ~~ "Approx" wA
+snippet ~ "Similar" w
+\sim 
+endsnippet
+
+snippet \sim "Approx" w
 \approx 
 endsnippet
 
@@ -1051,9 +1055,22 @@ snippet =~ "Simeq" wA
 \simeq 
 endsnippet
 
-snippet ~ "Similar" w
-\sim 
+snippet \simeq "Strong eq + sim" w
+\cong
 endsnippet
+
+snippet o+ "oplus" w
+\oplus
+endsnippet
+
+snippet ox "nothing, no answer" w
+\varnothing
+endsnippet
+
+snippet \varnothing "otimes" w
+\otimes
+endsnippet
+
 
 snippet /~ "Similar in text" w
 $ \sim $1 $ $0
