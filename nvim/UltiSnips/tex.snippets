@@ -438,15 +438,6 @@ snippet rij "mrij" i
 endsnippet
 
 
-snippet => "Implies" Aw
-\implies
-endsnippet
-
-
-snippet =< "Implied by" Aw
-\impliedby
-endsnippet
-
 
 snippet iff "iff" Aw
 \iff
@@ -463,13 +454,21 @@ snippet != "Not Equal" wA
 endsnippet
 
 
-snippet <= "leq" w
+snippet =< "leq" w
 \le 
 endsnippet
 
 
-snippet >= "geq" w
+snippet >= "geq" wA
 \ge 
+endsnippet
+
+snippet << "ll" wA
+\ll
+endsnippet
+
+snippet >> "gg" w
+\gg
 endsnippet
 
 snippet nn "Tikz node" w
@@ -739,12 +738,12 @@ snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
 endsnippet
 
 
-snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wr
 \\frac{`!p snip.rv = match.group(1)`}{$1}$0
 endsnippet
 
 
-snippet inf "infinity" wA
+snippet inf "infinity" w
 \infty
 endsnippet
 
@@ -991,31 +990,35 @@ endsnippet
 
 # note.sh environments {{{
 snippet gnote "Green note" bA
-\note{green}{$1 `date +%H:%M`}.
+\note{green}{$1 at `date +%H:%M`}.
 %{{{
 $2
 %}}}
+$0
 endsnippet
 
 snippet bnote "Blue note" bA
-\note{blue}{$1 `date +%H:%M`}.
+\note{blue}{$1 at `date +%H:%M`}.
 %{{{
 $2
 %}}}
+$0
 endsnippet
 
 snippet rnote "Red note" bA
-\note{red}{$1 `date +%H:%M`}.
+\note{red}{$1 at `date +%H:%M`}.
 %{{{
 $2
 %}}}
+$0
 endsnippet
 
 snippet knote "Black note" bA
-\note{black}{$1 `date +%H:%M`}.
+\note{black}{$1 at `date +%H:%M`}.
 %{{{
 $2
 %}}}
+$0
 endsnippet
 
 snippet meet "Meeting note" bA
@@ -1023,6 +1026,7 @@ snippet meet "Meeting note" bA
 %{{{
 $2
 %}}}
+$0
 endsnippet
 
 snippet idea "Idea" bA
@@ -1030,20 +1034,23 @@ snippet idea "Idea" bA
 %{{{
 $2
 %}}}
+$0
 endsnippet
 
 snippet BBsem "Black Board Seminar" bA
-\note{olive}{{\large BB Seminar at $0 `date +%H:%M`}}.
+\note{olive}{{\large BB Seminar at `date +%H:%M`}}.
 %{{{
 $1
 %}}}
+$0
 endsnippet
 
 snippet sem "Seminar" bA
-\note{lime}{{\large Seminar at $0 `date +%H:%M`}}.
+\note{lime}{{\large ${1:Seminar} at `date +%H:%M`}}.
 %{{{
-$1
+$2
 %}}}
+$0
 endsnippet
 #}}}
 
@@ -1063,7 +1070,7 @@ snippet VV "checkmark" w
 {\textcolor{green}{\checkmark}} 
 endsnippet
 
-snippet xx "anti-checkmark (red x)" w
+snippet XX "anti-checkmark (red x)" w
 {\textcolor{red}{X}} 
 endsnippet
 
@@ -1141,6 +1148,9 @@ snippet ~ "Similar" w
 \sim 
 endsnippet
 
+snippet /~ "Similar in text" w
+$ \sim $1 $ $0
+endsnippet
 
 snippet o< "proportional" wA
 \propto 
@@ -1161,40 +1171,44 @@ snippet nabl "nabla" wA
 \nabla 
 endsnippet
 
-
 snippet vnabl "vector nabla" wA
 \Vec{\nabla} 
 endsnippet
 
+# Automatic arrow builder {{{
 
-snippet -> "right arrow" w
+snippet -> "right arrow" wA
 \rightarrow
 endsnippet
 
-
-snippet <=> "Left right arrow" w
-\Leftrightarrow
-endsnippet
-
-
-snippet <-> "left right arrow" w
-\leftrightarrow
-endsnippet
-
-
-snippet => "Right arrow" w
+snippet => "Right arrow" wA
 \Rightarrow
 endsnippet
 
+snippet ==> "Right long arrow" Aw
+\implies
+endsnippet
 
-snippet <- "left arrow" w
+snippet <- "left arrow" wA
 \leftarrow
 endsnippet
 
+snippet \leftarrow> "left right arrow" wA
+\leftrightarrow
+endsnippet
 
-snippet <= "Left arrow" w
+snippet <= "Left arrow" wA
 \Leftarrow
 endsnippet
+
+snippet \Leftarrow> "Left right arrow" wA
+\Leftrightarrow
+endsnippet
+
+snippet \Leftarrow= "Left long arrow" wA
+\impliedby
+endsnippet
+#}}}
 
 #}}}
 
@@ -1204,11 +1218,11 @@ H$_2$
 endsnippet
 
 snippet red~ "redshfit" wA
-redshift $z \sim $1$$0
+redshift $z \sim $1$ $0
 endsnippet
 
 snippet Lya "Lyman-alpha" wA
-Lyman-$\alpha$ 
+Lyman-$\alpha$ $0
 endsnippet
 
 
@@ -1226,9 +1240,9 @@ ${0:${VISUAL}}
 endsnippet
 
 #Verbatim environment {{{
-# veve is jsut fast to type, and hard to accidentally confuse with other words
+# veve is just fast to type, and hard to accidentally confuse with other words
 priority 100
-snippet veve "verbatim environment 1" wA 
+snippet (veve "verbatim environment 1" wA 
 \verb|${0:${VISUAL}}|
 endsnippet
 priority 100
@@ -1253,7 +1267,7 @@ endsnippet
 
 snippet cas[ "cases []" biA
 \begin{equation}
-\left\[
+\left[
 \begin{aligned}
 	${0:${VISUAL}}
 \end{aligned}
@@ -1273,7 +1287,7 @@ endsnippet
 
 snippet cas( "cases ()" biA
 \begin{equation}
-\left\(
+\left(
 \begin{aligned}
 	${0:${VISUAL}}
 \end{aligned}
@@ -1293,6 +1307,7 @@ snippet 3rd "1st" wA
 3$^\text{rd}$ 
 endsnippet
 
+# Below doesn't work!
 snippet "`(\d+)(st|nd|rd|th)`" "General ordinal" r
 $1$^\text{$2}$
 endsnippet
