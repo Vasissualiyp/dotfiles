@@ -747,16 +747,17 @@ endsnippet
 #GREEK ALPHABET#
 ################
 
+
 snippet a "alpha" w
 \alpha
 endsnippet
 
-snippet b "beta" w
-\beta
-endsnippet
-
 snippet g "gamma" w
 \gamma
+endsnippet
+
+snippet b "beta" w
+\beta
 endsnippet
 
 snippet d "delta" w
@@ -851,11 +852,11 @@ snippet D "Delta" w
 \Delta
 endsnippet
 
-snippet \epsilon "varepsilon" w
+snippet veps "varepsilon" w
 \varepsilon
 endsnippet
 
-snippet \theta "vartheta" w
+snippet vth "vartheta" w
 \vartheta
 endsnippet
 
@@ -875,7 +876,7 @@ snippet P "Pi" w
 \Pi
 endsnippet
 
-snippet \rho "varrho" w
+snippet vr "varrho" w
 \varrho
 endsnippet
 
@@ -887,7 +888,7 @@ snippet U "Upsilon" w
 \Upsilon
 endsnippet
 
-snippet \phi "varphi" w
+snippet vf "varphi" w
 \varphi
 endsnippet
 
@@ -898,6 +899,160 @@ endsnippet
 snippet O "Omega" w
 \Omega
 endsnippet
+
+# GREEK ALPHABET - w/ automatic math environment
+snippet \alpha "math alpha" w
+$\alpha$ 
+endsnippet
+
+snippet \beta "math beta" w
+$\beta$ 
+endsnippet
+
+snippet \gamma "math gamma" w
+$\gamma$ 
+endsnippet
+
+snippet \delta "math delta" w
+$\delta$ 
+endsnippet
+
+snippet \epsilonps "math epsilon" w
+$\epsilon$ 
+endsnippet
+
+snippet \zeta "math zeta" w
+$\zeta$ 
+endsnippet
+
+snippet \etata "math eta" w
+$\eta$ 
+endsnippet
+
+snippet \thetah "math theta" w
+$\theta$ 
+endsnippet
+
+snippet \iota "math iota" w
+$\iota$ 
+endsnippet
+
+snippet \kappa "math kappa" w
+$\kappa$ 
+endsnippet
+
+snippet \lambda "math lambda" w
+$\lambda$ 
+endsnippet
+
+snippet \nu "math nu" w
+$\nu$ 
+endsnippet
+
+snippet \mu "math mu" w
+$\mu$ 
+endsnippet
+
+snippet \xi "math xi" w
+$\xi$ 
+endsnippet
+
+snippet \pii "math pi" w
+$\pi$ 
+endsnippet
+
+snippet \phi "math phi" w
+$\phi$ 
+endsnippet
+
+snippet \rho "math rho" w
+$\rho$ 
+endsnippet
+
+snippet \sigma "math sigma" w
+$\sigma$ 
+endsnippet
+
+snippet \tau "math tau" w
+$\tau$ 
+endsnippet
+
+snippet \upsilon "math upsilon" w
+$\upsilon$ 
+endsnippet
+
+snippet \Phi "math Phi" w
+$\Phi$ 
+endsnippet
+
+snippet \Gamma "math Gamma" w
+$\Gamma$ 
+endsnippet
+
+snippet \chi "math chi" w
+$\chi$ 
+endsnippet
+
+snippet \psisi "math psi" w
+$\psi$ 
+endsnippet
+
+snippet \omega "math omega" w
+$\omega$ 
+endsnippet
+
+snippet \Delta "math Delta" w
+$\Delta$ 
+endsnippet
+
+snippet \varepsilon "math varepsilon" w
+$\varepsilon$ 
+endsnippet
+
+snippet \vartheta "math vartheta" w
+$\vartheta$ 
+endsnippet
+
+snippet \Theta "math Theta" w
+$\Theta$ 
+endsnippet
+
+snippet \Lambda "math Lambda" w
+$\Lambda$ 
+endsnippet
+
+snippet \Xi "math Xi" w
+$\Xi$ 
+endsnippet
+
+snippet \Pi "math Pi" w
+$\Pi$ 
+endsnippet
+
+snippet \varrho "math varrho" w
+$\varrho$ 
+endsnippet
+
+snippet \Sigma "math Sigma" w
+$\Sigma$ 
+endsnippet
+
+snippet \Upsilon "math Upsilon" w
+$\Upsilon$ 
+endsnippet
+
+snippet \varphi "math varphi" w
+$\varphi$ 
+endsnippet
+
+snippet \Psisi "math Psi" w
+$\Psi$ 
+endsnippet
+
+snippet \Omega "math Omega" w
+$\Omega$ 
+endsnippet
+
 
 ##################
 #VASILII SNIPPETS#
@@ -910,7 +1065,7 @@ endsnippet
 # note.sh environments 
 snippet gnote "Green note" bA
 \note{green}{$1 at `date +%H:%M`}.
-%
+%{{{
 $2
 %}}}
 $0
@@ -918,7 +1073,7 @@ endsnippet
 
 snippet bnote "Blue note" bA
 \note{blue}{$1 at `date +%H:%M`}.
-%
+%{{{
 $2
 %}}}
 $0
@@ -926,7 +1081,7 @@ endsnippet
 
 snippet rnote "Red note" bA
 \note{red}{$1 at `date +%H:%M`}.
-%
+%{{{
 $2
 %}}}
 $0
@@ -934,7 +1089,7 @@ endsnippet
 
 snippet knote "Black note" bA
 \note{black}{$1 at `date +%H:%M`}.
-%
+%{{{
 $2
 %}}}
 $0
@@ -942,7 +1097,7 @@ endsnippet
 
 snippet meet "Meeting note" bA
 \note{purple}{{\large Meeting with $1 at `date +%H:%M`}}.
-%
+%{{{
 $2
 %}}}
 $0
@@ -950,7 +1105,7 @@ endsnippet
 
 snippet idea "Idea" bA
 \note{teal}{$1}.
-%
+%{{{
 $2
 %}}}
 $0
@@ -958,7 +1113,7 @@ endsnippet
 
 snippet BBsem "Black Board Seminar" bA
 \note{olive}{{\large BB Seminar at `date +%H:%M`}}.
-%
+%{{{
 $1
 %}}}
 $0
@@ -966,7 +1121,7 @@ endsnippet
 
 snippet sem "Seminar" bA
 \note{lime}{{\large ${1:Seminar} at `date +%H:%M`}}.
-%
+%{{{
 $2
 %}}}
 $0
@@ -1133,6 +1288,42 @@ snippet \impliedby> "Left right long arrow (iff)" wA
 \iff
 endsnippet
 
+# Automatic arrow builder - math
+snippet \rightarrow "math right arrow" w
+$\rightarrow$ 
+endsnippet
+
+snippet \Rightarrow "math Right arrow" w
+$\Rightarrow$ 
+endsnippet
+
+snippet \implies "math Right long arrow" A
+$\implies$ 
+endsnippet
+
+snippet \leftarrow "math left arrow" w
+$\leftarrow$ 
+endsnippet
+
+snippet \leftrightarrow "math left right arrow" w
+$\leftrightarrow$ 
+endsnippet
+
+snippet \Leftarrow "math Left arrow" w
+$\Leftarrow$ 
+endsnippet
+
+snippet \Leftrightarrow "math Left right arrow" w
+$\Leftrightarrow$ 
+endsnippet
+
+snippet \impliedby "math Left long arrow" w
+$\impliedby$ 
+endsnippet
+
+snippet \iffmpliedby "math Left right long arrow (iff)" w
+$\iff$ 
+endsnippet
 
 
 # Astrophysics 
@@ -1140,8 +1331,24 @@ snippet H2 "H_2" w
 H$_2$ 
 endsnippet
 
+snippet lcdm "Lambda-CDM" wA
+$\Lambda$CDM 
+endsnippet
+
 snippet red~ "redshfit" wA
 redshift $z \sim $1$ $0
+endsnippet
+
+snippet red> "redshfit" wA
+redshift $z > $1$ $0
+endsnippet
+
+snippet red< "redshfit" wA
+redshift $z < $1$ $0
+endsnippet
+
+snippet red= "redshfit" wA
+redshift $z = $1$ $0
 endsnippet
 
 snippet Lya "Lyman-alpha" wA
@@ -1248,8 +1455,6 @@ snip.rv = create_matrix(match.group(1), match.group(2), "&", "\t", "\\\\\\\\\n")
 `$0
 \end{pmatrix}
 endsnippet
-
-
 
 
 # vim:ft=snippets:
