@@ -85,6 +85,8 @@ require('plugins.vimwiki')
 require('plugins.calendar')
 -- Lightline --
 require('plugins.lightline')
+-- CMP (Completion --
+require('plugins.cmp')
 ------------------------------
 -------PLUGINS - NEOVIM-------
 ------------------------------

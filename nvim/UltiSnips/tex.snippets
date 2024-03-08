@@ -1056,6 +1056,15 @@ endsnippet
 #VASILII SNIPPETS#
 ##################
 
+snippet autocite "Automatic Citation" b
+[Please_include_your_paper_here]${1}
+`!p
+import vim
+paper = vim.eval("getline('.')").split('[Please_include_your_paper_here]')[1].strip()
+vim.command('pybibget ' + paper)
+`
+endsnippet
+
 snippet time "Current Time" w
 `date +%H:%M`
 endsnippet

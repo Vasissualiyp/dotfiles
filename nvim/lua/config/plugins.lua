@@ -44,8 +44,16 @@ require('lazy').setup({
   'tmhedberg/SimpylFold',
 
   --Latex--
-  'lervag/vimtex',
-  'matze/vim-tex-fold',
+  'lervag/vimtex',      --main vimtex
+  'matze/vim-tex-fold', --folding
+  "micangl/cmp-vimtex", --autocompletion for citations
+
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
+  'hrsh7th/cmp-cmdline',
+  'hrsh7th/nvim-cmp', --completion
+  'quangnguyen30192/cmp-nvim-ultisnips', --completion for ultisnips
 
   -- Vimwiki
   {
