@@ -57,7 +57,13 @@ in
         echo -n "$@" | xsel -b
       }
 
-	  # vi mode
+	  # git add + commit alias
+      gitac() {
+          git add -u
+          git commit -m "$1"
+      }
+
+	  # vi mode in bash
       set -o vi
 
     '';

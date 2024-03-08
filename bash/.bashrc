@@ -148,6 +148,10 @@ alias pushall='pushall_func(){ ~/scripts/git/git_push_all.sh; unset -f pushall_f
 alias pullall='pullall_func(){ ~/scripts/git/git_pull_all.sh; unset -f pullall_func; }; pullall_func'
 alias addgit='addgit_func(){ echo "$(pwd),$(git remote get-url origin)" >> $HOME/scripts/git/github_tracked_dirs.csv; unset -f addgit_func; }; addgit_func'
 alias citavpn='citavpn_func(){ ~/scripts/VPN/citavpn.sh & unset -f citavpn_func; }; citavpn_func'
+gitac() {
+    git add -u
+    git commit -m "$1"
+}
 
 
 alias screenoff='screenoff_func(){ xset dpms force off; unset -f screenoff_func; }; screenoff_func'
