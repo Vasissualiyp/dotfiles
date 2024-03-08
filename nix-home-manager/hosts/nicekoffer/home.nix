@@ -22,7 +22,6 @@ in
 	redshiftModule
 	#latexModule
     #pythonshelllibModule 
-	../../envs/home_env/flake.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
