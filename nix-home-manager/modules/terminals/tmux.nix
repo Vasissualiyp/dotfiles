@@ -42,6 +42,7 @@
 	  tmuxPlugins.sensible
 	  tmuxPlugins.yank
 	  tmuxPlugins.resurrect
+	  tmuxPlugins.tmux-fzf
 	  tmuxPlugins.vim-tmux-navigator
 	];
 	extraConfig = ''

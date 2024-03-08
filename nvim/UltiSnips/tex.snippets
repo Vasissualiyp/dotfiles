@@ -1,9 +1,7 @@
-#Pre-made snips {{{
 ##########
 # GLOBAL #
 ##########
 
-#{{{
 global !p
 
 def create_table(snip):
@@ -71,13 +69,12 @@ def create_matrix(cols, rows, sep, start, end):
 		res += end
 	return res[:-1]
 endglobal
-#}}}
+
 
 ###############
 # ENVIRONMENT #
 ###############
 
-#{{{
 snippet beg "begin{} / end{}" bi
 \begin{$1}
 	${0:${VISUAL}}
@@ -218,28 +215,23 @@ snippet table "Table environment" b
 	\end{$4${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
 \end{table}
 endsnippet
-#}}}
+
 
 ########
 # MATH #
 ########
 
-#{{{
-
 snippet cc "subset" w
 \subset 
 endsnippet
-
 
 snippet inn "in " w
 \in 
 endsnippet
 
-
 snippet Nn "cap" w
 \cap 
 endsnippet
-
 
 snippet UU "cup" w
 \cup 
@@ -253,6 +245,7 @@ snippet nnn "bigcap" w
 \bigcap_{${1:i \in ${2: I} }} $0
 endsnippet
 
+
 snippet HH "H" w
 \mathbb{H}
 endsnippet
@@ -260,6 +253,7 @@ endsnippet
 snippet DD "D" w
 \mathbb{D}
 endsnippet
+
 
 snippet inmath "Inline Math" w
 \\(${1}\\) $0
@@ -276,25 +270,22 @@ snippet frac "Fraction" w
 \frac{$1}{$2}$0
 endsnippet
 
-
 snippet ^^ "Super Script" Ai
 ^{$1}$0
 endsnippet
-
 
 snippet __ "subscript" Ai
 _{$1}$0
 endsnippet
 
-
 snippet srt "Square Root" wi
 \sqrt{${1:${VISUAL} }}$0
 endsnippet
 
-
 snippet srto "... Root" wi
 \sqrt[$1]{${2:${VISUAL} }}$0
 endsnippet
+
 
 snippet tbf "Bold" wi
 \textbf{${1:${VISUAL}} }$0
@@ -309,19 +300,18 @@ snippet tun "Underline" wi
 endsnippet
 
 
-snippet mbf "Bold" wi
+snippet mbf "Bold math" wi
 \mathbf{${1:${VISUAL}} }$0
 endsnippet
 
-
-snippet mit "Italic" wi
+snippet mit "Italic math" wi
 mtextit{${1:${VISUAL}} }$0
 endsnippet
 
-
-snippet mun "Underline" wi
+snippet mun "Underline math" wi
 \underline{${1:${VISUAL}} }$0
 endsnippet
+
 
 snippet rm "Text" wi
 \rm{${1:${VISUAL}} }$0
@@ -349,39 +339,32 @@ endsnippet
 
 
 snippet () "Left( right)" w
-\left( ${1:${VISUAL}} \right) $0
+\left( ${1:${VISUAL}} \right)$0
 endsnippet
-
 
 snippet lr "left( right)" i
-\left( ${1:${VISUAL}} \right) $0
+\left( ${1:${VISUAL}} \right)$0
 endsnippet
-
 
 snippet lr( "left( right)" Ai
-\left( ${1:${VISUAL}} \right) $0
+\left( ${1:${VISUAL}} \right)$0
 endsnippet
-
 
 snippet lr| "left| right|" Ai
-\left| ${1:${VISUAL}} \right| $0
+\left| ${1:${VISUAL}} \right|$0
 endsnippet
-
 
 snippet lr{ "left\{ right\}" Ai
-\left\\{ ${1:${VISUAL}} \right\\} $0
+\left\\{ ${1:${VISUAL}} \right\\}$0
 endsnippet
-
 
 snippet lrb "left\{ right\}" i
-\left\\{ ${1:${VISUAL}} \right\\} $0
+\left\\{ ${1:${VISUAL}} \right\\}$0
 endsnippet
-
 
 snippet lr[ "left[ right]" Ai
-\left[ ${1:${VISUAL}} \right] $0
+\left[ ${1:${VISUAL}} \right]$0
 endsnippet
-
 
 snippet lra "leftangle rightangle" wi
 \left<${1:${VISUAL}} \right>$0
@@ -397,21 +380,17 @@ snippet sum "sum" w
 \sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
 endsnippet
 
-
 snippet taylor "taylor" w
 \sum_{${1:k}=${2:0}}^{${3:\infty}} ${4:c_$1} (x-a)^$1 $0
 endsnippet
-
 
 snippet lim "limit" w
 \lim_{${1:n} \to ${2:\infty}} 
 endsnippet
 
-
 snippet limsup "limsup" w
 \limsup_{${1:n} \to ${2:\infty}} 
 endsnippet
-
 
 snippet prod "product" w
 \prod_{${1:n=${2:1}} }^{${3:\infty}} ${4:${VISUAL}} $0
@@ -422,29 +401,18 @@ snippet ddx "d/dx" Aw
 \frac{\mathrm{d} ${1:V}}{\mathrm{d} ${2:x}} $0
 endsnippet
 
-
 snippet pddx "partial d/dx" Aw
 \frac{\partial ${1:V}}{\partial ${2:x}} $0
 endsnippet
 
 
-snippet ooo "\infty" w
+snippet ooo "\infty" wA
 \infty
 endsnippet
 
 
 snippet rij "mrij" i
 (${1:x}_${2:n})_{${3:$2}\\in${4:\\N}}$0
-endsnippet
-
-
-snippet => "Implies" Aw
-\implies
-endsnippet
-
-
-snippet =< "Implied by" Aw
-\impliedby
 endsnippet
 
 
@@ -463,13 +431,21 @@ snippet != "Not Equal" wA
 endsnippet
 
 
-snippet <= "leq" w
+snippet =< "leq" w
 \le 
 endsnippet
 
 
-snippet >= "geq" w
+snippet >= "geq" wA
 \ge 
+endsnippet
+
+snippet << "ll" wA
+\ll
+endsnippet
+
+snippet >> "gg" w
+\gg
 endsnippet
 
 snippet nn "Tikz node" w
@@ -516,13 +492,13 @@ endsnippet
 snippet !> "mapsto" Aw
 \mapsto 
 endsnippet
-#}}}
+
 
 ##########
 # TABLES #
 #########
 
-#{{{
+
 pre_expand "create_table(snip)"
 snippet "gentbl(\d+)x(\d+)" "Generate table of *width* by *height*" r
 endsnippet
@@ -530,13 +506,13 @@ endsnippet
 pre_expand "add_row(snip)"
 snippet "tr(\d+)" "Add table row of dimension ..." r
 endsnippet
-#}}}
+
 
 ###########
 # POSTFIX #
 ###########
 
-#{{{
+
 snippet bar "bar" wi
 \bar{${1:${VISUAL} }}$0
 endsnippet
@@ -552,13 +528,13 @@ endsnippet
 snippet "(.*)\\bra{(.*?)}([^\|]*?)\>" "braket" Awri
 `!p snip.rv = match.group(1)`\braket{`!p snip.rv = match.group(2)`}{`!p snip.rv = match.group(3).replace('q', f'\psi').replace('f', f'\phi')`}
 endsnippet
-#}}}
+
 
 #############
 # PRE-AMBLE #
 #############
 
-#{{{
+
 
 snippet pac "usepackage - removes square braces if options removed" b
 \usepackage`!p snip.rv='[' if t[1] else ""`${1:options}`!p snip.rv = ']' if t[1] else ""`{${2:package}}$0
@@ -567,13 +543,13 @@ endsnippet
 snippet docls "Document Class" bA
 \documentclass{$1}$0
 endsnippet
-#}}}
+
 
 #########
 # OTHER #
 #########
 
-#{{{
+
 
 snippet acl "Acroynm expanded" bi
 \acl{${1:acronym}}
@@ -586,14 +562,14 @@ endsnippet
 snippet ni "Non-indented paragraph" bi
 \noindent
 endsnippet
-#}}}
+
 
 
 ############
 # SECTIONS #
 ############
 
-#{{{
+
 
 snippet chap "Chapter" wi
 \chapter{$1${VISUAL}}
@@ -695,16 +671,10 @@ snippet subpar*l "Sub Paragraph* with label" wi
 endsnippet
 
 
-#}}}
-#}}}
-
-#Gilles Castel's snips {{{
-
 ##########################
 #GILLES CASTEL'S SNIPPETS#
 ##########################
 
-#{{{
 snippet beg "begin{} / end{}" bA
 \begin{$1}
 	$0
@@ -719,7 +689,7 @@ $0
 endsnippet
 
 snippet mk "Math" wA
-$${1}$`!p
+$ ${1}$`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
     snip.rv = ' '
 else:
@@ -733,18 +703,16 @@ snippet '([A-Za-z])(\d)' "auto subscript" wrA
 `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
 endsnippet
 
-
 snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
 `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
 endsnippet
 
 
-snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wr
 \\frac{`!p snip.rv = match.group(1)`}{$1}$0
 endsnippet
 
-
-snippet inf "infinity" wA
+snippet inf "infinity" w
 \infty
 endsnippet
 
@@ -752,270 +720,377 @@ snippet // "Fraction" iA
 \\frac{$1}{$2}$0
 endsnippet
 
-#}}}
-#}}}
-
-#My snips {{{
 
 ###############
 ###INTEGRALS###
 ###############
-
-#{{{
-
 
 priority 300
 snippet dint "integral" wA
 \int ${1:${VISUAL}} \, \mathrm{d} ${2:x} $0
 endsnippet
 
-
 priority 300
 snippet cint "integral" wA
 \oint\limits_{${1:\Gamma}} ${2:${VISUAL}} \, \mathrm{d} ${2:\gamma} $0
 endsnippet
 
-
 priority 300
 snippet ddint "integral" wA
 \int_{${1:-\infty}}^{${2:\infty}} ${3:${VISUAL}} \, \mathrm{d} ${4:x}  $0
 endsnippet
-#}}}
+
 
 ################
 #GREEK ALPHABET#
 ################
 
-#{{{
-
 
 snippet a "alpha" w
-\alpha 
+\alpha
 endsnippet
-
-
-snippet b "beta" w
-\beta 
-endsnippet
-
 
 snippet g "gamma" w
-\gamma 
+\gamma
 endsnippet
 
+snippet b "beta" w
+\beta
+endsnippet
 
 snippet d "delta" w
-\delta 
+\delta
 endsnippet
-
 
 snippet eps "epsilon" w
-\epsilon 
+\epsilon
 endsnippet
-
 
 snippet z "zeta" w
-\zeta 
+\zeta
 endsnippet
-
 
 snippet eta "eta" w
-\eta 
+\eta
 endsnippet
-
 
 snippet th "theta" w
-\theta 
+\theta
 endsnippet
-
 
 snippet i "iota" w
-\iota 
+\iota
 endsnippet
-
 
 snippet k "kappa" w
-\kappa 
+\kappa
 endsnippet
-
 
 snippet l "lambda" w
-\lambda 
+\lambda
 endsnippet
-
 
 snippet n "nu" w
-\nu 
+\nu
 endsnippet
-
 
 snippet m "mu" w
-\mu 
+\mu
 endsnippet
-
 
 snippet x "xi" w
-\xi 
+\xi
 endsnippet
-
 
 snippet pi "pi" w
-\pi 
+\pi
 endsnippet
-
 
 snippet f "phi" w
-\phi 
+\phi
 endsnippet
-
 
 snippet r "rho" w
-\rho 
+\rho
 endsnippet
-
 
 snippet s "sigma" w
-\sigma 
+\sigma
 endsnippet
-
 
 snippet t "tau" w
-\tau 
+\tau
 endsnippet
-
 
 snippet u "upsilon" w
-\upsilon 
+\upsilon
 endsnippet
-
 
 snippet F "Phi" w
-\Phi 
+\Phi
 endsnippet
-
 
 snippet G "Gamma" w
-\Gamma 
+\Gamma
 endsnippet
-
 
 snippet c "chi" w
-\chi 
+\chi
 endsnippet
-
 
 snippet psi "psi" w
-\psi 
+\psi
 endsnippet
-
 
 snippet o "omega" w
-\omega 
+\omega
 endsnippet
-
 
 snippet D "Delta" w
-\Delta 
+\Delta
 endsnippet
-
 
 snippet veps "varepsilon" w
-\varepsilon 
+\varepsilon
 endsnippet
-
 
 snippet vth "vartheta" w
-\vartheta 
+\vartheta
 endsnippet
-
 
 snippet T "Theta" w
-\Theta 
+\Theta
 endsnippet
-
 
 snippet L "Lambda" w
-\Lambda 
+\Lambda
 endsnippet
-
 
 snippet X "Xi" w
-\Xi 
+\Xi
 endsnippet
-
 
 snippet P "Pi" w
-\Pi 
+\Pi
 endsnippet
-
 
 snippet vr "varrho" w
-\varrho 
+\varrho
 endsnippet
-
 
 snippet S "Sigma" w
-\Sigma 
+\Sigma
 endsnippet
-
 
 snippet U "Upsilon" w
-\Upsilon 
+\Upsilon
 endsnippet
-
 
 snippet vf "varphi" w
-\varphi 
+\varphi
 endsnippet
-
 
 snippet Psi "Psi" w
-\Psi 
+\Psi
 endsnippet
-
 
 snippet O "Omega" w
-\Omega 
+\Omega
 endsnippet
-#}}}
+
+# GREEK ALPHABET - w/ automatic math environment
+snippet \alpha "math alpha" w
+$\alpha$ 
+endsnippet
+
+snippet \beta "math beta" w
+$\beta$ 
+endsnippet
+
+snippet \gamma "math gamma" w
+$\gamma$ 
+endsnippet
+
+snippet \delta "math delta" w
+$\delta$ 
+endsnippet
+
+snippet \epsilonps "math epsilon" w
+$\epsilon$ 
+endsnippet
+
+snippet \zeta "math zeta" w
+$\zeta$ 
+endsnippet
+
+snippet \etata "math eta" w
+$\eta$ 
+endsnippet
+
+snippet \thetah "math theta" w
+$\theta$ 
+endsnippet
+
+snippet \iota "math iota" w
+$\iota$ 
+endsnippet
+
+snippet \kappa "math kappa" w
+$\kappa$ 
+endsnippet
+
+snippet \lambda "math lambda" w
+$\lambda$ 
+endsnippet
+
+snippet \nu "math nu" w
+$\nu$ 
+endsnippet
+
+snippet \mu "math mu" w
+$\mu$ 
+endsnippet
+
+snippet \xi "math xi" w
+$\xi$ 
+endsnippet
+
+snippet \pii "math pi" w
+$\pi$ 
+endsnippet
+
+snippet \phi "math phi" w
+$\phi$ 
+endsnippet
+
+snippet \rho "math rho" w
+$\rho$ 
+endsnippet
+
+snippet \sigma "math sigma" w
+$\sigma$ 
+endsnippet
+
+snippet \tau "math tau" w
+$\tau$ 
+endsnippet
+
+snippet \upsilon "math upsilon" w
+$\upsilon$ 
+endsnippet
+
+snippet \Phi "math Phi" w
+$\Phi$ 
+endsnippet
+
+snippet \Gamma "math Gamma" w
+$\Gamma$ 
+endsnippet
+
+snippet \chi "math chi" w
+$\chi$ 
+endsnippet
+
+snippet \psisi "math psi" w
+$\psi$ 
+endsnippet
+
+snippet \omega "math omega" w
+$\omega$ 
+endsnippet
+
+snippet \Delta "math Delta" w
+$\Delta$ 
+endsnippet
+
+snippet \varepsilon "math varepsilon" w
+$\varepsilon$ 
+endsnippet
+
+snippet \vartheta "math vartheta" w
+$\vartheta$ 
+endsnippet
+
+snippet \Theta "math Theta" w
+$\Theta$ 
+endsnippet
+
+snippet \Lambda "math Lambda" w
+$\Lambda$ 
+endsnippet
+
+snippet \Xi "math Xi" w
+$\Xi$ 
+endsnippet
+
+snippet \Pi "math Pi" w
+$\Pi$ 
+endsnippet
+
+snippet \varrho "math varrho" w
+$\varrho$ 
+endsnippet
+
+snippet \Sigma "math Sigma" w
+$\Sigma$ 
+endsnippet
+
+snippet \Upsilon "math Upsilon" w
+$\Upsilon$ 
+endsnippet
+
+snippet \varphi "math varphi" w
+$\varphi$ 
+endsnippet
+
+snippet \Psisi "math Psi" w
+$\Psi$ 
+endsnippet
+
+snippet \Omega "math Omega" w
+$\Omega$ 
+endsnippet
+
 
 ##################
 #VASILII SNIPPETS#
 ##################
 
-#{{{
-
 snippet time "Current Time" w
 `date +%H:%M`
 endsnippet
 
-# note.sh environments {{{
+# note.sh environments 
 snippet gnote "Green note" bA
-\note{green}{$1 `date +%H:%M`}.
+\note{green}{$1 at `date +%H:%M`}.
 %{{{
 $2
 %}}}
+$0
 endsnippet
 
 snippet bnote "Blue note" bA
-\note{blue}{$1 `date +%H:%M`}.
+\note{blue}{$1 at `date +%H:%M`}.
 %{{{
 $2
 %}}}
+$0
 endsnippet
 
 snippet rnote "Red note" bA
-\note{red}{$1 `date +%H:%M`}.
+\note{red}{$1 at `date +%H:%M`}.
 %{{{
 $2
 %}}}
+$0
 endsnippet
 
 snippet knote "Black note" bA
-\note{black}{$1 `date +%H:%M`}.
+\note{black}{$1 at `date +%H:%M`}.
 %{{{
 $2
 %}}}
+$0
 endsnippet
 
 snippet meet "Meeting note" bA
@@ -1023,6 +1098,7 @@ snippet meet "Meeting note" bA
 %{{{
 $2
 %}}}
+$0
 endsnippet
 
 snippet idea "Idea" bA
@@ -1030,22 +1106,25 @@ snippet idea "Idea" bA
 %{{{
 $2
 %}}}
+$0
 endsnippet
 
 snippet BBsem "Black Board Seminar" bA
-\note{olive}{{\large BB Seminar at $0 `date +%H:%M`}}.
+\note{olive}{{\large BB Seminar at `date +%H:%M`}}.
 %{{{
 $1
 %}}}
+$0
 endsnippet
 
 snippet sem "Seminar" bA
-\note{lime}{{\large Seminar at $0 `date +%H:%M`}}.
+\note{lime}{{\large ${1:Seminar} at `date +%H:%M`}}.
 %{{{
-$1
+$2
 %}}}
+$0
 endsnippet
-#}}}
+
 
 snippet niagara "Address of files on Niagara" w
 vasissua@niagara.scinet.utoronto.ca:/scratch/m/murray/vasissua
@@ -1063,7 +1142,7 @@ snippet VV "checkmark" w
 {\textcolor{green}{\checkmark}} 
 endsnippet
 
-snippet xx "anti-checkmark (red x)" w
+snippet XX "anti-checkmark (red x)" w
 {\textcolor{red}{X}} 
 endsnippet
 
@@ -1072,25 +1151,21 @@ snippet neur "Neural" w
 endsnippet
 
 
-
 # Fonts
-
 snippet mbb "number sets like reals, complex" wA
 \mathbb{$1}$0
 endsnippet
-
 
 snippet mcal "curly variable" wA
 \mathcal{$1}$0
 endsnippet
 
-
 snippet mfk "edgy font" wA
 \mathfrak{$1}$0
 endsnippet
-#}}}
 
-# Character modifiers {{{
+
+# Character modifiers 
 snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
 \vec{`!p snip.rv=match.group(1)`} 
 endsnippet
@@ -1099,125 +1174,191 @@ snippet "(\\?\w+)(\.h)" "Hat postfix" riA
 \hat{`!p snip.rv=match.group(1)`} 
 endsnippet
 
-
 snippet h "hat" w
 \hat{$1}$0
 endsnippet
-
 
 snippet v "vector" w
 \Vec{$1}$0
 endsnippet
 
-
 snippet ol "overline" w
 \overline{$1}$0
 endsnippet
 
-
 snippet ul "underline" w
 \underline{$1}$0
 endsnippet
-#}}}
 
-# Math {{{
 
+# Math 
 snippet =- "Equiv" wA
 \equiv 
 endsnippet
-
-
-snippet ~~ "Approx" wA
-\approx 
-endsnippet
-
-
-snippet =~ "Simeq" wA
-\simeq 
-endsnippet
-
 
 snippet ~ "Similar" w
 \sim 
 endsnippet
 
+snippet \sim "Approx" w
+\approx 
+endsnippet
+
+snippet =~ "Simeq" wA
+\simeq 
+endsnippet
+
+snippet \simeq "Strong eq + sim" w
+\cong
+endsnippet
+
+snippet o+ "oplus" w
+\oplus
+endsnippet
+
+snippet ox "nothing, no answer" w
+\varnothing
+endsnippet
+
+snippet \varnothing "otimes" w
+\otimes
+endsnippet
+
+
+snippet /~ "Similar in text" w
+$ \sim $1 $ $0
+endsnippet
 
 snippet o< "proportional" wA
 \propto 
 endsnippet
 
-
 snippet pl "Parallel" i
 \parallel
 endsnippet
-
 
 snippet pp "Perpendicular" i
 \bot
 endsnippet
 
-
 snippet nabl "nabla" wA
 \nabla 
 endsnippet
-
 
 snippet vnabl "vector nabla" wA
 \Vec{\nabla} 
 endsnippet
 
-
-snippet -> "right arrow" w
+# Automatic arrow builder 
+snippet -> "right arrow" wA
 \rightarrow
 endsnippet
 
-
-snippet <=> "Left right arrow" w
-\Leftrightarrow
-endsnippet
-
-
-snippet <-> "left right arrow" w
-\leftrightarrow
-endsnippet
-
-
-snippet => "Right arrow" w
+snippet => "Right arrow" wA
 \Rightarrow
 endsnippet
 
+snippet ==> "Right long arrow" Aw
+\implies
+endsnippet
 
-snippet <- "left arrow" w
+snippet <- "left arrow" wA
 \leftarrow
 endsnippet
 
+snippet \leftarrow> "left right arrow" wA
+\leftrightarrow
+endsnippet
 
-snippet <= "Left arrow" w
+snippet <= "Left arrow" wA
 \Leftarrow
 endsnippet
 
-#}}}
+snippet \Leftarrow> "Left right arrow" wA
+\Leftrightarrow
+endsnippet
 
-# Astrophysics {{{
+snippet \Leftarrow= "Left long arrow" wA
+\impliedby
+endsnippet
+
+snippet \impliedby> "Left right long arrow (iff)" wA
+\iff
+endsnippet
+
+# Automatic arrow builder - math
+snippet \rightarrow "math right arrow" w
+$\rightarrow$ 
+endsnippet
+
+snippet \Rightarrow "math Right arrow" w
+$\Rightarrow$ 
+endsnippet
+
+snippet \implies "math Right long arrow" A
+$\implies$ 
+endsnippet
+
+snippet \leftarrow "math left arrow" w
+$\leftarrow$ 
+endsnippet
+
+snippet \leftrightarrow "math left right arrow" w
+$\leftrightarrow$ 
+endsnippet
+
+snippet \Leftarrow "math Left arrow" w
+$\Leftarrow$ 
+endsnippet
+
+snippet \Leftrightarrow "math Left right arrow" w
+$\Leftrightarrow$ 
+endsnippet
+
+snippet \impliedby "math Left long arrow" w
+$\impliedby$ 
+endsnippet
+
+snippet \iffmpliedby "math Left right long arrow (iff)" w
+$\iff$ 
+endsnippet
+
+
+# Astrophysics 
 snippet H2 "H_2" w
 H$_2$ 
 endsnippet
 
+snippet lcdm "Lambda-CDM" wA
+$\Lambda$CDM 
+endsnippet
+
 snippet red~ "redshfit" wA
-redshift $z \sim $1$$0
+redshift $z \sim $1$ $0
+endsnippet
+
+snippet red> "redshfit" wA
+redshift $z > $1$ $0
+endsnippet
+
+snippet red< "redshfit" wA
+redshift $z < $1$ $0
+endsnippet
+
+snippet red= "redshfit" wA
+redshift $z = $1$ $0
 endsnippet
 
 snippet Lya "Lyman-alpha" wA
-Lyman-$\alpha$ 
+Lyman-$\alpha$ $0
 endsnippet
-
 
 snippet Msun "Solar mass" wA
 M_\odot 
 endsnippet
-#}}}
 
-# Formatting {{{
+
+# Formatting 
 priority 300
 snippet verb "verbatim environment" bA
 \begin{verbatim}
@@ -1225,10 +1366,16 @@ ${0:${VISUAL}}
 \end{verbatim}
 endsnippet
 
-#Verbatim environment {{{
-# veve is jsut fast to type, and hard to accidentally confuse with other words
+snippet lstl "lstlisting (same as verbatim)" bi
+\begin{lstlisting}
+${0:${VISUAL}}
+\end{lstlisting}
+endsnippet
+
+# Formatting: Inline verbatim environment 
+# veve is just fast to type, and hard to accidentally confuse with other words
 priority 100
-snippet veve "verbatim environment 1" wA 
+snippet (veve "verbatim environment 1" wA 
 \verb|${0:${VISUAL}}|
 endsnippet
 priority 100
@@ -1243,17 +1390,11 @@ priority 100
 snippet evev "verbatim environment 4" wA 
 \verb|${0:${VISUAL}}|
 endsnippet
-#}}}
 
-snippet lstl "lstlisting" bi
-\begin{lstlisting}
-${0:${VISUAL}}
-\end{lstlisting}
-endsnippet
 
 snippet cas[ "cases []" biA
 \begin{equation}
-\left\[
+\left[
 \begin{aligned}
 	${0:${VISUAL}}
 \end{aligned}
@@ -1273,7 +1414,7 @@ endsnippet
 
 snippet cas( "cases ()" biA
 \begin{equation}
-\left\(
+\left(
 \begin{aligned}
 	${0:${VISUAL}}
 \end{aligned}
@@ -1281,24 +1422,26 @@ snippet cas( "cases ()" biA
 \end{equation}
 endsnippet
 
+
 snippet 1st "1st" wA
 1$^\text{st}$ 
 endsnippet
 
-snippet 2nd "1st" wA
+snippet 2nd "2nd" wA
 2$^\text{nd}$ 
 endsnippet
 
-snippet 3rd "1st" wA
+snippet 3rd "3rd" wA
 3$^\text{rd}$ 
 endsnippet
 
+# This ordinal (general nth) doesn't work!
 snippet "`(\d+)(st|nd|rd|th)`" "General ordinal" r
 $1$^\text{$2}$
 endsnippet
-#}}}
 
-# Matrix generator {{{
+
+# Matrix generator 
 post_jump "create_matrix_placeholders(snip)"
 snippet 'mx-(\d+)-(\d+)' "LaTeX array" br
 \begin{pmatrix}{`!p
@@ -1311,7 +1454,5 @@ snip.rv = create_matrix(match.group(1), match.group(2), "&", "\t", "\\\\\\\\\n")
 \end{pmatrix}
 endsnippet
 
-#}}}
 
-#}}}
 # vim:ft=snippets:
