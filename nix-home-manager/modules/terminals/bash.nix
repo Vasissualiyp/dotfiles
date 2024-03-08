@@ -39,7 +39,7 @@ let
     stup = "$HOME/scripts/startup/startup.sh";
     wifissh = "$HOME/scripts/web/establish_ssh_over_wifi.sh \"$1\"";
     xopdf = "$HOME/scripts/custom_docs_editing/xopdf.sh";
-    note = "$HOME/Software/Noterius/note.sh";
+    note = "$HOME/Software/Noterius/scripts/note.sh";
     bslt = "$HOME/scripts/bspwm_scripts/bspwm-layouts.sh";
   };
 

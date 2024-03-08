@@ -174,7 +174,7 @@ alias stup='stup_func(){ ~/scripts/startup/startup.sh; unset -f stup_func; }; st
 alias wifissh='wifissh_func(){ ~/scripts/web/establish_ssh_over_wifi.sh "$1"; unset -f wifissh_func; }; wifissh_func'
 
 alias xopdf='~/scripts/custom_docs_editing/xopdf.sh'
-alias note='~/Software/Noterius/note.sh'
+alias note='~/Software/Noterius/scripts/note.sh'
 alias bslt='~/scripts/bspwm_scripts/bspwm-layouts.sh'
 #}}}
 
