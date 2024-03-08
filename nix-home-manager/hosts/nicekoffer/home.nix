@@ -73,12 +73,14 @@ in
     enable = true;
 	userName = "Vasissualiyp";
 	userEmail = "vpustovoit@cita.utoronto.ca";
-	aliases = {
-	  pu = "push";
-	  co = "checkout";
-	  cm = "commit";
-	};
   };
+
+  home.activation.createPythonEnvs = config.lib.dag.entryAfter ["writeBoundary"] ''
+      mkdir -p $HOME/env
+      ln -sf ${pkgs.general} $HOME/env/general
+      ln -sf ${pkgs.vim} $HOME/env/vim
+      ln -sf ${pkgs.shellgpt} $HOME/env/shellgpt
+    '';
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. If you don't want to manage your shell through Home
