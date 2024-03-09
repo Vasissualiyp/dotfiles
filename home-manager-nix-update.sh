@@ -1,3 +1,6 @@
 #!/bin/bash
 
-home-manager switch --flake ~/.dotfiles/nix-home-manager/
+nix_dir="$HOME/nix"
+nix_system_dir="$nix_dir/home-manager/"
+
+home-manager switch --flake "$nix_system_dir"

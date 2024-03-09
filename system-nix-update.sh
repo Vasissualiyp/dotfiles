@@ -1,4 +1,4 @@
-
+!#/bin/bash
 # Prompt for hostname
 read -p "Enter hostname (press enter to use current hostname): " input_hostname
 
@@ -9,4 +9,7 @@ else
     hostname=$input_hostname
 fi
 
-sudo nixos-rebuild switch --flake "$HOME/.dotfiles/nix-system/#$hostname"
+nix_dir="$HOME/nix"
+nix_system_dir="$nix_dir/system"
+
+sudo nixos-rebuild switch --flake "$nix_system_dir/#$hostname"
