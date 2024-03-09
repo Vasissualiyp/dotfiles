@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/sh
 # Prompt for hostname
 read -p "Enter hostname (press enter to use current hostname): " input_hostname
 
