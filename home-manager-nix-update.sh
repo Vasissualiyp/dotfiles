@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 nix_dir="$HOME/nix"
 nix_system_dir="$nix_dir/home-manager/"

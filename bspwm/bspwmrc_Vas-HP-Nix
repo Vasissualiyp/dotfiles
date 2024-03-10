@@ -1,6 +1,6 @@
 #! /bin/sh
 
-pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep -x sxhkd > /dev/null || sxhkd -c /home/vasilii/.dotfiles/sxhkd/sxhkdrc_office &
 
 # Polkit
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -69,6 +69,7 @@ xfce-power-manager &
 # warpd
 warpd &
 
+kitty &
 # Set wallpaper with feh for pywal to use
 #feh --bg-fill /path/to/your/wallpaper.jpg &
 # Generate color scheme with pywal
