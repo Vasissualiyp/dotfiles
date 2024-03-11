@@ -92,7 +92,7 @@ require('plugins.cmp')
 ------------------------------
 -- Noterius --
 require('keymaps.noterius')
-vim.cmd('source ~/.config/nvim/vimscript/noterius.vim')
+vim.cmd('source ~/.dotfiles/nvim/vimscript/noterius.vim')
 -- Treesitter --
 require('plugins.treesitter')
 -- Harpoon --

@@ -154,7 +154,7 @@ endfunction
 
 "}}}
 
-let g:noterius_quickhelp_path = '/home/vasilii/Software/Noterius/quickhelp.tex'
+let g:noterius_quickhelp_path = '/home/vasilii/Software/Noterius/templates/quickhelp.tex'
 
 function! DisplayNoteriusQuickhelp()
     let l:quickhelp_path = get(g:, 'noterius_quickhelp_path', '')
