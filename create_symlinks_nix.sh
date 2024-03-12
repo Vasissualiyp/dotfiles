@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 DOTFILES_DIR=$HOME/.dotfiles
 
@@ -20,9 +20,6 @@ declare -A FILES_TO_SYMLINK=(
   [nvim/init.lua]="$HOME/.config/nvim/"
   [nvim/lua]="$HOME/.config/nvim/"
   [nvim/vimscript]="$HOME/.config/nvim/"
-  [browsers/qutebrowser/bookmarks]="$HOME/.config/qutebrowser/"
-  [browsers/qutebrowser/config.py]="$HOME/.config/qutebrowser/"
-  [browsers/qutebrowser/quickmarks]="$HOME/.config/qutebrowser/"
   # add other dotfiles here
 )
 
