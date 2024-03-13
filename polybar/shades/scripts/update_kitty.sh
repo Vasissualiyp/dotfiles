@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Path to the colors.ini and kitty.conf files
 colors_file="$HOME/.config/polybar/shades/colors.ini"

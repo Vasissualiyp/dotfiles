@@ -74,7 +74,7 @@ elif [ "$machine_name" == "Vas-Office-EOS" ]; then
 	else
 		echo "There are $monitor_number monitors, the polybar configuration only exists for 1, 2, and 4"
 	fi
-elif [ "$machine_name" == "Vas-HP-EOS" ]; then
+elif [ "$machine_name" == "Vas-HP-Nix" ]; then
 	if [ "$monitor_number" -eq 1 ]; then
 		export MONITOR='eDP-1'
 		polybar -q main-single -c "$DIR"/configOffice.ini &

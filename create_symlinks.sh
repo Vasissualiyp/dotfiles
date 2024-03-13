@@ -23,6 +23,7 @@ declare -A FILES_TO_SYMLINK=(
   [browsers/qutebrowser/bookmarks]="$HOME/.config/qutebrowser/"
   [browsers/qutebrowser/config.py]="$HOME/.config/qutebrowser/"
   [browsers/qutebrowser/quickmarks]="$HOME/.config/qutebrowser/"
+  [polybar]="$HOME/.config/"
   # add other dotfiles here
 )
 

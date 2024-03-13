@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This script simply calls the original bspwm module and then replaces the placeholders with the correct icons.
 

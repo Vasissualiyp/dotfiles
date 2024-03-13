@@ -20,6 +20,10 @@ declare -A FILES_TO_SYMLINK=(
   [nvim/init.lua]="$HOME/.config/nvim/"
   [nvim/lua]="$HOME/.config/nvim/"
   [nvim/vimscript]="$HOME/.config/nvim/"
+  [browsers/qutebrowser/bookmarks]="$HOME/.config/qutebrowser/"
+  [browsers/qutebrowser/config.py]="$HOME/.config/qutebrowser/"
+  [browsers/qutebrowser/quickmarks]="$HOME/.config/qutebrowser/"
+  [polybar]="$HOME/.config/"
   # add other dotfiles here
 )
 
@@ -38,9 +42,9 @@ for i in "${!FILES_TO_SYMLINK[@]}"; do
       echo "Symlink exists for $i, skipping."
       continue # Skip to the next file
     else
-      # It's a real file, back it up
-      echo "Backing up $targetFile."
-      mv "$targetFile" "$targetFile.bak"
+      #echo "Backing up $targetFile."
+      echo "Removing $targetFile."
+      rm "$targetFile" #"$targetFile.bak"
     fi
   fi
 
