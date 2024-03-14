@@ -462,6 +462,9 @@ snippet . "dot product" w
 \cdot 
 endsnippet
 
+snippet * "dot product" w
+\star 
+endsnippet
 
 snippet xx "cross product" Aw
 \times 
@@ -697,7 +700,9 @@ else:
 `$2
 endsnippet
 
-
+snippet tt "text" w
+\text{$1} $0
+endsnippet
 
 snippet '([A-Za-z])(\d)' "auto subscript" wrA
 `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
@@ -788,6 +793,10 @@ endsnippet
 
 snippet l "lambda" w
 \lambda
+endsnippet
+
+snippet vl "ell" w
+\ell
 endsnippet
 
 snippet n "nu" w
@@ -943,6 +952,10 @@ snippet \lambda "math lambda" w
 $\lambda$ 
 endsnippet
 
+snippet \ell "math ell" w
+$\ell$ 
+endsnippet
+
 snippet \nu "math nu" w
 $\nu$ 
 endsnippet
@@ -1055,15 +1068,6 @@ endsnippet
 ##################
 #VASILII SNIPPETS#
 ##################
-
-snippet autocite "Automatic Citation" b
-[Please_include_your_paper_here]${1}
-`!p
-import vim
-paper = vim.eval("getline('.')").split('[Please_include_your_paper_here]')[1].strip()
-vim.command('pybibget ' + paper)
-`
-endsnippet
 
 snippet time "Current Time" w
 `date +%H:%M`
