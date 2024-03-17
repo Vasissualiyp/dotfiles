@@ -39,20 +39,20 @@ if [ "$machine_name" == "Vas-Desktop-EOS" ]; then
 	#polybar -q main -c "$DIR"/configL.ini &
 elif [ "$machine_name" == "Vas-Office-Nix" ]; then
 	if [ "$monitor_number" -eq 1 ]; then
-		export MONITOR='eDP-2'
+		export MONITOR='eDP-1'
 		polybar -q main-single -c "$DIR"/configOffice.ini &
 	elif [ "$monitor_number" -eq 2 ]; then
-		export MONITOR='eDP-2'
+		export MONITOR='eDP-1'
 		polybar -q main-single -c "$DIR"/configOffice.ini &
 	elif [ "$monitor_number" -eq 3 ]; then
-		export MONITOR='eDP-2'
+		export MONITOR='eDP-1'
 		polybar -q secondary -c "$DIR"/configOffice.ini &
 		export MONITOR='HDMI-1-0'
 		polybar -q main -c "$DIR"/configOffice.ini &
 		export MONITOR='DP-1-1.9'
 		polybar -q secondary -c "$DIR"/configOffice.ini &
 	elif [ "$monitor_number" -eq 4 ]; then
-		export MONITOR='eDP-2'
+		export MONITOR='eDP-1'
 		polybar -q secondary -c "$DIR"/configOffice.ini &
 		export MONITOR='HDMI-1-0'
 		polybar -q main -c "$DIR"/configOffice.ini &
@@ -61,7 +61,7 @@ elif [ "$machine_name" == "Vas-Office-Nix" ]; then
 		export MONITOR='DP-1-1.9'
 		polybar -q secondary -c "$DIR"/configOffice.ini &
 	elif [ "$monitor_number" -eq 5 ]; then
-		export MONITOR='eDP-2'
+		export MONITOR='eDP-1'
 		polybar -q secondary -c "$DIR"/configOffice.ini &
 		export MONITOR='HDMI-1-0'
 		polybar -q main -c "$DIR"/configOffice.ini &
