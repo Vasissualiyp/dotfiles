@@ -19,7 +19,7 @@ hint_fgcolor: #90a1a9
 #screen_chars: jkl
 #screen_chars: jlk
 
-# Office-EOS config
+# Office-Nix config
 screen_chars: kj;l
 #screen_chars: jk;l
 #screen_chars: j;lk

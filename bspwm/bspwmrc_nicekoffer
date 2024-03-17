@@ -94,7 +94,7 @@ xsetroot -cursor_name left_ptr &
 
 #stalonetray
 pkill stalonetray
-if [ "$machine_name" == "Vas-Office-EOS" ]; then
+if [ "$machine_name" == "Vas-Office-Nix" ]; then
   stalonetray -c .dotfiles/stalonetray/stalonetrayrc_Office &
 #elif [ "$machine_name" == "Vas-Desktop-EOS" ]; then
 #  stalonetray -c .dotfiles/stalonetray/stalonetrayrc_Office &

@@ -1,25 +1,25 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 DOTFILES_DIR=$HOME/.dotfiles
 
 # List of dotfiles with their target directories
 declare -A FILES_TO_SYMLINK=(
-  [vim/.vimrc]="$HOME/"
-  [bash/.bashrc]="$HOME/"
-  [bash/.bash_profile]="$HOME/"
-  [bspwm/bspwmrc]="$HOME/.config/bspwm/"
-  [warpd/config]="$HOME/.config/warpd/"
-  [stalonetray/stalonetrayrc_Office]="$HOME/.config/stalonetray/"
-  [kitty/kitty.conf]="$HOME/.config/kitty/"
-  [tmux/tmux.conf]="$HOME/.config/tmux/"
-  [redshift/redshift.conf]="$HOME/.config/"
-  [sxhkd/sxhkdrc]="$HOME/.config/sxhkd/"
-  [zathura/zathurarc]="$HOME/.config/zathura/"
-  [zathura/zathurarc-light]="$HOME/.config/zathura/"
-  [sxhkd/sxhkdrc_office]="$HOME/.config/sxhkd/"
-  [nvim/init.lua]="$HOME/.config/nvim/"
-  [nvim/lua]="$HOME/.config/nvim/"
-  [nvim/vimscript]="$HOME/.config/nvim/"
+  #[vim/.vimrc]="$HOME/"
+  #[bash/.bashrc]="$HOME/"
+  #[bash/.bash_profile]="$HOME/"
+  #[bspwm/bspwmrc]="$HOME/.config/bspwm/"
+  #[warpd/config]="$HOME/.config/warpd/"
+  #[stalonetray/stalonetrayrc_Office]="$HOME/.config/stalonetray/"
+  #[kitty/kitty.conf]="$HOME/.config/kitty/"
+  #[tmux/tmux.conf]="$HOME/.config/tmux/"
+  #[redshift/redshift.conf]="$HOME/.config/"
+  #[sxhkd/sxhkdrc]="$HOME/.config/sxhkd/"
+  #[zathura/zathurarc]="$HOME/.config/zathura/"
+  #[zathura/zathurarc-light]="$HOME/.config/zathura/"
+  #[sxhkd/sxhkdrc_office]="$HOME/.config/sxhkd/"
+  #[nvim/init.lua]="$HOME/.config/nvim/"
+  #[nvim/lua]="$HOME/.config/nvim/"
+  #[nvim/vimscript]="$HOME/.config/nvim/"
   [browsers/qutebrowser/bookmarks]="$HOME/.config/qutebrowser/"
   [browsers/qutebrowser/config.py]="$HOME/.config/qutebrowser/"
   [browsers/qutebrowser/quickmarks]="$HOME/.config/qutebrowser/"
