@@ -37,22 +37,22 @@ if [ "$machine_name" == "Vas-Desktop-EOS" ]; then
 	export MONITOR='HDMI-1'
 	polybar -q secondary -c "$DIR"/config.ini &
 	#polybar -q main -c "$DIR"/configL.ini &
-elif [ "$machine_name" == "Vas-Office-EOS" ]; then
+elif [ "$machine_name" == "Vas-Office-Nix" ]; then
 	if [ "$monitor_number" -eq 1 ]; then
-		export MONITOR='eDP-2'
+		export MONITOR='eDP-1'
 		polybar -q main-single -c "$DIR"/configOffice.ini &
 	elif [ "$monitor_number" -eq 2 ]; then
-		export MONITOR='eDP-2'
+		export MONITOR='eDP-1'
 		polybar -q main-single -c "$DIR"/configOffice.ini &
 	elif [ "$monitor_number" -eq 3 ]; then
-		export MONITOR='eDP-2'
+		export MONITOR='eDP-1'
 		polybar -q secondary -c "$DIR"/configOffice.ini &
 		export MONITOR='HDMI-1-0'
 		polybar -q main -c "$DIR"/configOffice.ini &
 		export MONITOR='DP-1-1.9'
 		polybar -q secondary -c "$DIR"/configOffice.ini &
 	elif [ "$monitor_number" -eq 4 ]; then
-		export MONITOR='eDP-2'
+		export MONITOR='eDP-1'
 		polybar -q secondary -c "$DIR"/configOffice.ini &
 		export MONITOR='HDMI-1-0'
 		polybar -q main -c "$DIR"/configOffice.ini &
@@ -61,7 +61,7 @@ elif [ "$machine_name" == "Vas-Office-EOS" ]; then
 		export MONITOR='DP-1-1.9'
 		polybar -q secondary -c "$DIR"/configOffice.ini &
 	elif [ "$monitor_number" -eq 5 ]; then
-		export MONITOR='eDP-2'
+		export MONITOR='eDP-1'
 		polybar -q secondary -c "$DIR"/configOffice.ini &
 		export MONITOR='HDMI-1-0'
 		polybar -q main -c "$DIR"/configOffice.ini &
@@ -92,7 +92,7 @@ elif [ "$machine_name" == "nixos" ]; then
 		echo "There are $monitor_number monitors, the polybar configuration only exists for 1"
 	fi
 else
-	echo "Your desktop configuration is $machine_name, the only accepted ones are Vas-Desktop-EOS and Vas-Office-EOS"
+	echo "Your desktop configuration is $machine_name, the only accepted ones are Vas-Desktop-EOS and Vas-Office-Nix"
 fi
 #}}}
 

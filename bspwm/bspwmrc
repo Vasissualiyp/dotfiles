@@ -9,7 +9,7 @@ machine_name=$(uname -n)
 monitor_number=$(xrandr | grep " connected" | wc -l)
 echo "$monitor_number"
 
-if [ "$machine_name" == "Vas-Office-EOS" ]; then
+if [ "$machine_name" == "Vas-Office-*" ]; then
   if [ "$monitor_number" -eq 1 ]; then
     bspc monitor eDP-2 -d    I II III IV V VI VII VIII IX X
   elif [ "$monitor_number" -eq 2 ]; then
@@ -33,11 +33,11 @@ if [ "$machine_name" == "Vas-Office-EOS" ]; then
   else
     echo "There are $monitor_number monitors, the bspwm configuration only exists for 1-5 monitors"
   fi
-elif [ "$machine_name" == "Vas-Desktop-EOS" ]; then
+elif [ "$machine_name" == "Vas-Desktop-*" ]; then
   bspc monitor DP-3 -d I II III
   bspc monitor DP-0 -d X IV V VI
   bspc monitor HDMI-1 -d VII VIII IX
-elif [ "$machine_name" == "Vas-HP-EOS" ]; then
+elif [ "$machine_name" == "Vas-HP-*" ]; then
   if [ "$monitor_number" -eq 1 ]; then
     bspc monitor eDP-1 -d    I II III IV V VI VII VIII IX X
   elif [ "$monitor_number" -eq 2 ]; then
@@ -51,7 +51,7 @@ elif [ "$machine_name" == "Vas-MSI-Arch" ]; then
 elif [ "$machine_name" == "nixos" ]; then
     bspc monitor HDMI-1 -d    I II III IV V VI VII VIII IX X
 else
-  echo "Machine name not recognized. Needs to be: Vas-Desktop-EOS, Vas-Office-EOS, Vas-HP-EOS"
+  echo "Machine name not recognized. Needs to be: Vas-Desktop-*, Vas-Office-*, Vas-HP-*"
 fi
 
 
@@ -102,14 +102,14 @@ bspc config top_padding 30
 #/usr/bin/dunst &
 
 # Sxhkd
-if [ "$machine_name" == "Vas-Office-EOS" ]; then
+if [ "$machine_name" == "Vas-Office-*" ]; then
   sxhkd -c /home/vasilii/.dotfiles/sxhkd/sxhkdrc_office &
   xfce-power-manager &
-elif [ "$machine_name" == "Vas-Desktop-EOS" ]; then
+elif [ "$machine_name" == "Vas-Desktop-*" ]; then
   sxhkd &
 elif [ "$machine_name" == "Vas-MSI-Arch" ]; then
   sxhkd &
-elif [ "$machine_name" == "Vas-HP-EOS" ]; then
+elif [ "$machine_name" == "Vas-HP-*" ]; then
   sxhkd -c /home/vasilii/.dotfiles/sxhkd/sxhkdrc_office &
   xfce-power-manager &
 fi
@@ -146,10 +146,10 @@ xsetroot -cursor_name left_ptr &
 
 #stalonetray
 pkill stalonetray
-if [ "$machine_name" == "Vas-Office-EOS" ]; then
+if [ "$machine_name" == "Vas-Office-*" ]; then
   stalonetray -c .dotfiles/stalonetray/stalonetrayrc_Office &
-#elif [ "$machine_name" == "Vas-Desktop-EOS" ]; then
+#elif [ "$machine_name" == "Vas-Desktop-*" ]; then
 #  stalonetray -c .dotfiles/stalonetray/stalonetrayrc_Office &
-#elif [ "$machine_name" == "Vas-HP-EOS" ]; then
+#elif [ "$machine_name" == "Vas-HP-*" ]; then
 #  stalonetray -c .dotfiles/stalonetray/stalonetrayrc_Office &
 fi
