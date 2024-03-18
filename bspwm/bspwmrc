@@ -33,7 +33,7 @@ if [ "$machine_name" == "Vas-Office-*" ]; then
   else
     echo "There are $monitor_number monitors, the bspwm configuration only exists for 1-5 monitors"
   fi
-elif [ "$machine_name" == "Vas-Desktop-*" ]; then
+elif [ "$machine_name" == "Vas-Desktop-EOS" ]; then
   bspc monitor DP-3 -d I II III
   bspc monitor DP-0 -d X IV V VI
   bspc monitor HDMI-1 -d VII VIII IX
