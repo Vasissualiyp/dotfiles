@@ -280,9 +280,10 @@ nnoremap <C-`> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/
 ""}}}
 
 " Map the commands to the functions
-nnoremap <leader>nn :call noterius#FindNextNote()<CR>
-nnoremap <leader>np :call noterius#FindPreviousNote()<CR>
-nnoremap <leader>no :call noterius#OpenNoteByDate()<CR>
+nnoremap <leader>nn :FindNextNote<CR>
+nnoremap <leader>np :FindPreviousNote<CR>
+nnoremap <leader>no :OpenNoteByDate<CR>
+nnoremap <leader>n? :DisplayNoteriusQuickhelp<CR>
 "nnoremap <leader>no :call noterius#OpenNoteOnSpecificDay()<CR>
 "nnoremap <leader>ns :call noterius#SearchNotes()<CR>
 
