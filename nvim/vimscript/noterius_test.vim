@@ -27,7 +27,7 @@ function! SetupNoteriusNotes()
 
     " Copy the templates directory to the notes directory
     " Using system command for copying, adapt if necessary based on your operating system
-    call system('cp -r ' . shellescape(templates_dir) . ' ' . shellescape(notes_dir))
+    call system('cp -r ' . shellescape(g:templates_dir) . ' ' . shellescape(notes_dir))
 
     " Initialize a Git repository if .git directory does not exist
     if !isdirectory(notes_dir . '/.git')
@@ -36,13 +36,36 @@ function! SetupNoteriusNotes()
         " Check if the Git URL is defined
         if exists('g:noterius_git_url')
             let git_url = g:noterius_git_url
-            call system('cd ' . shellescape(notes_dir) . ' && git remote add origin ' . shellescape(git_url) . ' && git branch -M main && git push -u origin main')
+            call system('cd ' . shellescape(notes_dir) . ' && git remote add origin ' . shellescape(git_url) . ' && git branch -M main')
+			call SyncWithRemoteRepo()
+			
         else
             echo "g:noterius_git_url is not defined. Initialized an empty git repository."
         endif
     endif
 
     echo "Noterius notes setup completed."
+endfunction
+
+function! SyncWithRemoteRepo()
+    " Check if there are any commits in the remote repository
+    let l:remoteCommits = system('git ls-remote --heads origin')
+	echo system('git ls-remote --heads origin')
+
+    " Check for errors or empty output indicating no commits
+    if v:shell_error || empty(l:remoteCommits)
+        " No commits in the remote, so proceed to add, commit, and push
+        echo "No commits found in remote. Initializing with first commit."
+
+        " Add the templates directory, commit and push
+        call system('git add templates')
+        call system('git commit -m "First commit"')
+        call system('git push -u origin main')
+    else
+        " Commits exist, so just pull the latest changes
+        echo "Commits found in remote. Pulling changes."
+        call system('git pull origin main')
+    endif
 endfunction
 
 " Expose the function as a command
