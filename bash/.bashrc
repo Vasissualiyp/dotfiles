@@ -179,8 +179,9 @@ alias wifissh='wifissh_func(){ ~/scripts/web/establish_ssh_over_wifi.sh "$1"; un
 
 alias xopdf='~/scripts/custom_docs_editing/xopdf.sh'
 alias note='~/Software/Noterius/bin/note.sh'
-alias cdp='~/Software/Citerius/download_paper.sh'
-alias cfp='~/Software/Citerius/fuzzy_find_paper.sh'
+alias cdp='~/Software/Citerius/bin/download_paper.sh'
+alias cfp='~/Software/Citerius/bin/fuzzy_find_paper_wrapper.sh'
+alias cfe='~/Software/Citerius/bin/fuzzy_find_eqns_figs_wrapper.sh'
 alias bslt='~/scripts/bspwm_scripts/bspwm-layouts.sh'
 #}}}
 
