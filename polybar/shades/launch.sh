@@ -67,7 +67,7 @@ elif [ "$machine_name" == "Vas-Office-Nix" ]; then
 		polybar -q main -c "$DIR"/configOffice.ini &
 		export MONITOR='DP-1-1.8'
 		polybar -q secondary -c "$DIR"/configOffice.ini &
-		export MONITOR='DP-4'
+		export MONITOR='DP-1'
 		polybar -q secondary -c "$DIR"/configOffice.ini &
 		export MONITOR='DP-1-1.9'
 		polybar -q secondary -c "$DIR"/configOffice.ini &

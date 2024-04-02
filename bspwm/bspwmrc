@@ -28,7 +28,7 @@ if [ "$machine_name" == "Vas-Office-*" ]; then
     bspc monitor eDP-2    -d I II
     bspc monitor DP-1-1.9 -d III
     bspc monitor HDMI-1-0 -d IV V VI
-    bspc monitor DP-4     -d VII
+    bspc monitor DP-1     -d VII
     bspc monitor DP-1-1.8 -d VIII
   else
     echo "There are $monitor_number monitors, the bspwm configuration only exists for 1-5 monitors"
@@ -48,7 +48,7 @@ elif [ "$machine_name" == "Vas-HP-*" ]; then
   fi
 elif [ "$machine_name" == "Vas-MSI-Arch" ]; then
     bspc monitor eDP-1 -d    I II III IV V VI VII VIII IX X
-elif [ "$machine_name" == "nixos" ]; then
+elif [ "$machine_name" == "nicekoffer" ]; then
     bspc monitor HDMI-1 -d    I II III IV V VI VII VIII IX X
 else
   echo "Machine name not recognized. Needs to be: Vas-Desktop-*, Vas-Office-*, Vas-HP-*"
