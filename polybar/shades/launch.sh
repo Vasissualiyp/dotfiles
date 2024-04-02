@@ -27,7 +27,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch the bar
 #polybar -q main -c "$DIR"/config.ini &
-if [ "$machine_name" == "Vas-Desktop-EOS" ]; then
+if [ "$machine_name" == "Vas-Desktop-Nix" ]; then
 	export MONITOR='DP-0'
 	polybar -q main -c "$DIR"/config.ini &
 
@@ -92,7 +92,7 @@ elif [ "$machine_name" == "nixos" ]; then
 		echo "There are $monitor_number monitors, the polybar configuration only exists for 1"
 	fi
 else
-	echo "Your desktop configuration is $machine_name, the only accepted ones are Vas-Desktop-EOS and Vas-Office-Nix"
+	echo "Your desktop configuration is $machine_name, the only accepted ones are Vas-Desktop-Nix and Vas-Office-Nix"
 fi
 #}}}
 
