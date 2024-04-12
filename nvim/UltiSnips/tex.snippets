@@ -1154,6 +1154,18 @@ $2
 $0
 endsnippet
 
+snippet vsp "vspace" bA
+\vspace{${1:5mm}}
+
+$0
+endsnippet
+
+snippet hln "line with vspace" bA
+\hline \vspace{${1:5mm}}
+
+$0
+endsnippet
+
 #VASILII CODING SNIPS#
 
 snippet rtn "Description of routine"
@@ -1177,6 +1189,10 @@ endsnippet
 
 snippet path "Filepath" w
 \href{run:$1}{Location}
+endsnippet
+
+snippet cite "cite" w
+\cite{$1} $0
 endsnippet
 
 snippet url "url" w
@@ -1240,7 +1256,7 @@ snippet ol "overline" w
 endsnippet
 
 snippet ul "underline" w
-\underline{$1}$0
+\uline{$1}$0
 endsnippet
 
 
@@ -1410,6 +1426,12 @@ snippet Msun "Solar mass" wA
 M_\odot 
 endsnippet
 
+snippet -h- "hbar" wA
+\hbar
+endsnippet
+snippet hbar "hbar" wA
+\hbar
+endsnippet
 
 # Formatting 
 priority 300
