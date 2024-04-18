@@ -366,8 +366,8 @@ snippet lr[ "left[ right]" Ai
 \left[ ${1:${VISUAL}} \right]$0
 endsnippet
 
-snippet lra "leftangle rightangle" wi
-\left<${1:${VISUAL}} \right>$0
+snippet lra "leftangle rightangle" Ai
+\left< ${1:${VISUAL}} \right>$0
 endsnippet
 
 
@@ -1228,11 +1228,15 @@ endsnippet
 
 # Character modifiers 
 snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
-\vec{`!p snip.rv=match.group(1)`} 
+\vec{`!p snip.rv=match.group(1)`}
+endsnippet
+
+snippet "(\\?\W+)(\.a)" "angled brackets postfix" riA
+\left< `!p snip.rv=match.group(1)` \right>
 endsnippet
 
 snippet "(\\?\w+)(\.h)" "Hat postfix" riA
-\hat{`!p snip.rv=match.group(1)`} 
+\hat{`!p snip.rv=match.group(1)`}
 endsnippet
 
 snippet "(\\?\w+)(\.t)" "Tilde postfix" riA
@@ -1269,7 +1273,7 @@ snippet ~ "Similar" w
 \sim 
 endsnippet
 
-snippet \sim "Approx" w
+snippet ~~ "Approx" wA
 \approx 
 endsnippet
 
@@ -1308,6 +1312,14 @@ endsnippet
 
 snippet pp "Perpendicular" i
 \bot
+endsnippet
+
+snippet nb "nabla" wA
+\nabla 
+endsnippet
+
+snippet vnb "vector nabla" wA
+\Vec{\nabla} 
 endsnippet
 
 snippet nabl "nabla" wA
