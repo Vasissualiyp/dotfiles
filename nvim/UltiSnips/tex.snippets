@@ -165,12 +165,21 @@ snippet conc "Conclusion" bi
 \end{conclusion}
 endsnippet
 
+snippet pfig "Figure environment for pasting screenshots" biA
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{$1}
+	\caption{${2:$1}}
+	\label{fig:${3:${2/\W+/-/g}}}
+\end{figure}
+endsnippet
+
 snippet fig "Figure environment" bi
 \begin{figure}[${1:htpb}]
 	\centering
 	${2:\includegraphics[width=0.8\textwidth]{$3}}
 	\caption{${4:$3}}
-	\label{fig:${5:${3/\W+/-/g}} }
+	\label{fig:${5:${3/\W+/-/g}}}
 \end{figure}
 endsnippet
 
@@ -1231,8 +1240,12 @@ snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
 \vec{`!p snip.rv=match.group(1)`}
 endsnippet
 
-snippet "(\\?\W+)(\.a)" "angled brackets postfix" riA
+snippet "(\\?\W+)(\.a)" "Angled brackets postfix" riA
 \left< `!p snip.rv=match.group(1)` \right>
+endsnippet
+
+snippet "(\\?\w+)(\.H)" "Harpoons postfix" riA
+\lrharpoon{`!p snip.rv=match.group(1)`}
 endsnippet
 
 snippet "(\\?\w+)(\.h)" "Hat postfix" riA
@@ -1289,11 +1302,11 @@ snippet o+ "oplus" w
 \oplus
 endsnippet
 
-snippet ox "nothing, no answer" w
+snippet \otimes "nothing, no answer" w
 \varnothing
 endsnippet
 
-snippet \varnothing "otimes" w
+snippet ox "otimes" w
 \otimes
 endsnippet
 
