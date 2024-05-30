@@ -13,6 +13,9 @@ set encoding=utf-8
 "highlight CursorLine ctermbg=235 guibg=#2e3440
 "highlight CursorColumn ctermbg=236 ctermfg=white guibg=#fe5260 guifg=black
 
+" Disable the mouse
+set mouse=
+
 " Special symbols {{{
 digraph gu 287
 " }}}
@@ -280,12 +283,27 @@ nnoremap <C-`> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/
 ""}}}
 
 " Map the commands to the functions
+"
+" Global variables
+let g:noterius_notes_dir = '~/research/notes'
+"let g:noterius_git_url = 'git@github.com:your_git_username/your_git_dir.git'
+
+" Folding keymaps
+nnoremap <leader>zo :execute "normal! ggVGzo"<CR>
+nnoremap <leader>zm :execute "normal! ggVGzc"<CR>
+
+" Note management keybindings
+nnoremap <leader>N :NoteriusToday<CR>
+nnoremap <leader>nc :NoteriusCleanup<CR>
 nnoremap <leader>nn :FindNextNote<CR>
 nnoremap <leader>np :FindPreviousNote<CR>
 nnoremap <leader>no :OpenNoteByDate<CR>
 nnoremap <leader>n? :DisplayNoteriusQuickhelp<CR>
-"nnoremap <leader>no :call noterius#OpenNoteOnSpecificDay()<CR>
-"nnoremap <leader>ns :call noterius#SearchNotes()<CR>
+nnoremap <leader>nP :NoteriusGitPush<CR>
+nnoremap <leader>ns :NoteriusSyncWithRemoteRepo<CR>
+" Initialize Noterius paths on Vim start - AFTER definition of global
+" variables
+autocmd VimEnter * call noterius#InitPaths()
 
 "}}}
 
