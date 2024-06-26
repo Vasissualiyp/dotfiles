@@ -9,6 +9,7 @@ local fmta = require("luasnip.extras.fmt").fmta
 local function get_current_time()
   return os.date("%H:%M")
 end
+local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return {
   -- Green note
@@ -27,7 +28,8 @@ return {
         i(2),
         i(0)
       }
-    )
+    ),
+	{ condition = line_begin }
   ),
 
   -- Blue note
@@ -46,7 +48,8 @@ return {
         i(2),
         i(0)
       }
-    )
+    ),
+	{ condition = line_begin }
   ),
 
   -- Red note
@@ -65,7 +68,8 @@ return {
         i(2),
         i(0)
       }
-    )
+    ),
+	{ condition = line_begin }
   ),
 
   -- Black note
@@ -84,7 +88,8 @@ return {
         i(2),
         i(0)
       }
-    )
+    ),
+	{ condition = line_begin }
   ),
 
   -- Meeting note
@@ -103,7 +108,8 @@ return {
         i(2),
         i(0)
       }
-    )
+    ),
+	{ condition = line_begin }
   ),
 
   -- Idea
@@ -121,7 +127,8 @@ return {
         i(2),
         i(0)
       }
-    )
+    ),
+	{ condition = line_begin }
   ),
 
   -- Black Board Seminar
@@ -139,7 +146,8 @@ return {
         i(1),
         i(0)
       }
-    )
+    ),
+	{ condition = line_begin }
   ),
 
   -- Seminar
@@ -158,6 +166,7 @@ return {
         i(2),
         i(0)
       }
-    )
+    ),
+	{ condition = line_begin }
   ),
 }

@@ -43,7 +43,7 @@ return {
         i(1),
         i(0)
       },
-	  { condition = line_begin }
+	  { condition = not_in_mathzone }
     )
   ),
   -- Display math
