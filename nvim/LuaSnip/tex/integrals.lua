@@ -2,16 +2,36 @@ local ls = require("luasnip")
 local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
+local fmta = require("luasnip.extras.fmt").fmta
+local tsutils = require("config.tsutils")  -- Assuming tsutils is correctly set up
+
+-- Define the condition functions
+local function not_in_mathzone()
+  return not tsutils.in_mathzone()
+end
+
+local as = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
 
 return {
-  -- Integral snippets with priority 300 and snippetType "autosnippet"
-  s({trig = "dint", priority = 300, snippetType = "autosnippet"}, 
-    {t("\\int "), i(1, "${VISUAL}"), t(" \\, \\mathrm{d} "), i(2, "x"), t(" "), i(0)}
+  as({ trig = "dint" }, 
+    fmta(
+      "\\int <> \\, \\mathrm{{d}} <> <>",
+      { i(1, "${VISUAL}"), i(2, "x"), i(0) },
+      { condition = tsutils.in_mathzone }
+    )
   ),
-  s({trig = "cint", priority = 300, snippetType = "autosnippet"}, 
-    {t("\\oint\\limits_{"), i(1, "\\Gamma"), t("} "), i(2, "${VISUAL}"), t(" \\, \\mathrm{d} "), i(3, "\\gamma"), t(" "), i(0)}
+  as({ trig = "cint" }, 
+    fmta(
+      "\\oint\\limits_{{<>}} <> \\, \\mathrm{{d}} <> <>",
+      { i(1, "\\Gamma"), i(2, "${VISUAL}"), i(3, "\\gamma"), i(0) },
+      { condition = tsutils.in_mathzone }
+    )
   ),
-  s({trig = "ddint", priority = 300, snippetType = "autosnippet"}, 
-    {t("\\int_{"), i(1, "-\\infty"), t("}^{"), i(2, "\\infty"), t("} "), i(3, "${VISUAL}"), t(" \\, \\mathrm{d} "), i(4, "x"), t(" "), i(0)}
+  as({ trig = "ddint" }, 
+    fmta(
+      "\\int_{{<>}}^{{<>}} <> \\, \\mathrm{{d}} <> <>",
+      { i(1, "-\\infty"), i(2, "\\infty"), i(3, "${VISUAL}"), i(4, "x"), i(0) },
+      { condition = tsutils.in_mathzone }
+    )
   ),
 }

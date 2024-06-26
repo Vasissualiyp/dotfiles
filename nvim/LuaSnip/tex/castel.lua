@@ -4,36 +4,95 @@
 local ls = require("luasnip")
 local s = ls.snippet
 ls.config.setup({enable_autosnippets = true})
+local tsutils = require "config.tsutils"
+
+local as = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
+local function not_in_mathzone()
+  return not tsutils.in_mathzone()
+end
+
+-- Function to process the match and construct the fraction
+local function process_fraction(args, snip)
+  local match = snip.captures[1]
+  return "\\frac{" .. match .. "}{"
+end
 
 return {
-s({trig="beg", snippetType="autosnippet"},
-  fmta(
-    [[
-      \begin{<>}
-          <>
-      \end{<>}
-    ]],
+  s({trig="beg", snippetType="autosnippet"},
+    fmta(
+      [[
+        \begin{<>}
+            <>
+        \end{<>}
+      ]],
+      {
+        i(1),
+        i(2),
+        rep(1),  -- this node repeats insert node i(1)
+      }
+    )
+  ),
+
+  -- Inline math
+  as("mk", fmta(
+      [[
+	    $<>$<>
+      ]],
+      {
+        i(1),
+        i(0)
+      },
+	  { condition = not_in_mathzone }
+    )
+  ),
+  -- Display math
+  s("dm", fmta(
+      [[
+\[
+  <>
+\]
+<>
+      ]],
+      {
+        i(1),
+        i(0)
+      }
+    ),
+	{ condition = not_in_mathzone }
+  ),
+  as("//", fmta(
+      [[
+	    /frac{<>}{<>}<>
+      ]],
+      {
+        i(1),
+        i(2),
+        i(0)
+      }
+    ),
+	{ condition = tsutils.in_mathzone }
+  ),
+  as(
+    { trig = "%((.-)%)%/", regTrig = true, wordTrig = false },
     {
+      f(process_fraction, {}),
       i(1),
-      i(2),
-      rep(1),  -- this node repeats insert node i(1)
+      t("}"),
+      i(0)
     }
-  )
-),
+  ),
+  as("tt", fmta(
+      [[
+	    \\text{<>}<>
+      ]],
+      {
+        i(1),
+        i(0)
+      }
+    ),
+	{ condition = tsutils.in_mathzone }
+  ),
 }
--- snippet mk "Math" wA
--- $ ${1}$`!p
--- if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
---     snip.rv = ' '
--- else:
---     snip.rv = ''
--- `$2
--- endsnippet
--- 
--- snippet tt "text" w
--- \text{$1} $0
--- endsnippet
--- 
 -- #snippet '([A-Za-z])(\d)' "auto subscript" wrA
 -- #`!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
 -- #endsnippet
@@ -46,12 +105,3 @@ s({trig="beg", snippetType="autosnippet"},
 -- snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wr
 -- \\frac{`!p snip.rv = match.group(1)`}{$1}$0
 -- endsnippet
--- 
--- snippet inf "infinity" w
--- \infty
--- endsnippet
--- 
--- snippet // "Fraction" iA
--- \\frac{$1}{$2}$0
--- endsnippet
--- 
