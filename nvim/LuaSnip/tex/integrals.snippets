@@ -1,0 +1,805 @@
+###############
+###INTEGRALS###
+###############
+
+priority 300
+snippet dint "integral" wA
+\int ${1:${VISUAL}} \, \mathrm{d} ${2:x} $0
+endsnippet
+
+priority 300
+snippet cint "integral" wA
+\oint\limits_{${1:\Gamma}} ${2:${VISUAL}} \, \mathrm{d} ${2:\gamma} $0
+endsnippet
+
+priority 300
+snippet ddint "integral" wA
+\int_{${1:-\infty}}^{${2:\infty}} ${3:${VISUAL}} \, \mathrm{d} ${4:x}  $0
+endsnippet
+
+
+################
+#GREEK ALPHABET#
+################
+
+
+snippet a "alpha" w
+\alpha
+endsnippet
+
+snippet g "gamma" w
+\gamma
+endsnippet
+
+snippet b "beta" w
+\beta
+endsnippet
+
+snippet d "delta" w
+\delta
+endsnippet
+
+snippet eps "epsilon" w
+\epsilon
+endsnippet
+
+snippet z "zeta" w
+\zeta
+endsnippet
+
+snippet eta "eta" w
+\eta
+endsnippet
+
+snippet th "theta" w
+\theta
+endsnippet
+
+snippet i "iota" w
+\iota
+endsnippet
+
+snippet k "kappa" w
+\kappa
+endsnippet
+
+snippet l "lambda" w
+\lambda
+endsnippet
+
+snippet vl "ell" w
+\ell
+endsnippet
+
+snippet n "nu" w
+\nu
+endsnippet
+
+snippet m "mu" w
+\mu
+endsnippet
+
+snippet x "xi" w
+\xi
+endsnippet
+
+snippet pi "pi" w
+\pi
+endsnippet
+
+snippet f "phi" w
+\phi
+endsnippet
+
+snippet r "rho" w
+\rho
+endsnippet
+
+snippet s "sigma" w
+\sigma
+endsnippet
+
+snippet t "tau" w
+\tau
+endsnippet
+
+snippet u "upsilon" w
+\upsilon
+endsnippet
+
+snippet F "Phi" w
+\Phi
+endsnippet
+
+snippet G "Gamma" w
+\Gamma
+endsnippet
+
+snippet c "chi" w
+\chi
+endsnippet
+
+snippet psi "psi" w
+\psi
+endsnippet
+
+snippet o "omega" w
+\omega
+endsnippet
+
+snippet D "Delta" w
+\Delta
+endsnippet
+
+snippet veps "varepsilon" w
+\varepsilon
+endsnippet
+
+snippet vth "vartheta" w
+\vartheta
+endsnippet
+
+snippet T "Theta" w
+\Theta
+endsnippet
+
+snippet L "Lambda" w
+\Lambda
+endsnippet
+
+snippet X "Xi" w
+\Xi
+endsnippet
+
+snippet P "Pi" w
+\Pi
+endsnippet
+
+snippet vr "varrho" w
+\varrho
+endsnippet
+
+snippet S "Sigma" w
+\Sigma
+endsnippet
+
+snippet U "Upsilon" w
+\Upsilon
+endsnippet
+
+snippet vf "varphi" w
+\varphi
+endsnippet
+
+snippet Psi "Psi" w
+\Psi
+endsnippet
+
+snippet O "Omega" w
+\Omega
+endsnippet
+
+# GREEK ALPHABET - w/ automatic math environment
+snippet \alpha "math alpha" w
+$\alpha$ 
+endsnippet
+
+snippet \beta "math beta" w
+$\beta$ 
+endsnippet
+
+snippet \gamma "math gamma" w
+$\gamma$ 
+endsnippet
+
+snippet \delta "math delta" w
+$\delta$ 
+endsnippet
+
+snippet \epsilonps "math epsilon" w
+$\epsilon$ 
+endsnippet
+
+snippet \zeta "math zeta" w
+$\zeta$ 
+endsnippet
+
+snippet \etata "math eta" w
+$\eta$ 
+endsnippet
+
+snippet \thetah "math theta" w
+$\theta$ 
+endsnippet
+
+snippet \iota "math iota" w
+$\iota$ 
+endsnippet
+
+snippet \kappa "math kappa" w
+$\kappa$ 
+endsnippet
+
+snippet \lambda "math lambda" w
+$\lambda$ 
+endsnippet
+
+snippet \ell "math ell" w
+$\ell$ 
+endsnippet
+
+snippet \nu "math nu" w
+$\nu$ 
+endsnippet
+
+snippet \mu "math mu" w
+$\mu$ 
+endsnippet
+
+snippet \xi "math xi" w
+$\xi$ 
+endsnippet
+
+snippet \pii "math pi" w
+$\pi$ 
+endsnippet
+
+snippet \phi "math phi" w
+$\phi$ 
+endsnippet
+
+snippet \rho "math rho" w
+$\rho$ 
+endsnippet
+
+snippet \sigma "math sigma" w
+$\sigma$ 
+endsnippet
+
+snippet \tau "math tau" w
+$\tau$ 
+endsnippet
+
+snippet \upsilon "math upsilon" w
+$\upsilon$ 
+endsnippet
+
+snippet \Phi "math Phi" w
+$\Phi$ 
+endsnippet
+
+snippet \Gamma "math Gamma" w
+$\Gamma$ 
+endsnippet
+
+snippet \chi "math chi" w
+$\chi$ 
+endsnippet
+
+snippet \psisi "math psi" w
+$\psi$ 
+endsnippet
+
+snippet \omega "math omega" w
+$\omega$ 
+endsnippet
+
+snippet \Delta "math Delta" w
+$\Delta$ 
+endsnippet
+
+snippet \varepsilon "math varepsilon" w
+$\varepsilon$ 
+endsnippet
+
+snippet \vartheta "math vartheta" w
+$\vartheta$ 
+endsnippet
+
+snippet \Theta "math Theta" w
+$\Theta$ 
+endsnippet
+
+snippet \Lambda "math Lambda" w
+$\Lambda$ 
+endsnippet
+
+snippet \Xi "math Xi" w
+$\Xi$ 
+endsnippet
+
+snippet \Pi "math Pi" w
+$\Pi$ 
+endsnippet
+
+snippet \varrho "math varrho" w
+$\varrho$ 
+endsnippet
+
+snippet \Sigma "math Sigma" w
+$\Sigma$ 
+endsnippet
+
+snippet \Upsilon "math Upsilon" w
+$\Upsilon$ 
+endsnippet
+
+snippet \varphi "math varphi" w
+$\varphi$ 
+endsnippet
+
+snippet \Psisi "math Psi" w
+$\Psi$ 
+endsnippet
+
+snippet \Omega "math Omega" w
+$\Omega$ 
+endsnippet
+
+
+##################
+#VASILII SNIPPETS#
+##################
+
+snippet time "Current Time" w
+`date +%H:%M`
+endsnippet
+
+# note.sh environments 
+snippet gnote "Green note" bA
+\note{green}{$1 at `date +%H:%M`}.
+%{{{
+$2
+%}}}
+$0
+endsnippet
+
+snippet bnote "Blue note" bA
+\note{blue}{$1 at `date +%H:%M`}.
+%{{{
+$2
+%}}}
+$0
+endsnippet
+
+snippet rnote "Red note" bA
+\note{red}{$1 at `date +%H:%M`}.
+%{{{
+$2
+%}}}
+$0
+endsnippet
+
+snippet knote "Black note" bA
+\note{black}{$1 at `date +%H:%M`}.
+%{{{
+$2
+%}}}
+$0
+endsnippet
+
+snippet meet "Meeting note" bA
+\note{purple}{{\large Meeting with $1 at `date +%H:%M`}}.
+%{{{
+$2
+%}}}
+$0
+endsnippet
+
+snippet idea "Idea" bA
+\note{teal}{$1}.
+%{{{
+$2
+%}}}
+$0
+endsnippet
+
+snippet BBsem "Black Board Seminar" bA
+\note{olive}{{\large BB Seminar at `date +%H:%M`}}.
+%{{{
+$1
+%}}}
+$0
+endsnippet
+
+snippet sem "Seminar" bA
+\note{lime}{{\large ${1:Seminar} at `date +%H:%M`}}.
+%{{{
+$2
+%}}}
+$0
+endsnippet
+
+snippet vsp "vspace" bA
+\vspace{${1:5mm}}
+
+$0
+endsnippet
+
+snippet hln "line with vspace" bA
+\hline \vspace{${1:5mm}}
+
+$0
+endsnippet
+
+#VASILII CODING SNIPS#
+
+snippet rtn "Description of routine"
+\subsection{$1}
+\begin{itemize}
+	\item[] \textbf{Locaiton:} 
+		\verb|$2|
+
+	\item[] \textbf{Subroutine name:} 
+		\verb|$3|
+
+	\item[] \textbf{Purpose:}
+		$4
+\end{itemize}
+$0
+endsnippet 
+
+snippet niagara "Address of files on Niagara" w
+vasissua@niagara.scinet.utoronto.ca:/scratch/m/murray/vasissua
+endsnippet
+
+snippet path "Filepath" w
+\href{run:$1}{Location}
+endsnippet
+
+snippet cite "cite" w
+\cite{$1} $0
+endsnippet
+
+snippet url "url" w
+\url{$1}
+endsnippet
+
+snippet VV "checkmark" w
+{\textcolor{green}{\checkmark}} 
+endsnippet
+
+snippet XX "anti-checkmark (red x)" w
+{\textcolor{red}{X}} 
+endsnippet
+
+snippet neur "Neural" w
+<c-o>:ls
+endsnippet
+
+
+# Fonts
+snippet mbb "number sets like reals, complex" wA
+\mathbb{$1}$0
+endsnippet
+
+snippet mcal "curly variable" wA
+\mathcal{$1}$0
+endsnippet
+
+snippet mfk "edgy font" wA
+\mathfrak{$1}$0
+endsnippet
+
+
+# Character modifiers 
+snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
+\vec{`!p snip.rv=match.group(1)`}
+endsnippet
+
+snippet "(\\?\W+)(\.a)" "Angled brackets postfix" riA
+\left< `!p snip.rv=match.group(1)` \right>
+endsnippet
+
+snippet "(\\?\w+)(\.H)" "Harpoons postfix" riA
+\lrharpoon{`!p snip.rv=match.group(1)`}
+endsnippet
+
+snippet "(\\?\w+)(\.h)" "Hat postfix" riA
+\hat{`!p snip.rv=match.group(1)`}
+endsnippet
+
+snippet "(\\?\w+)(\.t)" "Tilde postfix" riA
+\tilde{`!p snip.rv=match.group(1)`} 
+endsnippet
+
+snippet "(\\?\w+)(\.b)" "Bar postfix" riA
+\bar{`!p snip.rv=match.group(1)`} 
+endsnippet
+
+snippet h "hat" w
+\hat{$1}$0
+endsnippet
+
+snippet v "vector" w
+\Vec{$1}$0
+endsnippet
+
+snippet ol "overline" w
+\overline{$1}$0
+endsnippet
+
+snippet ul "underline" w
+\uline{$1}$0
+endsnippet
+
+
+# Math 
+snippet =- "Equiv" wA
+\equiv 
+endsnippet
+
+snippet ~ "Similar" w
+\sim 
+endsnippet
+
+snippet ~~ "Approx" wA
+\approx 
+endsnippet
+
+snippet =~ "Simeq" wA
+\simeq 
+endsnippet
+
+snippet \simeq "Strong eq + sim" w
+\cong
+endsnippet
+
+snippet o+ "oplus" w
+\oplus
+endsnippet
+
+snippet \otimes "nothing, no answer" w
+\varnothing
+endsnippet
+
+snippet ox "otimes" w
+\otimes
+endsnippet
+
+
+snippet /~ "Similar in text" w
+$ \sim $1 $ $0
+endsnippet
+
+snippet o< "proportional" wA
+\propto 
+endsnippet
+
+snippet pl "Parallel" i
+\parallel
+endsnippet
+
+snippet pd "Perpendicular" i
+\bot
+endsnippet
+
+snippet nb "nabla" wA
+\nabla 
+endsnippet
+
+snippet vnb "vector nabla" wA
+\Vec{\nabla} 
+endsnippet
+
+snippet nabl "nabla" wA
+\nabla 
+endsnippet
+
+snippet vnabl "vector nabla" wA
+\Vec{\nabla} 
+endsnippet
+
+# Automatic arrow builder 
+snippet -> "right arrow" wA
+\rightarrow
+endsnippet
+
+snippet => "Right arrow" wA
+\Rightarrow
+endsnippet
+
+snippet ==> "Right long arrow" Aw
+\implies
+endsnippet
+
+snippet <- "left arrow" wA
+\leftarrow
+endsnippet
+
+snippet \leftarrow> "left right arrow" wA
+\leftrightarrow
+endsnippet
+
+snippet <= "Left arrow" wA
+\Leftarrow
+endsnippet
+
+snippet \Leftarrow> "Left right arrow" wA
+\Leftrightarrow
+endsnippet
+
+snippet \Leftarrow= "Left long arrow" wA
+\impliedby
+endsnippet
+
+snippet \impliedby> "Left right long arrow (iff)" wA
+\iff
+endsnippet
+
+# Automatic arrow builder - math
+snippet \rightarrow "math right arrow" w
+$\rightarrow$ 
+endsnippet
+
+snippet \Rightarrow "math Right arrow" w
+$\Rightarrow$ 
+endsnippet
+
+snippet \implies "math Right long arrow" A
+$\implies$ 
+endsnippet
+
+snippet \leftarrow "math left arrow" w
+$\leftarrow$ 
+endsnippet
+
+snippet \leftrightarrow "math left right arrow" w
+$\leftrightarrow$ 
+endsnippet
+
+snippet \Leftarrow "math Left arrow" w
+$\Leftarrow$ 
+endsnippet
+
+snippet \Leftrightarrow "math Left right arrow" w
+$\Leftrightarrow$ 
+endsnippet
+
+snippet \impliedby "math Left long arrow" w
+$\impliedby$ 
+endsnippet
+
+snippet \iffmpliedby "math Left right long arrow (iff)" w
+$\iff$ 
+endsnippet
+
+
+# Astrophysics 
+snippet H2 "H_2" w
+H$_2$ 
+endsnippet
+
+snippet lcdm "Lambda-CDM" wA
+$\Lambda$CDM 
+endsnippet
+
+snippet red~ "redshfit" wA
+redshift $z \sim $1$ $0
+endsnippet
+
+snippet red> "redshfit" wA
+redshift $z > $1$ $0
+endsnippet
+
+snippet red< "redshfit" wA
+redshift $z < $1$ $0
+endsnippet
+
+snippet red= "redshfit" wA
+redshift $z = $1$ $0
+endsnippet
+
+snippet Lya "Lyman-alpha" wA
+Lyman-$\alpha$ $0
+endsnippet
+
+snippet Msun "Solar mass" wA
+M_\odot 
+endsnippet
+
+snippet -h- "hbar" wA
+\hbar
+endsnippet
+snippet hbar "hbar" wA
+\hbar
+endsnippet
+
+# Formatting 
+priority 300
+snippet verb "verbatim environment" bA
+\begin{verbatim}
+${0:${VISUAL}}
+\end{verbatim}
+endsnippet
+
+snippet lstl "lstlisting (same as verbatim)" bi
+\begin{lstlisting}
+${0:${VISUAL}}
+\end{lstlisting}
+endsnippet
+
+# Formatting: Inline verbatim environment 
+# veve is just fast to type, and hard to accidentally confuse with other words
+priority 100
+snippet (veve "verbatim environment 1" wA 
+\verb|${0:${VISUAL}}|
+endsnippet
+priority 100
+snippet veev "verbatim environment 2" wA 
+\verb|${0:${VISUAL}}|
+endsnippet
+priority 100
+snippet evve "verbatim environment 3" wA 
+\verb|${0:${VISUAL}}|
+endsnippet
+priority 100
+snippet evev "verbatim environment 4" wA 
+\verb|${0:${VISUAL}}|
+endsnippet
+
+
+snippet cas[ "cases []" biA
+\begin{equation}
+\left[
+\begin{aligned}
+	${0:${VISUAL}}
+\end{aligned}
+\right.
+\end{equation}
+endsnippet
+
+snippet cas{ "cases {}" biA
+\begin{equation}
+\left\{
+\begin{aligned}
+	${0:${VISUAL}}
+\end{aligned}
+\right.
+\end{equation}
+endsnippet
+
+snippet cas( "cases ()" biA
+\begin{equation}
+\left(
+\begin{aligned}
+	${0:${VISUAL}}
+\end{aligned}
+\right.
+\end{equation}
+endsnippet
+
+
+snippet 1st "1st" wA
+1$^\text{st}$ 
+endsnippet
+
+snippet 2nd "2nd" wA
+2$^\text{nd}$ 
+endsnippet
+
+snippet 3rd "3rd" wA
+3$^\text{rd}$ 
+endsnippet
+
+# This ordinal (general nth) doesn't work!
+snippet "`(\d+)(st|nd|rd|th)`" "General ordinal" r
+$1$^\text{$2}$
+endsnippet
+
+
+# Matrix generator 
+post_jump "create_matrix_placeholders(snip)"
+snippet 'mx-(\d+)-(\d+)' "LaTeX array" br
+\begin{pmatrix}{`!p
+orient = ""
+for _ in range(0, int(match.group(1))): orient += "l"
+snip.rv = orient`}
+`!p
+snip.rv = create_matrix(match.group(1), match.group(2), "&", "\t", "\\\\\\\\\n")
+`$0
+\end{pmatrix}
+endsnippet
+
+
+# vim:ft=snippets:

@@ -1,0 +1,68 @@
+##########
+# TABLES #
+#########
+
+
+pre_expand "create_table(snip)"
+snippet "gentbl(\d+)x(\d+)" "Generate table of *width* by *height*" r
+endsnippet
+
+pre_expand "add_row(snip)"
+snippet "tr(\d+)" "Add table row of dimension ..." r
+endsnippet
+
+
+###########
+# POSTFIX #
+###########
+
+
+snippet bar "bar" wi
+\bar{${1:${VISUAL} }}$0
+endsnippet
+
+snippet "\<(.*?)\|" "bra" wri
+\bra{`!p snip.rv = match.group(1).replace('q', f'\psi').replace('f', f'\phi')`}
+endsnippet
+
+snippet "\|(.*?)\>" "ket" wri
+\ket{`!p snip.rv = match.group(1).replace('q', f'\psi').replace('f', f'\phi')`}
+endsnippet
+
+snippet "(.*)\\bra{(.*?)}([^\|]*?)\>" "braket" Awri
+`!p snip.rv = match.group(1)`\braket{`!p snip.rv = match.group(2)`}{`!p snip.rv = match.group(3).replace('q', f'\psi').replace('f', f'\phi')`}
+endsnippet
+
+
+#############
+# PRE-AMBLE #
+#############
+
+
+
+snippet pac "usepackage - removes square braces if options removed" b
+\usepackage`!p snip.rv='[' if t[1] else ""`${1:options}`!p snip.rv = ']' if t[1] else ""`{${2:package}}$0
+endsnippet
+
+snippet docls "Document Class" bA
+\documentclass{$1}$0
+endsnippet
+
+
+#########
+# OTHER #
+#########
+
+
+
+snippet acl "Acroynm expanded" bi
+\acl{${1:acronym}}
+endsnippet
+
+snippet ac "Acroynm normal" bi
+\ac{${1:acronym}}
+endsnippet
+
+snippet ni "Non-indented paragraph" bi
+\noindent
+endsnippet
