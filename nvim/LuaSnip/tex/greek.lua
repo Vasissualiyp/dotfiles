@@ -1,11 +1,15 @@
 -- GREEK ALPHABET
 local ls = require("luasnip")
 local s = ls.snippet
-ls.config.setup({enable_autosnippets = true})
+local tsutils = require "config.tsutils"
+--ls.config.setup({enable_autosnippets = true})
+local autosnippet = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
 
 return {
-
   s( { trig = ";a", snippetType = "autosnippet"}, { t("\\alpha") } ),
+  --s( { trig = ";a", snippetType = "autosnippet"}, 
+  --{ t("\\alpha") }, { condition = tsutils.in_mathzone } ),
+
   s( { trig = ";g", snippetType = "autosnippet" }, { t("\\gamma") } ),
   s( { trig = ";b", snippetType = "autosnippet" }, { t("\\beta") } ),
   s( { trig = ";d", snippetType = "autosnippet" }, { t("\\delta") } ),

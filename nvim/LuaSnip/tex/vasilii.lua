@@ -4,7 +4,7 @@ local i = ls.insert_node
 ls.config.setup({enable_autosnippets = true})
 
 return {
-  s({trig="hr", dscr="The hyperref package's href{}{} command (for url links)"},
+  s({trig="url", dscr="The hyperref package's href{}{} command (for url links)"},
     fmta(
       [[\href{<>}{<>}]],
       {
@@ -13,7 +13,6 @@ return {
       }
     )
   ),
-}
 
 -- 
 -- snippet time "Current Time" w
@@ -478,3 +477,4 @@ return {
 -- 
 -- 
 -- # vim:ft=snippets:
+}

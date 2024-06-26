@@ -71,4 +71,25 @@ return {
   s({trig = "<!", snippetType = "autosnippet"}, {t("\\triangleleft ")}),
   s({trig = "((\\d|\\w)+)invs", regTrig = true, snippetType = "autosnippet"}, {i(1), t("^{-1}")}),
   s({trig = "!>", snippetType = "autosnippet"}, {t("\\mapsto ")}),
+
+  s({trig="eq", dscr="A LaTeX equation environment"},
+    fmta( 
+      [[
+        \begin{equation}
+            <>
+        \end{equation}
+      ]],
+      { i(1) }
+    )
+  ),
+  s({trig="eq*", dscr="A LaTeX equation environment"},
+    fmta( 
+      [[
+        \begin{equation*}
+            <>
+        \end{equation*}
+      ]],
+      { i(1) }
+    )
+  ),
 }
