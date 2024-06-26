@@ -2,92 +2,129 @@
 local ls = require("luasnip")
 local s = ls.snippet
 local tsutils = require "config.tsutils"
---ls.config.setup({enable_autosnippets = true})
-local autosnippet = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
+
+local as = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
+local function not_in_mathzone()
+  return not tsutils.in_mathzone()
+end
 
 return {
-  s( { trig = ";a", snippetType = "autosnippet"}, { t("\\alpha") } ),
-  --s( { trig = ";a", snippetType = "autosnippet"}, 
-  --{ t("\\alpha") }, { condition = tsutils.in_mathzone } ),
+  -- Every entry contains a snippet for being in the math block, and for being outside of it
+  -- for writing single variables
+  as({ trig = ";a"}, t "\\alpha", { condition = tsutils.in_mathzone }),
+  as({ trig = ";a"}, t "$\\alpha$", { condition = not_in_mathzone }),
 
-  s( { trig = ";g", snippetType = "autosnippet" }, { t("\\gamma") } ),
-  s( { trig = ";b", snippetType = "autosnippet" }, { t("\\beta") } ),
-  s( { trig = ";d", snippetType = "autosnippet" }, { t("\\delta") } ),
-  s( { trig = ";eps", snippetType = "autosnippet" }, { t("\\epsilon") } ),
-  s( { trig = ";veps", snippetType = "autosnippet" }, { t("\\varepsilon") } ),
-  s( { trig = ";z", snippetType = "autosnippet" }, { t("\\zeta") } ),
-  s( { trig = ";eta", snippetType = "autosnippet" }, { t("\\eta") } ),
-  s( { trig = ";th", snippetType = "autosnippet" }, { t("\\theta") } ),
-  s( { trig = ";vth", snippetType = "autosnippet" }, { t("\\vartheta") } ),
-  s( { trig = ";i", snippetType = "autosnippet" }, { t("\\iota") } ),
-  s( { trig = ";k", snippetType = "autosnippet" }, { t("\\kappa") } ),
-  s( { trig = ";l", snippetType = "autosnippet" }, { t("\\lambda") } ),
-  s( { trig = ";vl", snippetType = "autosnippet" }, { t("\\ell") } ),
-  s( { trig = ";n", snippetType = "autosnippet" }, { t("\\nu") } ),
-  s( { trig = ";m", snippetType = "autosnippet" }, { t("\\mu") } ),
-  s( { trig = ";x", snippetType = "autosnippet" }, { t("\\xi") } ),
-  s( { trig = ";pi", snippetType = "autosnippet" }, { t("\\pi") } ),
-  s( { trig = ";f", snippetType = "autosnippet" }, { t("\\phi") } ),
-  s( { trig = ";vf", snippetType = "autosnippet" }, { t("\\varphi") } ),
-  s( { trig = ";r", snippetType = "autosnippet" }, { t("\\rho") } ),
-  s( { trig = ";s", snippetType = "autosnippet" }, { t("\\sigma") } ),
-  s( { trig = ";t", snippetType = "autosnippet" }, { t("\\tau") } ),
-  s( { trig = ";u", snippetType = "autosnippet" }, { t("\\upsilon") } ),
-  s( { trig = ";F", snippetType = "autosnippet" }, { t("\\Phi") } ),
-  s( { trig = ";G", snippetType = "autosnippet" }, { t("\\Gamma") } ),
-  s( { trig = ";c", snippetType = "autosnippet" }, { t("\\chi") } ),
-  s( { trig = ";psi", snippetType = "autosnippet" }, { t("\\psi") } ),
-  s( { trig = ";o", snippetType = "autosnippet" }, { t("\\omega") } ),
-  s( { trig = ";D", snippetType = "autosnippet" }, { t("\\Delta") } ),
-  s( { trig = ";T", snippetType = "autosnippet" }, { t("\\Theta") } ),
-  s( { trig = ";L", snippetType = "autosnippet" }, { t("\\Lambda") } ),
-  s( { trig = ";X", snippetType = "autosnippet" }, { t("\\Xi") } ),
-  s( { trig = ";P", snippetType = "autosnippet" }, { t("\\Pi") } ),
-  s( { trig = ";vr", snippetType = "autosnippet" }, { t("\\varrho") } ),
-  s( { trig = ";S", snippetType = "autosnippet" }, { t("\\Sigma") } ),
-  s( { trig = ";U", snippetType = "autosnippet" }, { t("\\Upsilon") } ),
-  s( { trig = ";Psi", snippetType = "autosnippet" }, { t("\\Psi") } ),
-  s( { trig = ";O", snippetType = "autosnippet" }, { t("\\Omega") } ), 
+  as( { trig = ";b" }, { t("\\beta") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";b" }, { t("$\\beta$") }, {condition = not_in_mathzone }),
 
-  -- GREEK ALPHABET - w/ automatic math environment
+  as( { trig = ";g" }, { t("\\gamma") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";g" }, { t("$\\gamma$") }, {condition = not_in_mathzone }),
 
-  s( { trig = "\\alpha" }, { t("$\\alpha$ ") } ),
-  s( { trig = "\\beta" }, { t("$\\beta$ ") } ),
-  s( { trig = "\\gamma" }, { t("$\\gamma$ ") } ),
-  s( { trig = "\\delta" }, { t("$\\delta$ ") } ),
-  s( { trig = "\\epsilonps" }, { t("$\\epsilon$ ") } ),
-  s( { trig = "\\zeta" }, { t("$\\zeta$ ") } ),
-  s( { trig = "\\etata" }, { t("$\\eta$ ") } ),
-  s( { trig = "\\thetah" }, { t("$\\theta$ ") } ),
-  s( { trig = "\\iota" }, { t("$\\iota$ ") } ),
-  s( { trig = "\\kappa" }, { t("$\\kappa$ ") } ),
-  s( { trig = "\\lambda" }, { t("$\\lambda$ ") } ),
-  s( { trig = "\\ell" }, { t("$\\ell$ ") } ),
-  s( { trig = "\\nu" }, { t("$\\nu$ ") } ),
-  s( { trig = "\\mu" }, { t("$\\mu$ ") } ),
-  s( { trig = "\\xi" }, { t("$\\xi$ ") } ),
-  s( { trig = "\\pii" }, { t("$\\pi$ ") } ),
-  s( { trig = "\\phi" }, { t("$\\phi$ ") } ),
-  s( { trig = "\\rho" }, { t("$\\rho$ ") } ),
-  s( { trig = "\\sigma" }, { t("$\\sigma$ ") } ),
-  s( { trig = "\\tau" }, { t("$\\tau$ ") } ),
-  s( { trig = "\\upsilon" }, { t("$\\upsilon$ ") } ),
-  s( { trig = "\\Phi" }, { t("$\\Phi$ ") } ),
-  s( { trig = "\\Gamma" }, { t("$\\Gamma$ ") } ),
-  s( { trig = "\\chi" }, { t("$\\chi$ ") } ),
-  s( { trig = "\\psisi" }, { t("$\\psi$ ") } ),
-  s( { trig = "\\omega" }, { t("$\\omega$ ") } ),
-  s( { trig = "\\Delta" }, { t("$\\Delta$ ") } ),
-  s( { trig = "\\varepsilon" }, { t("$\\varepsilon$ ") } ),
-  s( { trig = "\\vartheta" }, { t("$\\vartheta$ ") } ),
-  s( { trig = "\\Theta" }, { t("$\\Theta$ ") } ),
-  s( { trig = "\\Lambda" }, { t("$\\Lambda$ ") } ),
-  s( { trig = "\\Xi" }, { t("$\\Xi$ ") } ),
-  s( { trig = "\\Pi" }, { t("$\\Pi$ ") } ),
-  s( { trig = "\\varrho" }, { t("$\\varrho$ ") } ),
-  s( { trig = "\\Sigma" }, { t("$\\Sigma$ ") } ),
-  s( { trig = "\\Upsilon" }, { t("$\\Upsilon$ ") } ),
-  s( { trig = "\\varphi" }, { t("$\\varphi$ ") } ),
-  s( { trig = "\\Psisi" }, { t("$\\Psi$ ") } ),
-  s( { trig = "\\Omega" }, { t("$\\Omega$ ") } ),
+  as( { trig = ";d" }, { t("\\delta") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";d" }, { t("$\\delta$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";eps" }, { t("\\epsilon") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";eps" }, { t("$\\epsilon$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";veps" }, { t("\\varepsilon") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";veps" }, { t("$\\varepsilon$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";z" }, { t("\\zeta") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";z" }, { t("$\\zeta$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";eta" }, { t("\\eta") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";eta" }, { t("$\\eta$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";th" }, { t("\\theta") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";th" }, { t("$\\theta$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";vth" }, { t("\\vartheta") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";vth" }, { t("$\\vartheta$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";i" }, { t("\\iota") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";i" }, { t("$\\iota$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";k" }, { t("\\kappa") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";k" }, { t("$\\kappa$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";l" }, { t("\\lambda") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";l" }, { t("$\\lambda$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";vl" }, { t("\\ell") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";vl" }, { t("$\\ell$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";n" }, { t("\\nu") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";n" }, { t("$\\nu$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";m" }, { t("\\mu") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";m" }, { t("$\\mu$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";x" }, { t("\\xi") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";x" }, { t("$\\xi$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";pi" }, { t("\\pi") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";pi" }, { t("$\\pi$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";f" }, { t("\\phi") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";f" }, { t("$\\phi$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";vf" }, { t("\\varphi") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";vf" }, { t("$\\varphi$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";r" }, { t("\\rho") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";r" }, { t("$\\rho$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";s" }, { t("\\sigma") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";s" }, { t("$\\sigma$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";t" }, { t("\\tau") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";t" }, { t("$\\tau$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";u" }, { t("\\upsilon") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";u" }, { t("$\\upsilon$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";F" }, { t("\\Phi") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";F" }, { t("$\\Phi$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";G" }, { t("\\Gamma") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";G" }, { t("$\\Gamma$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";c" }, { t("\\chi") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";c" }, { t("$\\chi$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";psi" }, { t("\\psi") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";psi" }, { t("$\\psi$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";o" }, { t("\\omega") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";o" }, { t("$\\omega$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";D" }, { t("\\Delta") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";D" }, { t("$\\Delta$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";T" }, { t("\\Theta") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";T" }, { t("$\\Theta$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";L" }, { t("\\Lambda") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";L" }, { t("$\\Lambda$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";X" }, { t("\\Xi") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";X" }, { t("$\\Xi$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";P" }, { t("\\Pi") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";P" }, { t("$\\Pi$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";vr" }, { t("\\varrho") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";vr" }, { t("$\\varrho$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";S" }, { t("\\Sigma") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";S" }, { t("$\\Sigma$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";U" }, { t("\\Upsilon") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";U" }, { t("$\\Upsilon$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";Psi" }, { t("\\Psi") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";Psi" }, { t("$\\Psi$") }, {condition = not_in_mathzone }),
+
+  as( { trig = ";O" }, { t("\\Omega") }, {condition = tsutils.in_mathzone }), 
+  as( { trig = ";O" }, { t("$\\Omega$") }, {condition = not_in_mathzone }), 
 }
