@@ -13,6 +13,7 @@ return {
       }
     )
   ),
+}
 
 -- 
 -- snippet time "Current Time" w
@@ -471,4 +472,3 @@ return {
 -- 
 -- 
 -- # vim:ft=snippets:
-}
