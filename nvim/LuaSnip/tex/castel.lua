@@ -6,6 +6,7 @@ local s = ls.snippet
 ls.config.setup({enable_autosnippets = true})
 local tsutils = require "config.tsutils"
 
+local line_begin = require("luasnip.extras.expand_conditions").line_begin
 local as = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
 local function not_in_mathzone()
   return not tsutils.in_mathzone()
@@ -42,7 +43,7 @@ return {
         i(1),
         i(0)
       },
-	  { condition = not_in_mathzone }
+	  { condition = line_begin }
     )
   ),
   -- Display math
@@ -58,7 +59,7 @@ return {
         i(0)
       }
     ),
-	{ condition = not_in_mathzone }
+	{ condition = line_begin }
   ),
   as("//", fmta(
       [[
