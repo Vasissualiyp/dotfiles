@@ -3,6 +3,28 @@ local s = ls.snippet
 local i = ls.insert_node
 ls.config.setup({enable_autosnippets = true})
 
+local as = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
+
+local function verbatim_snippet(args, parent)
+  local col = vim.fn.col(".") - 1 -- Get the current column position (0-based index)
+  if col == 0 then
+    return ls.sn(nil, {
+      t({"\\begin{verbatim}", ""}),
+      i(1),
+      t({"", "\\end{verbatim}"}),
+      i(0),
+    })
+  else
+    return ls.sn(nil, {
+      t("\\verb|"),
+      i(1),
+      t("|"),
+      i(0),
+    })
+  end
+end
+
+
 return {
   s({trig="url", dscr="The hyperref package's href{}{} command (for url links)"},
     fmta(
@@ -13,6 +35,9 @@ return {
       }
     )
   ),
+  as("vem", {
+    d(1, verbatim_snippet)
+  }),
 }
 
 -- 
@@ -375,38 +400,12 @@ return {
 -- 
 -- 
 -- # Formatting 
--- priority 300
--- snippet verb "verbatim environment" bA
--- \begin{verbatim}
--- ${0:${VISUAL}}
--- \end{verbatim}
--- endsnippet
 -- 
 -- snippet lstl "lstlisting (same as verbatim)" bi
 -- \begin{lstlisting}
 -- ${0:${VISUAL}}
 -- \end{lstlisting}
 -- endsnippet
--- 
--- # Formatting: Inline verbatim environment 
--- # veve is just fast to type, and hard to accidentally confuse with other words
--- priority 100
--- snippet (veve "verbatim environment 1" wA 
--- \verb|${0:${VISUAL}}|
--- endsnippet
--- priority 100
--- snippet veev "verbatim environment 2" wA 
--- \verb|${0:${VISUAL}}|
--- endsnippet
--- priority 100
--- snippet evve "verbatim environment 3" wA 
--- \verb|${0:${VISUAL}}|
--- endsnippet
--- priority 100
--- snippet evev "verbatim environment 4" wA 
--- \verb|${0:${VISUAL}}|
--- endsnippet
--- 
 -- 
 -- snippet cas[ "cases []" biA
 -- \begin{equation}
