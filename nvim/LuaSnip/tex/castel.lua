@@ -35,7 +35,7 @@ return {
   ),
 
   -- Inline math
-  as("mk", fmta(
+  as("mm", fmta(
       [[
 	    $<>$<>
       ]],

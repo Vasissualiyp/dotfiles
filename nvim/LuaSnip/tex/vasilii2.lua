@@ -1,9 +1,29 @@
 local ls = require("luasnip")
 local s = ls.snippet
 local f = ls.function_node
+local tsutils = require "config.tsutils"
+
+local as = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
+local function not_in_mathzone()
+  return not tsutils.in_mathzone()
+end
+
+-- Function to replace 'q' with '\\psi' and 'f' with '\\phi'
+local function replace_qf(text)
+  return text:gsub('q', '\\psi'):gsub('f', '\\phi')
+end
+
 
 return {
   -- Vector postfix
+
+  s({ trig = "(.-);v", regTrig = true, wordTrig = false , snippetType = "autosnippet"},
+    f(function(_, snip)
+      return "\\Vec{" .. replace_qf(snip.captures[1]) .. "}"
+    end),
+	{ condition = tsutils.in_mathzone }
+  ),
+
   s(
     { trig = "(\\?\\w+)\\.,", regTrig = true, wordTrig = false },
     f(function(_, snip)
