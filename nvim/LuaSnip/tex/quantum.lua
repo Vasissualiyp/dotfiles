@@ -40,7 +40,6 @@ return {
   ),
 
   -- All ways to type hbar
-  as("hb", { t("\\hbar") }, { condition = tsutils.in_mathzone }),
   as("-h-", { t("\\hbar") }, { condition = tsutils.in_mathzone }),
   as("hbar", { t("\\hbar") }, { condition = tsutils.in_mathzone }),
 }
