@@ -84,7 +84,7 @@ return {
   ),
   as("tt", fmta(
       [[
-	    \\text{<>}<>
+	    \text{<>}<>
       ]],
       {
         i(1),
