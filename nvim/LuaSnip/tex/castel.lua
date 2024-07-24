@@ -5,6 +5,9 @@ local ls = require("luasnip")
 local s = ls.snippet
 ls.config.setup({enable_autosnippets = true})
 local tsutils = require "config.tsutils"
+local fmta = require("luasnip.extras.fmt").fmta
+local rep = require("luasnip.extras").rep
+local conds = require("luasnip.extras.expand_conditions")
 
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 local as = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
@@ -19,7 +22,7 @@ local function process_fraction(args, snip)
 end
 
 return {
-  s({trig="beg", snippetType="autosnippet"},
+  s({trig="beg", snippetType="autosnippet", condition=conds.line_begin},
     fmta(
       [[
         \begin{<>}
@@ -33,7 +36,7 @@ return {
       }
     )
   ),
-
+  
   -- Inline math
   as("mm", fmta(
       [[
