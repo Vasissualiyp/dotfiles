@@ -30,14 +30,14 @@ return {
           {{
             devShell = pkgs.mkShell {{
               buildInputs = with pkgs; [
-                hello
+                {}
               ];
             }};
           }}
         );
     }}
     ]], 
-      { i(1, "name") }
+      { i(1, "name"), i(2, "packages") }
     )
   ),
 
