@@ -24,6 +24,15 @@ return {
   as({ trig = "<="}, t  "\\Leftarrow", { condition = tsutils.in_mathzone }),
   as({ trig = "<="}, t "$\\Leftarrow$", { condition = not_in_mathzone }),
 
+  as({ trig = "\\leftarrow>"}, t  "\\leftrightarrow", { condition = tsutils.in_mathzone }),
+  as({ trig = "$\\leftarrow$>"}, t "$\\leftrightarrow$", { condition = not_in_mathzone }),
+
+  as({ trig = "\\leftarrow-"}, t  "\\longleftarrow", { condition = tsutils.in_mathzone }),
+  as({ trig = "$\\leftarrow$-"}, t "$\\longleftarrow$", { condition = not_in_mathzone }),
+
+  as({ trig = "\\longleftarrow>"}, t  "\\longleftrightarrow", { condition = tsutils.in_mathzone }),
+  as({ trig = "$\\longleftarrow$>"}, t "$\\longleftrightarrow$", { condition = not_in_mathzone }),
+
   as({ trig = "\\Leftarrow="}, t  "\\impliedby", { condition = tsutils.in_mathzone }),
   as({ trig = "$\\Leftarrow$="}, t "$\\impliedby$", { condition = not_in_mathzone }),
 

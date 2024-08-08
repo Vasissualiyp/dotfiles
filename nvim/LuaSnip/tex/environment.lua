@@ -33,7 +33,7 @@ return {
 
   as({ trig = "itm"}, t "\\item", { condition = not_in_mathzone }),
 
-  as("fig", {
+  s({trig="fig", dscr="A LaTeX figure environment"},{
       t("\\begin{figure}["),
       i(1, "htpb"),
       t({"]", "\t\\centering"}),
@@ -46,6 +46,17 @@ return {
           return args[1][1]:gsub("%W+", "-")
       end, {3}),
       t({"}", "\\end{figure}", "\\FloatBarrier"}),
+      i(0),
+  }),
+  s({trig="fig*", dscr="A LaTeX figure environment"},{
+      t("\\begin{figure*}["),
+      i(1, "htpb"),
+      t({"]", "\t\\centering"}),
+      i(2, "\\includegraphics[width=0.8\\textwidth]{"),
+      i(3),
+      t({"}", "\t\\caption{"}),
+      i(4),
+      t({"}", "\\end{figure*}", "\\FloatBarrier"}),
       i(0),
   }),
 }
