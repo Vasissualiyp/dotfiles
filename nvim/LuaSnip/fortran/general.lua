@@ -6,7 +6,7 @@ local c = ls.choice_node
 local fmt = require("luasnip.extras.fmt").fmt
 
 return {
-  s({trig = "program", name = "Program Template", dscr = "Program template"}, 
+  s({trig = "prog", name = "Program Template", dscr = "Program template"}, 
     fmt([[
     program {}
       implicit none
@@ -17,7 +17,7 @@ return {
     )
   ),
 
-  s({trig = "subroutine", name = "Subroutine", dscr = "Subroutine template"}, 
+  s({trig = "srtn", name = "Subroutine", dscr = "Subroutine template"}, 
     fmt([[
     subroutine {}({})
       implicit none
@@ -28,7 +28,7 @@ return {
     )
   ),
 
-  s({trig = "function", name = "Function", dscr = "Function template"}, 
+  s({trig = "func", name = "Function", dscr = "Function template"}, 
     fmt([[
     function {}({}) result({})
       implicit none
@@ -39,7 +39,7 @@ return {
     )
   ),
 
-  s({trig = "module", name = "Module", dscr = "Module template"}, 
+  s({trig = "mod", name = "Module", dscr = "Module template"}, 
     fmt([[
     module {}
       implicit none
