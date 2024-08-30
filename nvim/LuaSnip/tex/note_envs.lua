@@ -17,7 +17,7 @@ return {
     fmta(
       [[
       \note{green}{<> at <>}.
-      %{{{{
+      %{{{
       <>
       %}}}
       <>
@@ -37,7 +37,7 @@ return {
     fmta(
       [[
       \note{blue}{<> at <>}.
-      %{{{{
+      %{{{
       <>
       %}}}
       <>
@@ -57,7 +57,7 @@ return {
     fmta(
       [[
       \note{red}{<> at <>}.
-      %{{{{
+      %{{{
       <>
       %}}}
       <>
@@ -77,7 +77,7 @@ return {
     fmta(
       [[
       \note{black}{<> at <>}.
-      %{{{{
+      %{{{
       <>
       %}}}
       <>
@@ -97,7 +97,7 @@ return {
     fmta(
       [[
       \note{purple}{{{\large Meeting with <> at <>}}}.
-      %{{{{
+      %{{{
       <>
       %}}}
       <>
@@ -117,7 +117,7 @@ return {
     fmta(
       [[
       \note{teal}{<>}.
-      %{{{{
+      %{{{
       <>
       %}}}
       <>
@@ -136,7 +136,7 @@ return {
     fmta(
       [[
       \note{olive}{{{\large BB Seminar at <>}}}.
-      %{{{{
+      %{{{
       <>
       %}}}
       <>
@@ -155,7 +155,7 @@ return {
     fmta(
       [[
       \note{lime}{{{\large <> at <>}}}.
-      %{{{{
+      %{{{
       <>
       %}}}
       <>
