@@ -25,18 +25,18 @@ local function verbatim_snippet(args, parent)
 end
 
 
-return {
-  s({trig="url", dscr="The hyperref package's href{}{} command (for url links)"},
-    fmta(
-      [[\href{<>}{<>}]],
-      {
-        i(1, "url"),
-        i(2, "display name"),
-      }
-    )
-  ),
-  as("vem", {
-    d(1, verbatim_snippet)
+  return {
+    s({trig="url", dscr="The hyperref package's href{}{} command (for url links)"},
+      fmta(
+        [[\href{<>}{<>}]],
+        {
+          i(1, "url"),
+          i(2, "display name"),
+        }
+      )
+    ),
+    as("vem", {
+      d(1, verbatim_snippet)
   }),
 }
 
@@ -255,10 +255,6 @@ return {
 -- 
 -- snippet Lya "Lyman-alpha" wA
 -- Lyman-$\alpha$ $0
--- endsnippet
--- 
--- snippet Msun "Solar mass" wA
--- M_\odot 
 -- endsnippet
 -- 
 -- 
