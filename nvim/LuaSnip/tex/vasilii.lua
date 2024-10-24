@@ -1,5 +1,6 @@
 local ls = require("luasnip")
 local s = ls.snippet
+local t = ls.text_node
 local i = ls.insert_node
 ls.config.setup({enable_autosnippets = true})
 
@@ -25,7 +26,7 @@ local function verbatim_snippet(args, parent)
 end
 
 
-  return {
+return {
     s({trig="url", dscr="The hyperref package's href{}{} command (for url links)"},
       fmta(
         [[\href{<>}{<>}]],
@@ -38,6 +39,8 @@ end
     as("vem", {
       d(1, verbatim_snippet)
   }),
+  as({trig = "VV"}, { t("{\textcolor{green}{\\checkmark}}")}),
+  as({trig = "XX"}, { t("{\textcolor{red}{X}}")}),
 }
 
 
@@ -89,18 +92,6 @@ end
 -- 
 -- snippet url "url" w
 -- \url{$1}
--- endsnippet
--- 
--- snippet VV "checkmark" w
--- {\textcolor{green}{\checkmark}} 
--- endsnippet
--- 
--- snippet XX "anti-checkmark (red x)" w
--- {\textcolor{red}{X}} 
--- endsnippet
--- 
--- snippet neur "Neural" w
--- <c-o>:ls
 -- endsnippet
 -- 
 -- 
@@ -312,6 +303,10 @@ end
 -- # This ordinal (general nth) doesn't work!
 -- snippet "`(\d+)(st|nd|rd|th)`" "General ordinal" r
 -- $1$^\text{$2}$
+-- endsnippet
+-- 
+-- snippet neur "Neural" w
+-- <c-o>:ls
 -- endsnippet
 -- 
 -- 
