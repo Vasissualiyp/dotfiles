@@ -1,9 +1,13 @@
--- GREEK ALPHABET
 local ls = require("luasnip")
 local s = ls.snippet
+local i = ls.insert_node
+local t = ls.text_node
 local tsutils = require "config.tsutils"
 
+ls.config.setup({enable_autosnippets = true})
 local as = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
+
+
 local function not_in_mathzone()
   return not tsutils.in_mathzone()
 end
@@ -125,6 +129,6 @@ return {
   as( { trig = ";Psi" }, { t("\\Psi") }, {condition = tsutils.in_mathzone }),
   as( { trig = ";Psi" }, { t("$\\Psi$") }, {condition = not_in_mathzone }),
 
-  as( { trig = ";O" }, { t("\\Omega") }, {condition = tsutils.in_mathzone }), 
-  as( { trig = ";O" }, { t("$\\Omega$") }, {condition = not_in_mathzone }), 
+  as( { trig = ";O" }, { t("\\Omega") }, {condition = tsutils.in_mathzone }),
+  as( { trig = ";O" }, { t("$\\Omega$") }, {condition = not_in_mathzone }),
 }

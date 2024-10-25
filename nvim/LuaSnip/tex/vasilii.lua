@@ -39,8 +39,11 @@ return {
     as("vem", {
       d(1, verbatim_snippet)
   }),
-  as({trig = "VV"}, { t("{\textcolor{green}{\\checkmark}}")}),
-  as({trig = "XX"}, { t("{\textcolor{red}{X}}")}),
+  as({trig = "VV"}, { t("{\\textcolor{green}{\\checkmark}}")}),
+  as({trig = "XX"}, { t("{\\textcolor{red}{X}}")}),
+  as({trig = "lcdm"}, { t("$\\Lambda$CDM") }),
+  as({trig = "H2"}, { t("H$_2$") }),
+  as({trig = "h2"}, { t("H$_2$") }),
 }
 
 
@@ -90,24 +93,6 @@ return {
 -- \cite{$1} $0
 -- endsnippet
 -- 
--- snippet url "url" w
--- \url{$1}
--- endsnippet
--- 
--- 
--- # Fonts
--- snippet mbb "number sets like reals, complex" wA
--- \mathbb{$1}$0
--- endsnippet
--- 
--- snippet mcal "curly variable" wA
--- \mathcal{$1}$0
--- endsnippet
--- 
--- snippet mfk "edgy font" wA
--- \mathfrak{$1}$0
--- endsnippet
--- 
 -- 
 -- # Character modifiers 
 -- snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
@@ -150,27 +135,6 @@ return {
 -- \uline{$1}$0
 -- endsnippet
 -- 
--- 
--- # Math 
--- snippet =- "Equiv" wA
--- \equiv 
--- endsnippet
--- 
--- snippet ~ "Similar" w
--- \sim 
--- endsnippet
--- 
--- snippet ~~ "Approx" wA
--- \approx 
--- endsnippet
--- 
--- snippet =~ "Simeq" wA
--- \simeq 
--- endsnippet
--- 
--- snippet \simeq "Strong eq + sim" w
--- \cong
--- endsnippet
 -- 
 -- snippet o+ "oplus" w
 -- \oplus
@@ -218,15 +182,6 @@ return {
 -- endsnippet
 -- 
 -- 
--- 
--- # Astrophysics 
--- snippet H2 "H_2" w
--- H$_2$ 
--- endsnippet
--- 
--- snippet lcdm "Lambda-CDM" wA
--- $\Lambda$CDM 
--- endsnippet
 -- 
 -- snippet red~ "redshfit" wA
 -- redshift $z \sim $1$ $0

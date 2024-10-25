@@ -11,6 +11,8 @@ end
 
 return {
   as({trig = "Msun"}, {t("M_\\odot")}, { condition = tsutils.in_mathzone }),
+  as({trig = "nab"}, {t("\\nabla")}, { condition = tsutils.in_mathzone }),
+  as({trig = "vnab"}, {t("\\Vec{\\nabla}")}, { condition = tsutils.in_mathzone }),
   s({trig = "cc"}, {t("\\subset ")}, { condition = tsutils.in_mathzone }),
   s({trig = "inn"}, {t("\\in ")}, {condition = tsutils.in_mathzone }),
   s({trig = "Nn"}, {t("\\cap ")}, {condition = tsutils.in_mathzone }),
