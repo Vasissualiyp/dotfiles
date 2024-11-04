@@ -10,7 +10,6 @@ local function not_in_mathzone()
 end
 
 return {
-  as({trig = "Msun"}, {t("M_\\odot")}, { condition = tsutils.in_mathzone }),
   as({trig = "nab"}, {t("\\nabla")}, { condition = tsutils.in_mathzone }),
   as({trig = "vnab"}, {t("\\Vec{\\nabla}")}, { condition = tsutils.in_mathzone }),
   s({trig = "cc"}, {t("\\subset ")}, { condition = tsutils.in_mathzone }),
@@ -71,6 +70,7 @@ return {
   as({trig = "~<"}, {t("\\lesssim")}, {condition = tsutils.in_mathzone }),
   as({trig = "<~"}, {t("\\lesssim")}, {condition = tsutils.in_mathzone }),
   as({trig = "~~"}, {t("\\approx")}, {condition = tsutils.in_mathzone }),
+   s({trig = "~"},  {t("\\sim")}, {condition = tsutils.in_mathzone }),
   as({trig = "=~"}, {t("\\simeq")}, {condition = tsutils.in_mathzone }),
   as({trig = "~="}, {t("\\simeq")}, {condition = tsutils.in_mathzone }),
   as({trig = "=-"}, {t("\\equiv")}, {condition = tsutils.in_mathzone }),

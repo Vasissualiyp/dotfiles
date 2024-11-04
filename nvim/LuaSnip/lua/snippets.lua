@@ -23,6 +23,15 @@ return {
     t({"", "}"})
   }),
 
+  s({trig = "mathzone"}, {
+    t({
+      "local tsutils = require \"config.tsutils\"",
+      "local function not_in_mathzone()",
+      "  return not tsutils.in_mathzone()",
+      "end",
+    }),
+  }),
+
   s({trig = "s"}, {
     t("s({trig = \""), i(1, "trigger"), t("\"}, { "),
     t("t(\""), i(2, "text"), t("\")"),
