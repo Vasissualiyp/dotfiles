@@ -6,6 +6,15 @@ local as = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
 
 return {
   as({trig = "#!", name = "Shebang", dscr = "Bash shebang line"}, { t("#!/usr/bin/env bash") }),
+  s({trig = "="}, { t("-eq") }),
+  s({trig = "!="}, { t("-ne") }),
+  s({trig = "<"}, { t("-lt") }),
+  s({trig = "=<"}, { t("-le") }),
+  s({trig = "<="}, { t("-le") }),
+  s({trig = ">"}, { t("-gt") }),
+  s({trig = ">="}, { t("-ge") }),
+  s({trig = "=>"}, { t("-ge") }),
+  as({trig = "|e"}, { t("|| { echo \""), i(1, "Error message"), t("\" ; exit 1; }") }),
   s({trig = "if", name = "If statement", dscr = "Basic if-else statement"}, {
     t("if [ "), i(1, "condition"), t(" ]; then\n  "),
     i(2, "echo \"true\""),
