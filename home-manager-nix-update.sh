@@ -37,4 +37,4 @@ fi
 echo "Hostname: " "$hostname"
 
 export NUMBER_OF_MONITORS="$monitor_number"
-home-manager switch --flake "$nix_system_dir.#$hostname"
+home-manager switch --flake "$nix_system_dir.#$hostname" -b backup
