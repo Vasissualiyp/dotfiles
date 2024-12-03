@@ -37,4 +37,5 @@ fi
 echo "Hostname: " "$hostname"
 
 export NUMBER_OF_MONITORS="$monitor_number"
+rm -rf ~/.gtkrc-2.0*
 home-manager switch --flake "$nix_system_dir.#$hostname" -b backup
