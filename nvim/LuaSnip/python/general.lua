@@ -46,8 +46,16 @@ return {
     )
   ),
 
+  s({trig = "main", name = "Run only when executing .py", dscr = "Set __name__ variable to __main__", snippetType = "snippet"},
+    {
+      t({'if __name__ == "__main__":', "    "}),
+      i(1, "# Your code here")
+    }
+  ),
+
+
   s({trig = "dcl", name = "Dataclass Definition", dscr = "Define a new dataclass", snippetType = "snippet"},
-    fmt("@dataclass{}\nclass {}{}:\n\t\"\"\"{}\"\"\"\n\t{}", 
+    fmt("@dataclass{}\nclass {}{}:\n\t\"\"\"{}\"\"\"\n\t{}",
       {
         c(1, {
           sn(nil, {
