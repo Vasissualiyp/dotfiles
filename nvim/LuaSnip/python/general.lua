@@ -80,6 +80,8 @@ return {
     )
   ),
 
+  s({trig = "printf"}, { t("print(f\""), i(1, "statement"), t("\")") }),
+
   -- Python function snippet with docstring and return statement
   as({trig = "deff", name = "Function Definition", dscr = "Function definition with docstring", snippetType = "snippet"}, {
       t("def "), i(1, "function_name"), t("("), i(2, "parameters"), t({"):", "    \"\"\""}),
