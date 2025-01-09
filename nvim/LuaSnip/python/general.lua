@@ -198,6 +198,13 @@ return {
       }
     )
   ),
+  as({trig = "docstr", name = "DocString", dscr = "Edit docstring", snippetType = "snippet"},
+    fmt("\"\"\"{}\"\"\"\n\t", 
+      {
+        i(1, "DocString"),
+      }
+    )
+  ),
 
   s({trig = "ar", name = "Assert Raises", dscr = "Create a context manager to assert that a particular Exception is raised", snippetType = "snippet"},
     fmt("with self.assertRaises({}):\n\t{}", 
