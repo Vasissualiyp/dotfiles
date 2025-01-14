@@ -3,6 +3,7 @@ local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
 local fmt = require("luasnip.extras.fmt").fmt
+local as = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
 
 ls.add_snippets("python", {
   s("read_csv", fmt([[
@@ -25,5 +26,15 @@ df = pd.read_csv(csv_file_path)
     i(5, "float"),                 -- Placeholder for the second column type
     i(6, "first_variable"),        -- Placeholder for the first variable name
     i(7, "second_variable")        -- Placeholder for the second variable name
-  }))
+  })),
+  as({trig = "curvefit"}, {
+	  t("from scipy.optimize import curve_fit"),
+	  t("popt, pcov = curve_fit("),
+      i(1,"funciton"),
+	  t(", "),
+      i(2,"x_data"),
+	  t(", "),
+      i(3,"y_data"),
+	  t(")"),
+      }),
 })
