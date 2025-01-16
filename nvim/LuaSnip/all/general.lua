@@ -12,7 +12,11 @@ return {
   s({trig = "mus"},  { t("MUSIC") }),
   s({trig = "ps" },  { t("power spectrum") }),
   s({trig = "tf" },  { t("transfer function") }),
+  s({trig = "sf"}, { t("star formation") }),
 
   -- Frequent typos
   as({trig = "teh"}, { t("the") }),
+
+  -- Capitalization
+  as({trig = "jwst"}, { t("JWST") }),
 }
