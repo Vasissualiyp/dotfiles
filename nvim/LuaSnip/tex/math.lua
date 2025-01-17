@@ -61,7 +61,7 @@ return {
   s({trig = "rij"}, {t("(${1:x}_${2:n})_{"), i(3, "$2\\in"), i(4, "\\N"), t("}$0")}, {condition = tsutils.in_mathzone }),
   as({trig = "iff"}, {t("\\iff")}, {condition = tsutils.in_mathzone }),
 
-  s({trig = "=="}, {t("&= "), i(1), t(" \\\\\n"), i(0)}, {condition = tsutils.in_mathzone }),
+  s({trig = "=="}, {t("&= "), i(1), t({" \\\\", ""}), i(0)}, {condition = tsutils.in_mathzone }),
   as({trig = "!="}, {t("\\neq")}, {condition = tsutils.in_mathzone }),
   s({trig = "=<"}, {t("\\le")}, {condition = tsutils.in_mathzone }),
   as({trig = ">="}, {t("\\ge")}, {condition = tsutils.in_mathzone }),
