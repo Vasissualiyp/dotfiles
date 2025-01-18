@@ -81,6 +81,7 @@ return {
   ),
 
   as({trig = "printf"}, { t("print(f\""), i(1, "statement"), t("\")") }),
+  as({trig = "raisev"}, { t("raise ValueError(f\""), i(1, "statement"), t("\")") }),
 
   -- Python function snippet with docstring and return statement
   as({trig = "deff", name = "Function Definition", dscr = "Function definition with docstring", snippetType = "snippet"}, {
