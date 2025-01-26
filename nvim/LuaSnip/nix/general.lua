@@ -26,21 +26,21 @@ return {
                 allowUnfree = true;
               }};
             }};
-			python = pkgs.python311Packages.python;
-			pythonEnv = python.withPackages (ps: with ps; [
+            python = pkgs.python311Packages.python;
+            pythonEnv = python.withPackages (ps: with ps; [
               pandas
               matplotlib
               numpy
               scipy
-			  {}
+              {}
               jupyterlab  # Include JupyterLab in pythonEnv
               ipykernel   # Include ipykernel to register kernels        
-			]);
+            ]);
           in
           {{
             devShell = pkgs.mkShell {{
               buildInputs = with pkgs; [
-			    pythonEnv
+                pythonEnv
                 {}
               ];
             }};
