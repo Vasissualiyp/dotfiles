@@ -2,20 +2,36 @@ local ls = require("luasnip")
 local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
-ls.config.setup({enable_autosnippets = true})
+local d = ls.dynamic_node
+local c = ls.choice_node
+ls.config.setup({ enable_autosnippets = true })
 
 local as = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
 
 local function verbatim_snippet(args, parent)
-  local col = vim.fn.col(".") - 1 -- Get the current column position (0-based index)
+  local col = vim.fn.col(".") - 1 -- Current column (0-based)
   if col == 0 then
+    -- At line start: offer choice between \begin{verbatim} and \verb
     return ls.sn(nil, {
-      t({"\\begin{verbatim}", ""}),
-      i(1),
-      t({"", "\\end{verbatim}"}),
-      i(0),
+      c(1, {
+        -- First choice: \begin{verbatim}...\end{verbatim}
+        ls.sn(nil, {
+          t({ "\\begin{verbatim}", "" }),
+          i(1),
+          t({ "", "\\end{verbatim}" }),
+          i(0),
+        }),
+        -- Second choice: \verb|...|
+        ls.sn(nil, {
+          t("\\verb|"),
+          i(1),
+          t("|"),
+          i(0),
+        }),
+      }),
     })
   else
+    -- Not at line start: directly use \verb
     return ls.sn(nil, {
       t("\\verb|"),
       i(1),
