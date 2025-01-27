@@ -2,6 +2,7 @@ local ls = require("luasnip")
 local s = ls.snippet
 local i = ls.insert_node
 local t = ls.text_node
+local c = ls.choice_node
 ls.config.setup({enable_autosnippets = true})
 local as = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
 
@@ -12,11 +13,14 @@ end
 
 return {
   -- Critical Density of the Universe
-  s( { trig = "\\rho_crit",
-       name = "Average Density of the Universe",
-       dscr = "Value of the critical density of the Universe"},
-    { t("2.77 \\times 10^11 h^2 M_{\\odot} / \\text{Mpc}^3") },
-	{condition = tsutils.in_mathzone }
+  s({ trig = "\\rho_crit",
+      name = "Average Density of the Universe",
+      dscr = "Toggle between critical density value and equation",
+      condition = tsutils.in_mathzone },
+    c(1, {
+      t("2.77 \\times 10^11 h^2 M_{\\odot} / \\text{Mpc}^3"),  -- Value version
+      t("\\frac{3H_0^2}{8\\pi G}")  -- Equation version
+    })
   ),
   
   -- Hubble Constant
