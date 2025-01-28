@@ -8,7 +8,7 @@ local as = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
 return {
 
   -- Get current path
-  s({trig = "pwd"}, {
+  as({trig = "pwd"}, {
     f(function()
       return vim.fn.getcwd()
     end),
