@@ -11,38 +11,30 @@ local function not_in_mathzone()
 end
 
 
-local function create_parenthetical_postfix_snippet(postfix, command)
+local function create_postfix_snippet(postfix, command)
+    -- Escape special regex characters
     local escaped_postfix = postfix:gsub("[][^$()%.*+?|-]", "%%%0")
     
     return s({
-        trig = string.format("%%b()%s()", escaped_postfix),
+        trig = string.format("([a-zA-Z0-9%%_\\^\\{\\}\\\\]+)%s()", escaped_postfix),
         regTrig = true,
         wordTrig = false,
         snippetType = "autosnippet"
     }, {
         c(1, {
-            -- Formatted version with parentheses removal
-            sn(nil, {
-                f(function(_, snip)
-                    local content = snip.captures[1]:sub(2, -2)  -- Remove ()
-                    return string.format("\\%s{%s}", command, content)
-                end),
-                i(0)
-            }),
-            -- Original version
-            sn(nil, {
-                f(function(_, snip)
-                    return snip.captures[1] .. postfix
-                end),
-                i(0)
-            })
+            -- Option 1: Formatted command
+            f(function(_, snip)
+                return string.format("\\%s{%s}", command, snip.captures[1])
+            end),
+            -- Option 2: Original text with postfix
+            f(function(_, snip)
+                return snip.captures[1] .. postfix
+            end)
         })
     }, { 
         condition = tsutils.in_mathzone 
     })
 end
-
-
 
 return {
   create_postfix_snippet(".v", "Vec"),
