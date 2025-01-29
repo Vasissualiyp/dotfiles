@@ -7,5 +7,6 @@ local as = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
 ls.add_snippets("all", {  -- 'all' makes it available for every filetype
   as({trig = "Doga"}, {t("Doğa")}),
   as({trig = "Grudic"}, {t("Grudić")}),
-  as({trig = "Schrodinger"}, {t("Schrödinger")})
+  as({trig = "Schrodinger"}, {t("Schrödinger")}),
+  as({trig = "guojian"}, {t("国建")}),
 })
