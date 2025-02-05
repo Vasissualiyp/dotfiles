@@ -320,6 +320,20 @@ return {
 	{condition = tsutils.in_mathzone }
   ),
 
+  as( { trig = "4pir2",
+       name = "Surface of a sphere",
+       dscr = "Surface of a sphere"},
+    { t("4 \\pi r^2") },
+	{condition = tsutils.in_mathzone }
+  ),
+
+  as( { trig = "43pir3",
+       name = "Volume of a sphere",
+       dscr = "Volume of a sphere"},
+    { t("\\frac{4}{3} \\pi r^3") },
+	{condition = tsutils.in_mathzone }
+  ),
+
   -- Peculiar Velocity
   as( { trig = "eqpecv",
        name = "Peculiar Velocity",

@@ -19,4 +19,6 @@ return {
 
   -- Capitalization
   as({trig = "jwst"}, { t("JWST") }),
+  as({trig = "2d"}, { t("2D") }),
+  as({trig = "3d"}, { t("3D") }),
 }
