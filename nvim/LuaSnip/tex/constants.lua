@@ -18,7 +18,7 @@ return {
       dscr = "Toggle between critical density value and equation",
       condition = tsutils.in_mathzone },
     c(1, {
-      t("2.77 \\times 10^11 h^2 M_{\\odot} / \\text{Mpc}^3"),  -- Value version
+      t("2.77 \\times 10^{11} h^2 M_{\\odot} / \\text{Mpc}^3"),  -- Value version
       t("\\frac{3H_0^2}{8\\pi G}")  -- Equation version
     })
   ),
