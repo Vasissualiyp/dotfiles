@@ -9,4 +9,5 @@ ls.add_snippets("all", {  -- 'all' makes it available for every filetype
   as({trig = "Grudic"}, {t("Grudić")}),
   as({trig = "Schrodinger"}, {t("Schrödinger")}),
   as({trig = "guojian"}, {t("国建")}),
+  as({trig = "wenxuan"}, {t("雯暄")}),
 })
