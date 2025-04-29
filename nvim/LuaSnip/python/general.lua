@@ -18,7 +18,7 @@ return {
     )
   ),
 
-  s({trig = "logger", name = "Global Logger", dscr = "A globally scoped module-level logger", snippetType = "snippet"},
+  s({trig = "logger", name = "Global Logger", dscr = "A globally scoped module-level logger"},
     fmt("logger: logging.Logger = logging.getLogger({})\n{}", 
       {
         i(1, "__name__"),
@@ -30,7 +30,7 @@ return {
     )
   ),
 
-  s({trig = "lm", name = "Log Message (Choice)", dscr = "Log a new message to the global logger", snippetType = "snippet"},
+  s({trig = "lm", name = "Log Message (Choice)", dscr = "Log a new message to the global logger"},
     fmt("logger.{}({})", 
       {
         c(1, {
@@ -46,7 +46,7 @@ return {
     )
   ),
 
-  s({trig = "main", name = "Run only when executing .py", dscr = "Set __name__ variable to __main__", snippetType = "snippet"},
+  s({trig = "main", name = "Run only when executing .py", dscr = "Set __name__ variable to __main__"},
     {
       t({'if __name__ == "__main__":', "    "}),
       i(1, "# Your code here")
@@ -54,7 +54,7 @@ return {
   ),
 
 
-  s({trig = "dcl", name = "Dataclass Definition", dscr = "Define a new dataclass", snippetType = "snippet"},
+  s({trig = "dcl", name = "Dataclass Definition", dscr = "Define a new dataclass"},
     fmt("@dataclass{}\nclass {}{}:\n\t\"\"\"{}\"\"\"\n\t{}",
       {
         c(1, {
@@ -84,7 +84,7 @@ return {
   as({trig = "raisev"}, { t("raise ValueError(f\""), i(1, "statement"), t("\")") }),
 
   -- Python function snippet with docstring and return statement
-  as({trig = "deff", name = "Function Definition", dscr = "Function definition with docstring", snippetType = "snippet"}, {
+  as({trig = "deff", name = "Function Definition", dscr = "Function definition with docstring"}, {
       t("def "), i(1, "function_name"), t("("), i(2, "parameters"), t({"):", "    \"\"\""}),
 	  t({"", "    "}),
       i(3, "Brief description of function"), t({"", "", "    Args:"}),
@@ -95,7 +95,7 @@ return {
       i(0, "pass"),  -- Final placeholder, defaults to `pass`
       t({"", "    return "}), i(9, "return_value")
   }),
-  --as({trig = "deff", name = "Function Definition", dscr = "Function definition with docstring", snippetType = "snippet"},
+  --as({trig = "deff", name = "Function Definition", dscr = "Function definition with docstring"},
   --  fmt("def {}({}) -> {}:\n\t\"\"\"{}\"\"\"\n\t{}", 
   --    {
   --      i(1, "function_name"),
@@ -107,7 +107,7 @@ return {
   --  )
   --),
 
-  as({trig = "defc", name = "Class Definition", dscr = "Define a new class", snippetType = "snippet"},
+  as({trig = "defc", name = "Class Definition", dscr = "Define a new class"},
     fmt("class {}{}:\n\t\"\"\"{}\"\"\"\n\tdef __init__(self{}):\n\t\t\"\"\"{}\"\"\"\n\t\t{}", 
       {
         i(1, "ClassName"),
@@ -134,7 +134,7 @@ return {
   ),
 
 
-  s({trig = "defm", name = "Method Definition", dscr = "Method definition with docstring", snippetType = "snippet"},
+  s({trig = "defm", name = "Method Definition", dscr = "Method definition with docstring"},
     fmt("def {}(self, {}) -> {}:\n\t\"\"\"{}\"\"\"\n\t{}", 
       {
         i(1, "function_name"),
@@ -146,7 +146,7 @@ return {
     )
   ),
 
-  s({trig = "@property", name = "Class Property Decorator", dscr = "Define a property for a Class", snippetType = "snippet"},
+  s({trig = "@property", name = "Class Property Decorator", dscr = "Define a property for a Class"},
     fmt("@property\ndef {}(self) -> {}:\n\t\"\"\"Return the {} property.\"\"\"\n\treturn self._{}\n@{}.setter\ndef {}(self, value: {}) -> None:\n\t\"\"\"Set the {} property.\"\"\"\n\tself._{} = value", 
       {
         i(1, "PropertyName"),
@@ -162,7 +162,7 @@ return {
     )
   ),
 
-  s({trig = "with", name = "Context Manager", dscr = "Use a context manager to access a resource", snippetType = "snippet"},
+  s({trig = "with", name = "Context Manager", dscr = "Use a context manager to access a resource"},
     fmt("with {} as {}:\n\t{}", 
       {
         i(1, "expression"),
@@ -172,7 +172,7 @@ return {
     )
   ),
 
-  s({trig = "try", name = "Try/Except", dscr = "Try to perform an action; catch and handle exceptions", snippetType = "snippet"},
+  s({trig = "try", name = "Try/Except", dscr = "Try to perform an action; catch and handle exceptions"},
     fmt("try:\n\t{}\nexcept {} as {}:\n\t{}", 
       {
         i(1, "expression"),
@@ -183,7 +183,7 @@ return {
     )
   ),
 
-  s({trig = "al", name = "Assert Logs", dscr = "Create a context manager to assert that a particular message is logged", snippetType = "snippet"},
+  s({trig = "al", name = "Assert Logs", dscr = "Create a context manager to assert that a particular message is logged"},
     fmt("with self.assertLogs(\"{}\", {}) as cm:\n\t{}", 
       {
         i(1, "logger.name"),
@@ -199,7 +199,7 @@ return {
       }
     )
   ),
-  as({trig = "docstr", name = "DocString", dscr = "Edit docstring", snippetType = "snippet"},
+  as({trig = "docstr", name = "DocString", dscr = "Edit docstring"},
     fmt("\"\"\"{}\"\"\"\n\t", 
       {
         i(1, "DocString"),
@@ -207,7 +207,7 @@ return {
     )
   ),
 
-  s({trig = "ar", name = "Assert Raises", dscr = "Create a context manager to assert that a particular Exception is raised", snippetType = "snippet"},
+  s({trig = "ar", name = "Assert Raises", dscr = "Create a context manager to assert that a particular Exception is raised"},
     fmt("with self.assertRaises({}):\n\t{}", 
       {
         i(1, "Exception"),
