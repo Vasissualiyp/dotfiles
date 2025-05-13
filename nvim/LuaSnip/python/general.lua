@@ -85,15 +85,8 @@ return {
 
   -- Python function snippet with docstring and return statement
   as({trig = "deff", name = "Function Definition", dscr = "Function definition with docstring"}, {
-      t("def "), i(1, "function_name"), t("("), i(2, "parameters"), t({"):", "    \"\"\""}),
-	  t({"", "    "}),
-      i(3, "Brief description of function"), t({"", "", "    Args:"}),
-      t({"", "        "}), i(4, "arg1"), t(" ("), i(5, "type"), t("): "), i(6, "description"),
-      t({"", "", "    Returns:"}),
-      t({"", "        "}), i(7, "return_type"), t(": "), i(8, "description"),
-      t({"", "    \"\"\"", "    "}),
+      t("def "), i(1, "function_name"), t("("), i(2, "parameters"), t({"):", "    "}),
       i(0, "pass"),  -- Final placeholder, defaults to `pass`
-      t({"", "    return "}), i(9, "return_value")
   }),
   --as({trig = "deff", name = "Function Definition", dscr = "Function definition with docstring"},
   --  fmt("def {}({}) -> {}:\n\t\"\"\"{}\"\"\"\n\t{}", 
@@ -108,7 +101,7 @@ return {
   --),
 
   as({trig = "defc", name = "Class Definition", dscr = "Define a new class"},
-    fmt("class {}{}:\n\t\"\"\"{}\"\"\"\n\tdef __init__(self{}):\n\t\t\"\"\"{}\"\"\"\n\t\t{}", 
+    fmt("class {}{}:\n\tdef __init__(self{}):\n\t\t\"\"\"{}\"\"\"\n\t\t{}", 
       {
         i(1, "ClassName"),
         c(2, {
@@ -119,8 +112,7 @@ return {
           }),
           t("")
         }),
-        i(3, "DocString"),
-        c(4, {
+        c(3, {
           sn(nil, {
             t(", "),
             i(1, "Parameters")
