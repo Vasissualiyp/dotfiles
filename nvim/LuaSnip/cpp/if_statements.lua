@@ -23,10 +23,10 @@ return {
     regTrig = false,
     snippetType = "autosnippet"
   }, fmta([[
-    if (<>) {
-        <>
-    }
-  ]], {
+if (<>) {
+<>
+}
+]], {
     i(1, "condition"),
     d(2, get_visual),
   })),
@@ -37,10 +37,10 @@ return {
     regTrig = false,
     snippetType = "autosnippet"
   }, fmta([[
-    if (rank == 0) {
-       <>
-    }
-  ]], {
+if (rank == 0) {
+<>
+}
+]], {
     d(1, get_visual),
   })),
 }
